@@ -3,7 +3,7 @@ service cloud.firestore {
   match /databases/{db}/documents {
     // Dükkân yöneticileri: Firebase Auth e-posta girişi + bu listede olmak
     function yonetici() {
-      return request.auth != null && request.auth.token.email in ['tolgaarpa@gmail.com'];
+      return request.auth != null && request.auth.token.email in ['tolgaarpa@gmail.com','korayca2001@gmail.com'] && request.auth.token.email_verified == true;
     }
     // Teklif ve satın alma talepleri
     match /talepler/{id} {
