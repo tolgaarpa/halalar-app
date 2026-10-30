@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    // Dükkân yöneticileri: Firebase Auth e-posta girişi + bu listede olmak
+    function yonetici() {
+      return request.auth != null && request.auth.token.email in ['tolgaarpa@gmail.com'];
+    }
+    // Teklif ve satın alma talepleri
+    match /talepler/{id} {
+      // Müşteri yeni talep oluşturabilir; alanlar ve tipler denetlenir
+      allow create: if request.resource.data.keys().hasOnly(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici'])
+                    && request.resource.data.tur in ['teklif','alim']
+                    && request.resource.data.tutar is int && request.resource.data.tutar > 0 && request.resource.data.tutar < 10000000
+                    && request.resource.data.ad is string && request.resource.data.ad.size() > 1 && request.resource.data.ad.size() < 60
+                    && request.resource.data.tel is string && request.resource.data.tel.size() >= 10 && request.resource.data.tel.size() < 20
+                    && request.resource.data.durum == 'Beklemede'
+                    && request.resource.data.zaman == request.time;
+      // Müşteri yalnız kendi talebini kimliğiyle (tahmin edilemez belge no) okuyabilir; liste yalnız yöneticiye
+      allow get: if true;
+      allow list, update, delete: if yonetici();
+    }
+  }
+}

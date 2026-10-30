@@ -95,6 +95,11 @@ nav .rozet{position:absolute;top:6px;margin-left:4px;background:var(--ink);color
 #secim{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);background:var(--ink);color:#111;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:500;opacity:0;transition:.2s;pointer-events:none;white-space:nowrap;z-index:2}
 #secim.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .tunele{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 10px "Space Grotesk";letter-spacing:.2em;text-transform:uppercase}
+.kisi{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.kisi input{background:#0d0d10;border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:12px;font:400 14px "Space Grotesk";outline:none;min-width:0}
+.kisi input:focus{border-color:var(--muted)}
+.hata{color:var(--nope);font-size:12px;margin-top:8px;min-height:14px}
+.yanit{font-size:11px;color:var(--ink);margin-top:3px;text-align:right}
 </style>
 </head>
 <body>
@@ -124,6 +129,9 @@ nav .rozet{position:absolute;top:6px;margin-left:4px;background:var(--ink);color
   <div id="sheet"></div>
   <div id="toast"></div>
 </div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-ayar.js"></script>
 <script src="urunler.js"></script>
 <script src="fiyatlar.js"></script>
 <script src="aspect.js"></script>
@@ -133,6 +141,17 @@ nav .rozet{position:absolute;top:6px;margin-left:4px;background:var(--ink);color
 const SATICILAR={halalar:{ad:'Halalar'}};
 const saticiOf=id=>'halalar';
 const KEY='halalar-app-v1';
+let VT=null; try{ firebase.initializeApp(FIREBASE_AYAR); VT=firebase.firestore(); }catch(e){ console.warn('veritabanı yok',e) }
+function kisiAlanlari(){const k=D.kisi||{};return `<div class="kisi"><input id="kad" autocomplete="name" placeholder="Adın" value="${(k.ad||'').replace(/"/g,'')}"><input id="ktel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Telefon (05..)" value="${(k.tel||'').replace(/"/g,'')}"></div><div class="hata" id="khata"></div>`}
+function kisiOku(){const ad=document.getElementById('kad').value.trim(),tel=document.getElementById('ktel').value.replace(/[^0-9+]/g,'');
+  if(ad.length<2){document.getElementById('khata').textContent='Adını yaz, dükkân sana böyle hitap edecek.';return null}
+  if(tel.replace(/\D/g,'').length<10){document.getElementById('khata').textContent='Telefon numaranı 10-11 hane olarak yaz.';return null}
+  D.kisi={ad,tel};kaydet();return {ad,tel}}
+async function gonder(id,tur,tutar,kisi,btn){
+  if(!VT){toast('Bağlantı kurulamadı, internetini kontrol et');return null}
+  btn.disabled=true;btn.textContent='Gönderiliyor…';
+  try{const r=await VT.collection('talepler').add({urun:id,urunAd:U(id)[1],tur,tutar,ad:kisi.ad,tel:kisi.tel,durum:'Beklemede',zaman:firebase.firestore.FieldValue.serverTimestamp(),satici:saticiOf(id)});return r.id}
+  catch(e){console.warn(e);document.getElementById('khata').textContent='Gönderilemedi. İnternetini kontrol edip tekrar dene.';btn.disabled=false;btn.textContent=tur==='teklif'?'Teklifi gönder':'Onayla';return null}}
 let D={sira:0,begeni:[],gec:[],islem:[]};
 try{const x=JSON.parse(localStorage.getItem(KEY));if(x)D=Object.assign(D,x)}catch(e){}
 const kaydet=()=>{try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){}};
@@ -212,30 +231,38 @@ function teklifAc(id){
   ac(ust(id,'Teklif ver','var(--offer)')+`
     <div class="teklif-kutu"><input id="tk" inputmode="numeric" value="${o[1]}"><span>₺</span></div>
     <div class="hizli">${o.map(v=>`<button data-v="${v}">${TL(v)}</button>`).join('')}</div>
-    <div class="not">Teklifin dükkâna iletilir. Kabul edilirse sana haber verilir, ürün senin için ayrılır.</div>
+    ${kisiAlanlari()}
+    <div class="not">Teklifin dükkâna iletilir. Cevap "Tekliflerim" sekmesinde görünür, gerekirse dükkân seni arar.</div>
     <div class="btns"><button id="vz">Vazgeç</button><button class="ana" id="gn" style="background:var(--offer)">Teklifi gönder</button></div>`);
   sheet.querySelectorAll('.hizli button').forEach(b=>b.onclick=()=>document.getElementById('tk').value=b.dataset.v);
   document.getElementById('vz').onclick=()=>kapat(true);
-  document.getElementById('gn').onclick=()=>{const v=parseInt(document.getElementById('tk').value.replace(/\D/g,''))||0;if(v<=0)return;
-    D.islem.unshift({id,satici:saticiOf(id),tur:'teklif',tutar:v,zaman:Date.now(),durum:'Beklemede'});kaydet();kapat(false);toast('Teklif gönderildi: '+TL(v));ucur(aktif.el,'yukari',ilerle)}}
+  document.getElementById('gn').onclick=async e=>{const v=parseInt(document.getElementById('tk').value.replace(/\D/g,''))||0;if(v<=0){document.getElementById('khata').textContent='Teklif tutarını yaz.';return}
+    const k=kisiOku();if(!k)return;const ref=await gonder(id,'teklif',v,k,e.currentTarget);if(!ref)return;
+    D.islem.unshift({id,ref,satici:saticiOf(id),tur:'teklif',tutar:v,zaman:Date.now(),durum:'Beklemede'});kaydet();kapat(false);toast('Teklif gönderildi: '+TL(v));ucur(aktif.el,'yukari',ilerle)}}
 function satinAlAc(id){
   const f=FIYAT[id];
   ac(ust(id,'Satın al','var(--buy)')+`
     <div class="ozet"><div><span>Satıcı</span><span>${SATICILAR[saticiOf(id)].ad}</span></div><div><span>Ürün</span><span>${TL(f)}</span></div><div><span>Teslimat</span><span>Dükkândan teslim</span></div><div><b>Toplam</b><b>${TL(f)}</b></div></div>
-    <div class="not">Bu ilk sürümde ödeme alınmıyor; talebin dükkâna düşer, ürün senin için ayrılır.</div>
+    ${kisiAlanlari()}
+    <div class="not">Bu ilk sürümde ödeme alınmıyor; talebin dükkâna düşer, dükkân seni arayıp ürünü ayırır.</div>
     <div class="btns"><button id="vz">Vazgeç</button><button class="ana" id="gn" style="background:var(--buy)">Onayla</button></div>`);
   document.getElementById('vz').onclick=()=>kapat(true);
-  document.getElementById('gn').onclick=()=>{D.islem.unshift({id,satici:saticiOf(id),tur:'alim',tutar:f,zaman:Date.now(),durum:'Ayrıldı'});kaydet();kapat(false);toast('Ürün senin için ayrıldı');ucur(aktif.el,'asagi',ilerle)}}
+  document.getElementById('gn').onclick=async e=>{const k=kisiOku();if(!k)return;const ref=await gonder(id,'alim',f,k,e.currentTarget);if(!ref)return;
+    D.islem.unshift({id,ref,satici:saticiOf(id),tur:'alim',tutar:f,zaman:Date.now(),durum:'Beklemede'});kaydet();kapat(false);toast('Talebin dükkâna iletildi');ucur(aktif.el,'asagi',ilerle)}}
 
 // ---- listeler ----
 function satir(id,sag){const u=U(id);return `<div class="satir"><img src="${img(id)}"><div><h3>${u[1]}</h3><div class="k">${u[2]}</div></div><div>${sag}</div></div>`}
+async function durumTazele(){ if(!VT)return; let degisti=false;
+  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const d=await VT.collection('talepler').doc(x.ref).get();if(!d.exists)return;const v=d.data();
+    if(v.durum!==x.durum||(v.yanit||'')!==(x.yanit||'')){x.durum=v.durum;x.yanit=v.yanit||'';degisti=true}}catch(e){}}));
+  if(degisti){kaydet();listeler()} }
 function listeler(){
   document.getElementById('l-begeni').innerHTML=D.begeni.length?D.begeni.slice().reverse().map(id=>satir(id,`<div class="t">${TL(FIYAT[id])}</div><div class="durum" style="color:var(--like)">Beğenildi</div>`)).join(''):'<div class="yok">Henüz beğeni yok. Keşfet\'te sağa kaydır.</div>';
-  document.getElementById('l-islem').innerHTML=D.islem.length?D.islem.map(x=>satir(x.id,`<div class="t">${TL(x.tutar)}</div><div class="durum" style="color:${x.tur==='teklif'?'var(--offer)':'var(--buy)'}">${x.tur==='teklif'?'Teklif · ':'Alım · '}${x.durum}</div>`)).join(''):'<div class="yok">Teklif için yukarı, satın almak için aşağı kaydır.</div>'}
+  document.getElementById('l-islem').innerHTML=D.islem.length?D.islem.map(x=>satir(x.id,`<div class="t">${TL(x.tutar)}</div><div class="durum" style="color:${x.tur==='teklif'?'var(--offer)':'var(--buy)'}">${x.tur==='teklif'?'Teklif · ':'Alım · '}${x.durum}</div>${x.yanit?`<div class="yanit">${x.yanit}</div>`:''}`)).join(''):'<div class="yok">Teklif için yukarı, satın almak için aşağı kaydır.</div>'}
 document.querySelectorAll('[data-git]').forEach(b=>b.onclick=()=>{const g=b.dataset.git;
   document.querySelectorAll('nav button').forEach(n=>n.classList.toggle('on',n.dataset.git===g));
   document.querySelectorAll('.sayfa').forEach(s=>s.classList.remove('on'));
-  if(g!=='kesfet'){listeler();document.getElementById('s-'+g).classList.add('on')}});
+  if(g!=='kesfet'){listeler();document.getElementById('s-'+g).classList.add('on');if(g==='islem')durumTazele()}});
 
 let tt=null;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
 ciz();
