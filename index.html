@@ -100,6 +100,9 @@ nav .rozet{position:absolute;top:6px;margin-left:4px;background:var(--ink);color
 .kisi input:focus{border-color:var(--muted)}
 .hata{color:var(--nope);font-size:12px;margin-top:8px;min-height:14px}
 .yanit{font-size:11px;color:var(--ink);margin-top:3px;text-align:right}
+.rza{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:11.5px;line-height:1.4;color:var(--muted)}
+.rza input{margin-top:2px;width:16px;height:16px;flex:none;accent-color:#f2efe9}
+.rza a{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -142,11 +145,12 @@ const SATICILAR={halalar:{ad:'Halalar'}};
 const saticiOf=id=>'halalar';
 const KEY='halalar-app-v1';
 let VT=null; try{ firebase.initializeApp(FIREBASE_AYAR); VT=firebase.firestore(); }catch(e){ console.warn('veritabanı yok',e) }
-function kisiAlanlari(){const k=D.kisi||{};return `<div class="kisi"><input id="kad" autocomplete="name" placeholder="Adın" value="${(k.ad||'').replace(/"/g,'')}"><input id="ktel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Telefon (05..)" value="${(k.tel||'').replace(/"/g,'')}"></div><div class="hata" id="khata"></div>`}
+function kisiAlanlari(){const k=D.kisi||{};return `<div class="kisi"><input id="kad" autocomplete="name" placeholder="Adın" value="${(k.ad||'').replace(/"/g,'')}"><input id="ktel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Telefon (05..)" value="${(k.tel||'').replace(/"/g,'')}"></div><label class="rza"><input type="checkbox" id="krz" ${k.rza?'checked':''}><span><a href="kvkk.html" target="_blank" rel="noopener">Aydınlatma metnini</a> okudum; adımın ve telefonumun talebim için işlenmesine ve ABD'deki sunucularda saklanmasına açık rıza veriyorum.</span></label><div class="hata" id="khata"></div>`}
 function kisiOku(){const ad=document.getElementById('kad').value.trim(),tel=document.getElementById('ktel').value.replace(/[^0-9+]/g,'');
   if(ad.length<2){document.getElementById('khata').textContent='Adını yaz, dükkân sana böyle hitap edecek.';return null}
   if(tel.replace(/\D/g,'').length<10){document.getElementById('khata').textContent='Telefon numaranı 10-11 hane olarak yaz.';return null}
-  D.kisi={ad,tel};kaydet();return {ad,tel}}
+  if(!document.getElementById('krz').checked){document.getElementById('khata').textContent='Göndermek için aydınlatma metnini onaylaman gerekiyor.';return null}
+  D.kisi={ad,tel,rza:true};kaydet();return {ad,tel}}
 async function gonder(id,tur,tutar,kisi,btn){
   if(!VT){toast('Bağlantı kurulamadı, internetini kontrol et');return null}
   btn.disabled=true;btn.textContent='Gönderiliyor…';
