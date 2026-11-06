@@ -84,7 +84,7 @@ nav .rozet{position:absolute;top:6px;margin-left:4px;background:var(--ink);color
 #toast{position:absolute;left:50%;top:70px;transform:translate(-50%,-20px);background:var(--ink);color:#111;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:500;opacity:0;transition:.3s;z-index:70;white-space:nowrap}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 /* tünel girişi */
-#tunel{position:absolute;inset:0;z-index:40;background:var(--bg);touch-action:none}
+#tunel{position:absolute;inset:0;z-index:40;background:var(--bg) url('img/ic.webp') center/cover no-repeat;touch-action:none}
 #tunel canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 #tunel .tust{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top)) 18px 10px;pointer-events:none;background:linear-gradient(#0b0b0dcc,#0b0b0d00)}
 #tunel .tust .logo{text-shadow:0 1px 8px #000}
@@ -313,7 +313,7 @@ const T=(()=>{
       it.op=(1-fog*0.6)*vis;it.sw=it.w*SC*k;it.sh=it.sw*im.naturalHeight/im.naturalWidth;it.sx=VW/2+(it.x*VW*0.5)*k;it.sy=VH/2+(it.y*VH*0.5)*k;
       if(it.sx+it.sw<-50||it.sx-it.sw>VW+50||it.sy+it.sh<-50||it.sy-it.sh>VH+50)continue;drawn.push(it)}
     drawn.sort((a,b)=>a.dz-b.dz);
-    g.setTransform(DPR,0,0,DPR,0,0);g.globalAlpha=1;g.fillStyle=BG;g.fillRect(0,0,VW,VH);
+    g.setTransform(DPR,0,0,DPR,0,0);g.globalAlpha=1;g.clearRect(0,0,VW,VH);g.fillStyle='rgba(11,11,13,.45)';g.fillRect(0,0,VW,VH);
     for(const it of drawn){g.save();g.globalAlpha=it.op;g.translate(it.sx,it.sy);g.rotate(it.rot);g.drawImage(IMG[it.u[0]],-it.sw/2,-it.sh/2,it.sw,it.sh);g.restore()}
     requestAnimationFrame(render)}
   requestAnimationFrame(render);
