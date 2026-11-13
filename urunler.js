@@ -56,7 +56,7 @@ const URUNLER=[
 ["3476","Mavi Çalar Saat","Çift zilli masa saati.","—"],
 ["ek/3470_kadeh","Kristal Kadehler","İkili kristal kadeh.","—"],
 ["3473","Bronz Geyik","Dal üstünde bronz geyik.","—"],
-["3489","Çay Fincanı","Porselen fincan.","—"],
+["3489","Porselen Çan","Kedi figürlü, asılan porselen çan.","—"],
 ["3492","Taşlı Yüzük","Kristal taşlı yüzük.","—"],
 ["ek/3481_tarti","Seyahat Tartısı","Mekanik seyahat tartısı.","—"],
 ["h/70yil","Türkiye Cumhuriyeti Albümü","70. kuruluş yıldönümü baskısı, 1922-1938 fotoğrafları, kutulu.","1993"],
