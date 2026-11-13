@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — yön ve tam kontrol
+Tolga: Buda üçlüsü ters, "tek tek yazmak saçma, kontrolü düzgün yap". 94 kapak + 136 galeri karesi 6x6 sayfalarda tek tek yön/kadraj için bakıldı. Düzeltilen: 3464 Buda (ters), 3468 fön (vitrinde ters asılı çekilmiş, düz çevrildi), h/fragile/2 kapak (yan). Galeriden çıkarılan: paravan_v2/1 (kesim artığı). Uygulamada 94 ürünün tüm açıları kartta açılıp ölçüldü: taşan/yüklenmeyen 0. Not: 3489 "Çay Fincanı" aslında asılı porselen çan (kedi figürü düz) — ad Tolga onayı bekliyor.
+
 ## 13.11 Taş Fener — kart düzeltmesi yayında
 Tolga "yayınla" dedi; push edildi, canlı index.html yeni CSS ile doğrulandı.
 

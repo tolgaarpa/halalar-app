@@ -186,7 +186,6 @@ const GALERI={
 "h/fragile/3"
 ],
 "ig/ig_paravan_v2": [
-"g/ig_ig_paravan_v2/1",
 "g/ig_ig_paravan_v2/2",
 "g/ig_ig_paravan_v2/3"
 ],
