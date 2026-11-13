@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — kategori
+Tolga: Rüzgâr Çanı (3490) Heykel → Müzik, Fisher Müzik Seti (h/fisher) Elektronik → Müzik. App + web veri/kategoriler.js aynı; tarayıcıda Müzik 14 ürün. Yerel, yayın bekliyor.
+
 ## 13.11 Taş Fener — deste kaldığı yer hatası
 Tolga ürünleri az gördü. Sebep: telefonda kayıtlı 'sira' yeni 94lük sırada da geçerli kalıyordu, öndeki ürünler atlanıyordu. Düzeltme: index.html ürün listesi imzası (D.liste) değişince sira=0, eski order silinir; beğeni/işlemler kalır. Tarayıcıda denendi: eski kayıt (sira 40, 59luk order) → 1/94; aynı listeyle yenileme → 6/94 korunuyor. Yerel commit, yayın bekliyor.
 
