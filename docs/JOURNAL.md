@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — kart düzeltmesi yayında
+Tolga "yayınla" dedi; push edildi, canlı index.html yeni CSS ile doğrulandı.
+
 ## 13.11 Taş Fener — kart kesik hatası
 Tolga: astronot ve Philips lamba son foto kesik, "neyi kontrol ediyorsun". Sebep görseller değil kart CSS'i: img max-height:100% grid içinde çözülmüyor, uzun görseller bilgi panelinin altında kalıyordu. Düzeltildi, telefon boyunda astronot ve lamba 4. açı tam görüldü. Ders LESSONS'a yazıldı.
 
