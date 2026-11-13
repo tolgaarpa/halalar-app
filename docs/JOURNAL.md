@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — yayın
+Tolga "kur kral" dedi; 710b9c0 push edildi. Canlıda kategoriler.js, galeri.js ve Ara düğmesi 200 döndü.
+
 ## 2026-11-13 Taş Fener (2)
 - Ellili/masalı fotolar dahil 35 yeni ürün + 9 eski ürüne yeni açılar eklendi; arama ve 10 kategori kuruldu.
 - Eski kadrajlar kaynaktan yeniden kesildi; kaynak fotoğraflar ürünü kestiği için düzelmedi, eskiler korundu.
