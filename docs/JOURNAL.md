@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — kenar payı
+Tolga: hoparlör ve Philips lamba kadrajı kötü, hepsini kontrol et. Fable limite takıldı, iş Opus ile yapıldı: kesik görünümün ortak sebebi sıfır kenar payıydı; 226 görsele %3,5 şeffaf pay eklendi, aspect.js güncellendi (3c875a6). Push sınıflandırıcıya takıldı, "yayınla" bekleniyor. Lamba son foto: kaynak tam ama Vision gövdeyi kesiyor.
+
 ## 13.11 Taş Fener — kapak düzeltmesi
 Tolga: tam görünen foto önce, detay sonra; fön kesik. Fable yaptı (b3cb653): 12 kapak değişti (hendrix, bakirtablo, bongo, filtablo, fisher, havan, jimbeam, piknik, fragile, fincantakim, 3479, ig_portre), 10 galeri sırası, 4 kapak kaynaktan yeniden kesildi (3468 fön, jant, şövalye, kadeh). Kapak sayfası kontrol edildi, Tolga "yayınla" dedi, push edildi.
 
