@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — kenar payı yayında
+Tolga "yayınla" dedi; push edildi, canlı aspect.js yerel ile aynı.
+
 ## 13.11 Taş Fener — kenar payı
 Tolga: hoparlör ve Philips lamba kadrajı kötü, hepsini kontrol et. Fable limite takıldı, iş Opus ile yapıldı: kesik görünümün ortak sebebi sıfır kenar payıydı; 226 görsele %3,5 şeffaf pay eklendi, aspect.js güncellendi (3c875a6). Push sınıflandırıcıya takıldı, "yayınla" bekleniyor. Lamba son foto: kaynak tam ama Vision gövdeyi kesiyor.
 
