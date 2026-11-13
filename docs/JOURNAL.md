@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — ürün adı
+Tolga onayıyla 3489 "Çay Fincanı" -> "Porselen Çan" (app + web). Yerel, yayın bekliyor.
+
 ## 13.11 Taş Fener — app + web yayında
 Tolga "yayınla" dedi; iki depo push edildi, canlı galeri.js ikisinde de yerel ile aynı.
 
