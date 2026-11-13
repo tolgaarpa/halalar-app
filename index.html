@@ -184,6 +184,9 @@ const U=id=>URUNLER.find(u=>u[0]===id);
 const img=id=>`img/${id}.webp`;
 // karışık ama sabit sıra
 let SIRA=URUNLER.map((u,i)=>[u[0],(i*0.6180339)%1]).sort((a,b)=>a[1]-b[1]).map(x=>x[0]);
+// ürün listesi değiştiyse (ekleme/çıkarma) eski kalınan yer geçersiz: deste baştan başlar
+const LISTE=URUNLER.map(u=>u[0]).sort().join(',');
+if(D.liste!==LISTE){D.liste=LISTE;D.sira=0;delete D.order;kaydet()}
 if(Array.isArray(D.order)&&D.order.length===SIRA.length&&D.order.every(id=>U(id)))SIRA=D.order;
 function oneAl(id){ // seçilen ürünü sıradaki kart yap
   const j=SIRA.indexOf(id); if(j<0)return; SIRA.splice(j,1);
