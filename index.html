@@ -103,12 +103,30 @@ nav .rozet{position:absolute;top:6px;margin-left:4px;background:var(--ink);color
 .rza{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:11.5px;line-height:1.4;color:var(--muted)}
 .rza input{margin-top:2px;width:16px;height:16px;flex:none;accent-color:#f2efe9}
 .rza a{color:var(--ink)}
+.noktalar{position:absolute;left:0;right:0;bottom:130px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.noktalar i{width:6px;height:6px;border-radius:50%;background:#ffffff40}.noktalar i.on{background:var(--ink)}
+.acilar{position:absolute;top:12px;right:14px;font-size:10px;letter-spacing:.18em;color:var(--muted);pointer-events:none}
+#ara{position:fixed;inset:0;z-index:60;background:var(--bg);display:none;flex-direction:column}
+#ara.on{display:flex}
+#ara .ust2{display:flex;gap:10px;align-items:center;padding:calc(14px + env(safe-area-inset-top)) 16px 10px}
+#ara input{flex:1;min-width:0;background:#17171b;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:11px 16px;font:400 15px "Space Grotesk";outline:none}
+#ara .katlar{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 12px;scrollbar-width:none}
+#ara .katlar button{flex:none;background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:7px 13px;font:500 12px "Space Grotesk";white-space:nowrap}
+#ara .katlar button.on{background:var(--ink);color:#111;border-color:var(--ink)}
+#ara .sonuc{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:4px 16px calc(20px + env(safe-area-inset-bottom));align-content:start}
+#ara .oge{background:#141417;border:1px solid var(--line);border-radius:16px;padding:10px;text-align:left;color:var(--ink);font:inherit}
+#ara .oge img{width:100%;aspect-ratio:1;object-fit:contain;display:block;margin-bottom:8px}
+#ara .oge b{display:block;font-weight:500;font-size:13px;line-height:1.25}
+#ara .oge small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+#ara .yok{grid-column:1/-1;color:var(--muted);text-align:center;padding:40px 0}
 </style>
 </head>
 <body>
 <div id="app">
-  <header><div class="logo">Halalar</div><div style="display:flex;gap:10px;align-items:center"><div class="sayac" id="sayac"></div><button class="tunele" id="tuneleDon">Tünel</button></div></header>
+  <header><div class="logo">Halalar</div><div style="display:flex;gap:10px;align-items:center"><div class="sayac" id="sayac"></div><button class="tunele" id="araAc">Ara</button><button class="tunele" id="tuneleDon">Tünel</button></div></header>
   <div id="deste"></div>
+  <div id="ara"><div class="ust2"><input id="araKutu" type="search" placeholder="Ürün ara: plak, tablo, porselen…" autocomplete="off"><button class="tunele" id="araKapat">Kapat</button></div>
+    <div class="katlar" id="katlar"></div><div class="sonuc" id="sonuc"></div></div>
   <div class="ipucu">
     <button class="b-nope" data-yon="sol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Geç</button>
     <button class="b-offer" data-yon="yukari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Teklif</button>
@@ -138,6 +156,8 @@ nav .rozet{position:absolute;top:6px;margin-left:4px;background:var(--ink);color
 <script src="urunler.js"></script>
 <script src="fiyatlar.js"></script>
 <script src="aspect.js"></script>
+<script src="galeri.js"></script>
+<script src="kategoriler.js"></script>
 <script>
 // ---- durum (telefonda saklanır) ----
 // satıcı alanı: ilk fazda yalnız Halalar; sonra başka satıcılar eklenecek
@@ -170,9 +190,12 @@ function oneAl(id){ // seçilen ürünü sıradaki kart yap
   if(D.sira>=SIRA.length+1)D.sira=0; SIRA.splice(Math.min(D.sira,SIRA.length),0,id); D.order=SIRA; kaydet()}
 const deste=document.getElementById('deste');
 
-function kartHTML(id){const u=U(id);return `
-  <div class="gorsel"><img src="${img(id)}" alt="${u[1]}"></div>
-  <div class="bilgi"><div class="donem">${u[3]==='—'?'Halalar koleksiyonu':u[3]}</div>
+const FOTOLAR=id=>[img(id)].concat(((typeof GALERI!=='undefined'&&GALERI[id])||[]).map(g=>`img/${g}.webp`));
+const KAT=id=>(typeof KATEGORI!=='undefined'&&KATEGORI[id])||'';
+function kartHTML(id){const u=U(id),f=FOTOLAR(id);return `
+  <div class="gorsel"><img src="${f[0]}" alt="${u[1]}"></div>
+  ${f.length>1?`<div class="acilar">${f.length} AÇI · DOKUN</div><div class="noktalar">${f.map((x,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div>`:''}
+  <div class="bilgi"><div class="donem">${[KAT(id),u[3]==='—'?'':u[3]].filter(Boolean).join(' · ')||'Halalar koleksiyonu'}</div>
     <h2>${u[1]}</h2><div class="alt"><p>${u[2]}</p><div class="fiyat">${TL(FIYAT[id])}<small>ÖRNEK</small></div></div></div>
   <div class="damga d-like">Beğen</div><div class="damga d-nope">Geç</div>
   <div class="damga d-offer">Teklif ver</div><div class="damga d-buy">Satın al</div>`}
@@ -191,6 +214,9 @@ function sayac(){document.getElementById('sayac').textContent=Math.min(D.sira+1,
   const rb=document.getElementById('r-begeni'),ri=document.getElementById('r-islem');
   rb.textContent=b;rb.style.display=b?'':'none';ri.textContent=i;ri.style.display=i?'':'none'}
 
+// ---- ürün açıları: karta dokununca sıradaki fotoğraf ----
+function aciDegis(el,id){const f=FOTOLAR(id);if(f.length<2)return;const n=((+el.dataset.f||0)+1)%f.length;el.dataset.f=n;
+  el.querySelector('.gorsel img').src=f[n];el.querySelectorAll('.noktalar i').forEach((x,i)=>x.classList.toggle('on',i===n))}
 // ---- kaydırma ----
 let aktif=null;
 function surukle(el,id){
@@ -208,6 +234,7 @@ function surukle(el,id){
   const birak=()=>{if(!basildi)return;basildi=false;
     const ax=Math.abs(dx),ay=Math.abs(dy);let yon=null;
     if(ax>ay&&ax>100)yon=dx>0?'sag':'sol'; else if(ay>ax&&ay>110)yon=dy<0?'yukari':'asagi';
+    if(!yon&&ax<8&&ay<8)aciDegis(el,id);
     if(yon)karar(el,id,yon); else {el.style.transition='transform .3s cubic-bezier(.2,.8,.2,1)';dx=dy=0;goster();Object.values(st).forEach(s=>s.style.opacity=0)}};
   el.addEventListener('pointerup',birak);el.addEventListener('pointercancel',birak);
   aktif={el,id,geriAl:()=>{el.style.transition='transform .3s cubic-bezier(.2,.8,.2,1)';dx=dy=0;goster();Object.values(st).forEach(s=>s.style.opacity=0)}};
@@ -270,6 +297,21 @@ document.querySelectorAll('[data-git]').forEach(b=>b.onclick=()=>{const g=b.data
 
 let tt=null;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
 ciz();
+// ---- arama ve kategori ----
+(()=>{const kutu=document.getElementById('araKutu'),kl=document.getElementById('katlar'),so=document.getElementById('sonuc'),pen=document.getElementById('ara');let kat='';
+  const norm=t=>(t||'').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i');
+  const katlar=['Tümü'].concat((typeof KATEGORILER!=='undefined'?KATEGORILER:[]).filter(k=>URUNLER.some(u=>KAT(u[0])===k)));
+  kl.innerHTML=katlar.map(k=>`<button data-k="${k==='Tümü'?'':k}">${k}</button>`).join('');
+  function goster(){const q=norm(kutu.value).trim();
+    kl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===kat));
+    const L=URUNLER.filter(u=>(!kat||KAT(u[0])===kat)&&(!q||q.split(/\s+/).every(w=>norm(u[1]+' '+u[2]+' '+u[3]+' '+KAT(u[0])).includes(w))));
+    so.innerHTML=L.length?L.map(u=>`<button class="oge" data-id="${u[0]}"><img loading="lazy" src="${img(u[0])}" alt=""><b>${u[1]}</b><small>${KAT(u[0])} · ${TL(FIYAT[u[0]])}</small></button>`).join(''):'<div class="yok">Bu aramada ürün yok.</div>';
+    so.querySelectorAll('.oge').forEach(b=>b.onclick=()=>{oneAl(b.dataset.id);pen.classList.remove('on');ciz()})}
+  kl.onclick=e=>{const b=e.target.closest('button');if(!b)return;kat=b.dataset.k;goster()};
+  kutu.oninput=goster;
+  document.getElementById('araAc').onclick=()=>{pen.classList.add('on');goster();setTimeout(()=>kutu.focus(),50)};
+  document.getElementById('araKapat').onclick=()=>pen.classList.remove('on');
+})();
 // ================= TÜNEL GİRİŞİ (sitedeki ile aynı mantık, telefona ölçekli) =================
 const T=(()=>{
   const wrap=document.getElementById('tunel'), cv=document.getElementById('tcv'), g=cv.getContext('2d');
