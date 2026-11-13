@@ -1,3 +1,6 @@
+## 13.11 Taş Fener — ad yayında
+Porselen Çan adı app + web canlıda doğrulandı.
+
 ## 13.11 Taş Fener — ürün adı
 Tolga onayıyla 3489 "Çay Fincanı" -> "Porselen Çan" (app + web). Yerel, yayın bekliyor.
 
