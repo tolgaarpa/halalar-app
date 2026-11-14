@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — Hit Pazarı yayında
+Tolga "yayınla": app (hit.html, tünel bağlantısı, kvkk) + web (nav bağlantısı, tünele giriş) push edildi; dördü canlıda doğrulandı. Gerçek Google girişi Tolga'nın denemesini bekliyor.
+
 ## 14.11 Taş Fener — Hit Pazarı giriş sayfası + üye paneli
 Tolga: hesap girişi + kullanıcı paneli, tünelde Halalar üstüne Hit Pazarı, 'deliğe' yerine tünel. Yapılan: hit.html (tanıtım, Tünele giriş, Google ile üye girişi, Hesabım: Beğenilerim/Tekliflerim/Bilgilerim, Nasıl çalışır, 4 uyarı, KVKK + Dükkân girişi bağlantısı). App tünelinde Halalar üstünde turuncu 'Hit Pazarı ↗' (tünel pointerdown'u a etiketini de bıraktı, yoksa dokunma yutuluyordu). Web: nav'da aynı bağlantı (app hit.html'e), urun.html '← deliğe dön' → '← tünele giriş'. kvkk.html'e üye girişi verisi eklendi. Tarayıcıda: bağlantı açılıyor, sahte kullanıcıyla panel 3 beğeni/2 teklif, Bilgilerim kaydı uygulamanın kaydına yazıyor; test verisi geri alındı. Sınır: beğeni/teklif hâlâ cihazda, hesaba bulut eşitleme yok (firestore.rules değişikliği + deploy ister). Google girişi yalnız yetkili alan adlarında çalışır (github.io panelde çalışıyor). Uyarı metinleri taslak, Tolga kendi metnini verebilir. Yerel, yayın bekliyor.
 
