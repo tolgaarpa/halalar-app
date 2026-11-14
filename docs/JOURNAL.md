@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — açıklamalar + neon kapı yayında
+Tolga "yayınla": iki depo push edildi; app ve web urunler.js (yeni açıklamalar), app kart düzeni (ust1) ve web hit.html (neon Hit tünel kapısı, yeni metin) canlıda doğrulandı.
+
 ## 14.11 Taş Fener — 94 ürüne açıklama
 Tolga: ürünlere açıklayıcı, uygun açıklamalar (kapsam: 94'ün hepsi). Kapak sayfalarına (.tmp/kapak_yon_0-2) bakılarak her ürüne 2 cümle yazıldı: ne olduğu + görünen detay, sonra kullanım/hava; durum/orijinallik/çalışırlık uydurulmadı, eldeki marka/yıl korundu. Eski hâl .tmp/urunler-aciklama-oncesi.js. Web veri/urunler.js aynı. Uygulama kartı açıklamayı tek satırda kesiyordu: bilgi alanı yeniden düzenlendi (üst satır kategori + fiyat, sonra tam genişlik ad, sonra 4 satıra kadar açıklama; alan en çok +21px uzar, resmin 26px boşluğu içinde). 94 kart ölçüldü: kısalan kategori 0, kesilen açıklama 0, taşma 0. Yerel, yayın bekliyor.
 
