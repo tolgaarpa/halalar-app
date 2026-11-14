@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — Hit Pazarı ikonu her sayfada
+Tolga: alttaki mavi 'hit pazarı' ana sayfadaki kırmızıyla; her sayfada sol üstte Hit Pazarı ikonu. Yapılan: alt yazı #ff5a1f (nav'daki Hit Pazarı rengi) + hafif parıltı. İkon = Hit tabelasının minik hâli (neon çerçeve + kıvrımlar + 'Hit'), koyu plaka üstünde (beyaz urun.html'de krem yazı kayboluyordu, plaka eklendi), tıklayınca hit.html. araclar/hit_ikon.py ile 6 sayfaya eklendi: web index/hit/urun, app index (tünel + kart ekranı + Beğeniler + Teklif), kvkk, panel; app hit.html eşitlemeyle geldi. Aynı işaret sekme simgesi (favicon) oldu. Ölçüm: 7 sayfada ikon sol üstte, üstünde başka katman yok; gözle: app tüneli, web ürün sayfası. Yerel, yayın bekliyor.
+
 ## 14.11 Taş Fener — vitrin + çerçeveli notlar + telefon sürümü yayında
 Tolga "yayınla": iki depo push edildi; web hit.html (nlevha), app hit.html (#u bağlantıları), app vitrin fotoğrafı ve app index #u desteği canlıda doğrulandı.
 

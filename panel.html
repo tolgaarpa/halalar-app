@@ -38,10 +38,18 @@ main{max-width:900px;margin:0 auto;padding:16px}
 .bos{color:var(--muted);text-align:center;padding:60px 0}
 .zaman{color:var(--muted);font-size:12px}
 @media (max-width:520px){.talep{grid-template-columns:60px 1fr}.talep img{width:60px;height:60px}}
+
+/* Hit Pazarı ikonu: minik neon tabela (her sayfanın sol üstünde) */
+.hpi-sol{display:flex;align-items:center;gap:12px}
+.hpi{position:relative;display:inline-grid;place-items:center;width:48px;height:34px;flex:none;text-decoration:none;pointer-events:auto;background:#0b0b0d;border-radius:9px}
+.hpi svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 2px #ff2d55) drop-shadow(0 0 6px #ff2d5588)}
+.hpi svg rect,.hpi svg path{fill:none;stroke:#ff6b85;stroke-width:1.6;stroke-linecap:round}
+.hpi b{position:relative;font:300 18px/1 Fraunces,Georgia,serif;letter-spacing:-.03em;color:#fff1ea;text-shadow:0 0 1px #fff,0 0 5px #ff5a1f,0 0 12px #ff5a1f}
 </style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230b0b0d%27/%3E%3Crect x=%277%27 y=%2714%27 width=%2750%27 height=%2736%27 rx=%279%27 fill=%27none%27 stroke=%27%23ff6b85%27 stroke-width=%273%27/%3E%3Ctext x=%2732%27 y=%2741%27 font-family=%27Georgia,serif%27 font-size=%2722%27 text-anchor=%27middle%27 fill=%27%23fff1ea%27%3EHit%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<header><h1>Halalar <small>Dükkân paneli</small></h1>
+<header><div class="hpi-sol"><a class="hpi" href="hit.html" aria-label="Hit Pazarı"><svg viewBox="0 0 48 34" aria-hidden="true"><rect x="1.5" y="1.5" width="45" height="31" rx="7"/><path d="M6 7.5c-1.6 0-2.2 1.6-1.4 2.4.7.6 1.8.2 1.5-.7"/><path d="M42 7.5c1.6 0 2.2 1.6 1.4 2.4-.7.6-1.8.2-1.5-.7"/><path d="M6 26.5c-1.6 0-2.2-1.6-1.4-2.4.7-.6 1.8-.2 1.5.7"/><path d="M42 26.5c1.6 0 2.2-1.6 1.4-2.4-.7-.6-1.8-.2-1.5.7"/></svg><b>Hit</b></a><h1>Halalar <small>Dükkân paneli</small></h1></div>
   <div class="filtre" id="filtre" hidden>
     <button data-f="Beklemede" class="on">Bekleyen</button><button data-f="hepsi">Tümü</button><button id="cikis">Çıkış</button>
   </div></header>
