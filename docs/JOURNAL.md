@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — vitrin + çerçeveli notlar + telefon sürümü yayında
+Tolga "yayınla": iki depo push edildi; web hit.html (nlevha), app hit.html (#u bağlantıları), app vitrin fotoğrafı ve app index #u desteği canlıda doğrulandı.
+
 ## 14.11 Taş Fener — vitrin başlığı, çerçeveli notlar, telefon sürümü eşit
 Tolga: 'Açık vitrinler' yerine yalnız 'Halalar' (yandaki başlık oraya), 9 ürün büyüsün; Bilmen gerekenler crazy.studio örneğine yakın; app hit.html de aynı olsun. Yapılan: üst başlık kaydırılan dükkânın adı (Halalar / Sıradaki vitrin), 9 ürün foto boyuna kilitli (contain:size; 1440'ta foto 695 = ızgara), ürünler karede %86. Notlar: başlıktan inen neon hat, düğüm, 4 dala çerçeveli (çift çizgi) levha, isim plakası üstte, fare ışığı (kobalt), bölüm görününce bir kez çizim; notlar varsayılan görünür. Telefon: araclar/hit_esitle.py web sayfasından app hit.html'i üretir + vitrin fotoğrafını kopyalar; app index.html'e #u=ID desteği (ürün kartı en üste, tünel kapanır). Bulunan ve düzelen: 9'lu ızgara fotodan uzundu (1156px), not sınıfı kepenk levhasıyla çakışıyordu (.nlevha). Doğrulama: 34 görsel yolu app'te 200, #u=3490 -> Rüzgâr Çanı üstte ve tünel kapalı, yana taşma yok; gözle 1440 vitrin + not hatları (yakın), 375 notlar. Yerel, yayın bekliyor.
 
