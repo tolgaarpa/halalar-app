@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — neon Hit tünel kapısı
+Tolga: girişteki 'Tünele giriş' kalksın, metin 'Hit Tünelinde gez; beğen, teklif ver, pazarlık et.', neon Hit'e tıklayınca tünele gitsin. Yapıldı (web + eşitlemeyle app). Tabela bağlantı oldu (üzerine gelince hafif büyür/parlar). Denendi: web 1280'de tıklama -> index.html; app 375'te dokunma -> index.html, tünel açık. Yerel, yayın bekliyor.
+
 ## 14.11 Taş Fener — ikon yayında
 Tolga "yayınla": iki depo push edildi; 7 canlı sayfanın hepsinde Hit Pazarı ikonu doğrulandı.
 
