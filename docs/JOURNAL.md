@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — Hit çerçevesi + düz yazı yayında
+Tolga "yayınla": halalar-web push edildi, notlar bölümü canlıda doğrulandı. Not: Tolga'nın duyduğu müzik, incelemek için tarayıcı panelinde açtığım crazy.studio sayfasından geliyordu; panel yerel sayfaya döndürüldü. Öneri bekliyor: crazy.studio'dan fener ışığı, neon kablo, plakalı duvar (Tolga seçecek).
+
 ## 14.11 Taş Fener — Hit çerçevesi + düz yazı uyarılar
 Tolga: Hit yazısı kutusunun içinde olsun; Bilmen gerekenler kart olmasın, düz yazı. Tabela iç payı artırıldı (.2em .5em .26em, yazı 150-280px): 1440'ta 568x345 çerçeve, 375'te 311x189 ekrana sığıyor, yazı dört yandan paylı. Asma tabelalar kaldırıldı; 4 madde başlık + paragraf, masaüstünde 2 sütun, telefonda tek sütun. Gözle: 1440 kapı ve Bilmen gerekenler. Yerel, yayın bekliyor.
 
