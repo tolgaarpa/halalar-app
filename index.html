@@ -367,6 +367,9 @@ const T=(()=>{
   document.getElementById('tuneleDon').onclick=()=>ac_();
   return {pick:(x,y)=>pick(x,y),get drawn(){return drawn},get camZ(){return camZ},set target(v){target=clamp(v)},get acik(){return acik}};
 })();
+// Hit Pazarı sayfasından gelen ürün (#u=ID): o ürün sıradaki kart olur, tünel kapanır
+(function(){const m=location.hash.match(/^#u=(.+)$/);if(!m)return;const id=decodeURIComponent(m[1]);if(!U(id))return;
+  oneAl(id);document.getElementById('direkBasla').click();ciz();history.replaceState(null,'',location.pathname)})();
 </script>
 </body>
 </html>
