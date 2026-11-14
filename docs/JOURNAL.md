@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — web Hit Pazarı sayfası
+Tolga: web arayüzü, yaratıcı ama mevcut site diline uygun. halalar-web/hit.html: koyu zemin, Fraunces + Space Grotesk, kobalt vurgu; derinlikte süzülen ürün kapısı (fare/kaydırmayla, tünel yankısı), ürün adları bandı, vitrin camı Halalar kartı, krem giriş bileti (Google girişi + Hesabım), dört yön kartı, krem askı etiketleri (uyarılar), sonda dev kobalt 'hit pazarı'. Web tüneli bağlantısı artık web hit.html'e. Ölçüm: kapı ürünleri yazıların üstüne binmiyor (1024, 1440, 375 genişlik), yatay kaydırma yok, panel sahte kullanıcıyla 2 beğeni gösterdi. Gözle bakılan: kapı, vitrin, bilet; nasıl çalışır/etiketler/alt kısım yalnız ölçüldü (ekran görüntüsü sınırı). Yerel, yayın bekliyor.
+
 ## 14.11 Taş Fener — Hit Pazarı yayında
 Tolga "yayınla": app (hit.html, tünel bağlantısı, kvkk) + web (nav bağlantısı, tünele giriş) push edildi; dördü canlıda doğrulandı. Gerçek Google girişi Tolga'nın denemesini bekliyor.
 
