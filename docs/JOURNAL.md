@@ -1,3 +1,6 @@
+## 14.11 Taş Fener — web Hit Pazarı yayında
+Tolga "yayınla": halalar-web push edildi; hit.html (ikinci tur), tünel bağlantısı ve veri/firebase-ayar.js canlıda doğrulandı. Google girişi web'de de Tolga'nın denemesini bekliyor.
+
 ## 14.11 Taş Fener — web Hit Pazarı ikinci tur (sanat yönetmeni)
 Eleştiri: kapı jenerik (eşit boy, çember gibi serpilmiş, derinlik yok), askı ipi kesimde kayboluyordu, bölüm numaraları kayıptı. Düzeltme: kapı gerçek tünel ağzı — başlık kaçış noktasında, 24 ürün halkalarda derine uzanıyor, yakındakiler büyük ve kadrajdan taşıyor, uzaktakiler siste; kamera yavaş içeri süzülüyor, kaydırınca dalıyor; yazının önünden geçen ürün soluyor. Askı ipi sarmalayıcıya alındı, numaralar büyüdü. Ölçüm: 1440'ta kare başına yazıya binen 0-2 (çoğu opak düğmenin arkası), 375'te 0-1, yatay taşma yok. Gözle: kapı (1440) ve etiketler bakıldı; telefon kapısı yalnız ölçüldü. Yerel, yayın bekliyor.
 
