@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — canlı tasarıma geri dönüş
+Tolga 'hiçbiri değil, bizim versiyona geri gel'. web hit.html 4ee07b6 sürümüne (canlı tasarım + durumlar okuması) döndü, app hit.html eşitlendi ve önceki hâliyle birebir aynı; hit_esitle.py eski hâline döndü. Ders yazıldı (denemeler ayrı dosyada).
+
 ## 15.11 Taş Fener — dijital dükkânlar sokağı tasarımı (yerel)
 Tolga referans görsel verdi ('eski siteyi buna ayarla, ek sayfalarımızda bu tasarım dili olsun'). Canlıdaki hit.html temel alındı, referans diline çevrildi: Yön seç meydanı + perspektif cam panolar + Vitrin/Üye girişi/Bilmen gerekenler/KVKK/Nasıl çalışır tünelleri. Düzeltilenler: panolar düz görünüyordu (perspektif 520px), 02/03 yazıları taşıyordu, duvar 01'e biniyordu, Google düğmesindeki ok yuvarlak düğme sınıfıyla çakışıyordu, telefonda bilgi panoları 47px'e çöküyordu (flex:none), telefonda başlık duvarın üstüne biniyordu (duvar üste, başlık altına). app eşitlendi (sokak/ eklendi). Yerel, yayın bekliyor.
 
