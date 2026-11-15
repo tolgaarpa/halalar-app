@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — dükkân sayfası beyaz
+Tolga isteğiyle dukkan.html beyaz fon (siyah yazı, kırmızı başlık, açık gri çizgiler). Ekranda bakıldı.
+
 ## 16.11 Taş Fener — yeni dükkâna deneme ürünleri
 Tolga 'Halalar'ın ürünlerini yeniye de koy, çoklu dükkân tasarımını görelim'. 94 Halalar ürünü DENEME etiketiyle dukkan2.js'e (Giyim 5, Hediyelik 63, Ev dekorasyon 26). Vitrin 2. slayt ve dükkân sayfası ekranda bakıldı.
 
