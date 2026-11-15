@@ -2,7 +2,7 @@
 <!-- Bu dosya araclar/hit_esitle.py ile halalar-web/hit.html dosyasından üretilir; elle düzenleme. -->
 <html lang="tr">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><link rel="prefetch" href="index.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b0b0d">
 <title>Hit Pazarı</title>
@@ -245,10 +245,9 @@ a.kepenk{display:block;text-decoration:none}
 /* ana sayfa tek ekran: aşağı kaydırınca sayfa parçalanıp pazara (tünele) girilir */
 html.ev,html.ev body{overflow:hidden;height:100%}
 .sekme:not([hidden])~* nav,nav{z-index:62}
-.kapi{transition:background .6s}
-.kapi.dag{background:#0b0b0d}
-.kapi.dag .parca{transition:transform .95s cubic-bezier(.55,0,.75,.3),opacity .8s ease-in .1s,filter .9s;will-change:transform,opacity}
-.kapi.dag .parca{opacity:0;filter:blur(3px)}
+.kapi .kapi-ic,.kapi .kisayol,.kapi .sahne{transform-origin:var(--ox,50%) var(--oy,50%)}
+.kapi.dag .kapi-ic,.kapi.dag .kisayol,.kapi.dag .sahne{transform:scale(7);opacity:0;transition:transform .75s cubic-bezier(.7,0,.84,0),opacity .32s linear .43s}
+.kapi.dag .kisayol{transform:translateY(40px);transition:transform .4s ease-in,opacity .25s linear}
 #pazaraGir{cursor:pointer}
 #pazaraGir svg{animation:asagi 1.4s ease-in-out infinite}
 @keyframes asagi{0%,100%{transform:translateY(-2px)}50%{transform:translateY(5px)}}
@@ -271,7 +270,7 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
 .sekme-kapat{position:fixed;top:84px;right:24px;z-index:59;width:52px;height:52px;border:1px solid #3a3a42;background:#0b0b0d;color:#f2efe9;font:300 34px/1 Barlow,sans-serif;cursor:pointer}
 .sekme-kapat:hover{border-color:#e8201c;color:#e8201c}
 @media(max-width:700px){.hp-menu{top:60px;left:12px}.sekme-kapat{top:70px;right:12px;width:44px;height:44px}}
-@media(prefers-reduced-motion:reduce){.kapi.dag .parca{transition:opacity .3s}#pazaraGir svg{animation:none}.sekme{animation:none}}
+@media(prefers-reduced-motion:reduce){.kapi.dag .kapi-ic,.kapi.dag .sahne{transform:none;transition:opacity .2s}#pazaraGir svg{animation:none}.sekme{animation:none}}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e3171b%27/%3E%3C/svg%3E">
 </head>
@@ -532,19 +531,16 @@ document.documentElement.classList.add('ev');
 const kapi=document.getElementById('kapi');let girildi=false;
 const sekmeAcik=()=>!document.getElementById('sekme').hidden;
 function pazaraGir(){if(girildi||sekmeAcik())return;girildi=true;
-  const az=matchMedia('(prefers-reduced-motion: reduce)').matches,W=innerWidth,H=innerHeight;
-  const P=[...kapi.querySelectorAll('.kapi-ic .sol>*, .kolaj>*, .soz>span, .kisayol, .sahne')];
-  P.forEach((el,i)=>{const r=el.getBoundingClientRect(),cx=r.left+r.width/2-W/2,cy=r.top+r.height/2-H/2,u=Math.hypot(cx,cy)||1;
-    el.classList.add('parca');el.style.transitionDelay=(i*.025)+'s';
-    el.dataset.t=az?'none':`translate(${cx/u*W*.9}px,${cy/u*H*.9}px) scale(2.6) rotate(${(i%2?1:-1)*(4+i%5)}deg)`});
-  requestAnimationFrame(()=>{kapi.classList.add('dag');P.forEach(el=>{el.style.transform=el.dataset.t})});
-  setTimeout(()=>location.href='https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar',az?250:820)}
+  // kamera kolajın ortasına doğru dalar (tek katman, GPU ile), ekran kararınca pazar tüneli açılır
+  const az=matchMedia('(prefers-reduced-motion: reduce)').matches,k=kapi.querySelector('.kolaj img'),r=k?k.getBoundingClientRect():null;
+  if(r){const ic=kapi.querySelector('.kapi-ic').getBoundingClientRect();kapi.querySelector('.kapi-ic').style.setProperty('--ox',(r.left+r.width/2-ic.left)+'px');kapi.querySelector('.kapi-ic').style.setProperty('--oy',(r.top+r.height*.42-ic.top)+'px')}
+  kapi.classList.add('dag');setTimeout(()=>location.href='https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar',az?150:720)}
 document.getElementById('pazaraGir').onclick=pazaraGir;
 addEventListener('wheel',e=>{if(!sekmeAcik()&&e.deltaY>8)pazaraGir()},{passive:true});
 let dokY=null;addEventListener('touchstart',e=>{dokY=e.touches[0].clientY},{passive:true});
 addEventListener('touchmove',e=>{if(dokY!==null&&!sekmeAcik()&&dokY-e.touches[0].clientY>40){dokY=null;pazaraGir()}},{passive:true});
 addEventListener('keydown',e=>{if(!sekmeAcik()&&['ArrowDown','PageDown',' '].includes(e.key)&&!e.target.closest('input,textarea,button,a')){e.preventDefault();pazaraGir()}});
-addEventListener('pageshow',e=>{if(e.persisted){girildi=false;kapi.classList.remove('dag');kapi.querySelectorAll('.parca').forEach(el=>{el.style.transform='';el.classList.remove('parca')})}});
+addEventListener('pageshow',e=>{if(e.persisted){girildi=false;kapi.classList.remove('dag')}});
 // ---- logo menüsü ve sekmeler ----
 const marka=document.getElementById('marka'),hpMenu=document.getElementById('hpMenu'),sekme=document.getElementById('sekme');
 const menuKapa=()=>{hpMenu.hidden=true;marka.setAttribute('aria-expanded','false')};
