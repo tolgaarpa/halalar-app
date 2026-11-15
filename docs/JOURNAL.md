@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — dijital dükkânlar sokağı tasarımı (yerel)
+Tolga referans görsel verdi ('eski siteyi buna ayarla, ek sayfalarımızda bu tasarım dili olsun'). Canlıdaki hit.html temel alındı, referans diline çevrildi: Yön seç meydanı + perspektif cam panolar + Vitrin/Üye girişi/Bilmen gerekenler/KVKK/Nasıl çalışır tünelleri. Düzeltilenler: panolar düz görünüyordu (perspektif 520px), 02/03 yazıları taşıyordu, duvar 01'e biniyordu, Google düğmesindeki ok yuvarlak düğme sınıfıyla çakışıyordu, telefonda bilgi panoları 47px'e çöküyordu (flex:none), telefonda başlık duvarın üstüne biniyordu (duvar üste, başlık altına). app eşitlendi (sokak/ eklendi). Yerel, yayın bekliyor.
+
 ## 15.11 Taş Fener — yeni mod reddedildi
 Tolga: 'bu çok kötü, bekle, neye benzediğini ben vereceğim.' Referans bekleniyor; yerel tasarım yayınlanmayacak.
 
