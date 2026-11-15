@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — Fisher ilk fotoğraf masasız
+Tolga: 'müzik setinin ilk fotoğrafındaki masayı silelim, sadece ilk foto'. h/fisher.webp (web+app): masa çokgen maskeyle kesildi, kenarlar yakından kontrol edildi, 848x692'ye kırpıldı; aspect 1.0 -> 1.23. Galerinin diğer açıları değişmedi. Eski dosya scratchpad/fisher-yedek.webp ve git'te.
+
 ## 16.11 Taş Fener — dükkân içi beyaz, çerçevesiz
 Tolga: 'dükkân içlerine girince fon beyaz, çerçeve olmasın, ürünler dekupe hâliyle'. dukkan.html: kartlar çerçevesiz, dekupe ürün + hafif gölge, ad/fiyat ortalı, satırlar hizalı (ölçüldü). urun.html (iki dükkân): beyaz fon, açılar çerçevesiz (seçili altı kırmızı çizgi). Tünel ve Hit Pazarı ana sayfası siyah kaldı.
 
