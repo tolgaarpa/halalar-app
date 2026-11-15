@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — yurt içi dropship tedarikçi araştırması
+Tolga 'yurt içi tedarikle başlayalım, en güvenilir hangisi'. Arama: bağımsız sıralama yok; kaynaklar çoğu tanıtım. Geçen adlar: EasyToptan, DepoXML, Tahtakale Toptan, ToptanTR, Hediyesepeti XML, Lidyana Partner, Turuncix (ev-yaşam), EWS (mutfak/ev), Mexelena/MarkaPati (moda; tanıtım yazısı). Vintage tek parça ürünler XML modeline uymaz. Öneri: kategori seçimi -> 3 aday -> sicil/fatura/şikâyet/test siparişi kontrolü. Tolga'dan kategori bekleniyor.
+
 ## 15.11 Taş Fener — kendi satışımız (yönlendirme değil)
 Tolga: 'illa yönlendirme mi, satışı ben yapsam; yönlendirmek süreklilik sağlamaz'. Açıklandı: kendi satışı = tedarikçi (yurt içi XML dropship) + ödeme (iyzico/PayTR) + şirket/e-fatura + mesafeli satış belgeleri. Ara çözüm: mevcut talep akışıyla siparişi al, telefonla/havaleyle kapat. Tolga'dan şirket durumu bekleniyor.
 
