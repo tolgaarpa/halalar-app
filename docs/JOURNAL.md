@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — güvenlik eksikleri taraması
+Tolga 'güvenliğimizle ilgili eksiklerimizi tespit et'. Yalnız okuma: firestore.rules, panel.html, urun.html, index.html incelendi; canlı Firestore'a girişsiz liste denemesi 403 (kural yayında); iki deponun git geçmişinde yalnız herkese açık Firebase web anahtarı var (gizli değil). Bulgular Tolga'ya önem sırasıyla verildi; hiçbir dosya değişmedi.
+
 ## 15.11 Taş Fener — web teklif + menü düzeltmesi yayında
 Tolga "yayınla" (web ve telefon): iki depo push edildi; web urun.html (Teklif ver/Satın al), web ve app hit.html (nav.dolu menü zemini) canlıda doğrulandı.
 
