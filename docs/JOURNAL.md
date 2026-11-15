@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — tünelden kart destesine
+Tolga: 'beğen, al, teklif ver, geç kısmımız nerede' -> 'yap bakalım'. Web tünelinde (pazar, kategori, Halalar) ürüne dokununca uygulamanın destesi o üründen açılıyor: index.html#u=<id> (canlıda halalar-app, yerelde port 8766->8769, 8770->8771). Hover kartı 'Beğen, teklif ver →'. Denendi: Polaroid destede ilk kart, alt düğmeler Geç/Teklif/Satın al/Beğen. Kısıt: deste sonrasında bütün Halalar ürünleriyle devam ediyor (kategoriye/pazara göre süzmüyor); destedeki TÜNEL uygulamanın kendi tüneline dönüyor.
+
 ## 16.11 Taş Fener — telefonda üst üste binme düzeltmeleri
 Tolga sinirli: 'dikkat etmeden mi yapıyorsun; içerinin boyutları değişti, yazılar üst üste, ilk başta kaydırma yok/ulaşılmıyor'. 390x844'te tek tek bakıldı ve bulunanlar: sekmeler saydam açılıyordu (giriş arkadan görünüp üst üste biniyordu) -> opak açılıyor; × düğmesi vitrin oklarının üstüne biniyordu -> sekme içeriği 120px aşağıdan başlıyor; 'Alışık olduğun gibi...' başlığı ekrandan taşıyordu -> telefonda 10vw; Nasıl çalışır kartında ürün görseli kartın dışına taşıyordu (grid img max-height çözülmüyor, LESSONS 13.11 ile aynı) -> mutlak konum + contain. Kaydırma: dokunma olayı emülasyonda pazara geçişi tetikliyor; gerçek telefonda nerede takıldığı Tolga'dan soruldu. Uygulama destesi telefonda düzgün.
 
