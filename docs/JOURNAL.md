@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — kategori tüneli
+Tolga: 'Pazara gir deyince kategoriler çıksın, aynı tünel mantığı, kendi belirlediğimiz ikonik görseller'. web kategori.html: 10 Halalar kategorisi, her biri ikonik ürünle (veri/kategori-ikon.js: Müzik=Fender, Heykel=Kurt, Tablo=Hendrix, Oyuncak=Astronot, Elektronik=Polaroid, Mutfak=Küp vazo, Nostalji=Mavi çalar saat, Spor=Kask, Sandık=Samsonite, Kitap=70. yıl albümü), tünelde süzülür, üstüne gelince durur, dokununca index.html?kat=... arama o kategoriyle açılır; altta kategori düğmeleri. Hit 'PAZARA GİR' -> kategori.html (app'te web adresine). Denendi: 20 parça, kırık görsel yok, ?kat=Müzik 14 ürün açtı. Yeni dükkânın kategorileri (Giyim/Hediyelik/Ev) ürün gelince eklenecek.
+
 ## 16.11 Taş Fener — tünel başlığı büyüdü, Ara beyaz
 Tolga: 'tünelde Hit Pazarı 2 kat, dükkân adı alt satırda 3 kat; Ara sekmesi dükkân gibi beyaz, çerçevesiz, dekupe'. Web index: hp-logo 34->68px (telefon 44), Halalar 34->102px (telefon 84), alt alta. App tünel (.tust): 44px / 84px. Ara (web+app): beyaz fon, çerçevesiz dekupe ürünler, seçili kategori kırmızı. Ekranda bakıldı, taşma yok. Not: Fisher fotoğrafı canlıda hâlâ eski; Tolga yerelde gördü ('şimdi oldu').
 
