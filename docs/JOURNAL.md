@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — dükkân içi beyaz, çerçevesiz
+Tolga: 'dükkân içlerine girince fon beyaz, çerçeve olmasın, ürünler dekupe hâliyle'. dukkan.html: kartlar çerçevesiz, dekupe ürün + hafif gölge, ad/fiyat ortalı, satırlar hizalı (ölçüldü). urun.html (iki dükkân): beyaz fon, açılar çerçevesiz (seçili altı kırmızı çizgi). Tünel ve Hit Pazarı ana sayfası siyah kaldı.
+
 ## 16.11 Taş Fener — dükkân sayfası beyaz
 Tolga isteğiyle dukkan.html beyaz fon (siyah yazı, kırmızı başlık, açık gri çizgiler). Ekranda bakıldı.
 
