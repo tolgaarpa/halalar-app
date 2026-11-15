@@ -246,7 +246,7 @@ a.kepenk{display:block;text-decoration:none}
 html.ev,html.ev body{overflow:hidden;height:100%}
 .sekme:not([hidden])~* nav,nav{z-index:62}
 .kapi .kapi-ic,.kapi .kisayol,.kapi .sahne{transform-origin:var(--ox,50%) var(--oy,50%)}
-.kapi.dag .kapi-ic,.kapi.dag .kisayol,.kapi.dag .sahne{transform:scale(7);opacity:0;transition:transform .75s cubic-bezier(.7,0,.84,0),opacity .32s linear .43s}
+.kapi.dag .kapi-ic,.kapi.dag .kisayol,.kapi.dag .sahne{transform:scale(4);transition:transform .6s cubic-bezier(.7,0,.84,0)}
 .kapi.dag .kisayol{transform:translateY(40px);transition:transform .4s ease-in,opacity .25s linear}
 #pazaraGir{cursor:pointer}
 #pazaraGir svg{animation:asagi 1.4s ease-in-out infinite}
@@ -271,6 +271,7 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
 .sekme-kapat:hover{border-color:#e8201c;color:#e8201c}
 @media(max-width:700px){.hp-menu{top:60px;left:12px}.sekme-kapat{top:70px;right:12px;width:44px;height:44px}}
 @media(prefers-reduced-motion:reduce){.kapi.dag .kapi-ic,.kapi.dag .sahne{transform:none;transition:opacity .2s}#pazaraGir svg{animation:none}.sekme{animation:none}}
+@view-transition{navigation:auto}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e3171b%27/%3E%3C/svg%3E">
 </head>
@@ -534,8 +535,10 @@ function pazaraGir(){if(girildi||sekmeAcik())return;girildi=true;
   // kamera kolajın ortasına doğru dalar (tek katman, GPU ile), ekran kararınca pazar tüneli açılır
   const az=matchMedia('(prefers-reduced-motion: reduce)').matches,k=kapi.querySelector('.kolaj img'),r=k?k.getBoundingClientRect():null;
   if(r){const ic=kapi.querySelector('.kapi-ic').getBoundingClientRect();kapi.querySelector('.kapi-ic').style.setProperty('--ox',(r.left+r.width/2-ic.left)+'px');kapi.querySelector('.kapi-ic').style.setProperty('--oy',(r.top+r.height*.42-ic.top)+'px')}
-  kapi.classList.add('dag');setTimeout(()=>location.href='https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar',az?150:720)}
+  kapi.classList.add('dag');setTimeout(()=>location.href='https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar',az?150:520)}
 document.getElementById('pazaraGir').onclick=pazaraGir;
+// tünel görsellerini boşta önceden indir: pazara girince ekran boş/siyah kalmasın
+(window.requestIdleCallback||(f=>setTimeout(f,1200)))(()=>{if(typeof URUNLER==='undefined')return;let i=0;(function sira(){for(let n=0;n<8&&i<URUNLER.length;n++,i++){const im=new Image();im.decoding='async';im.src='img/'+URUNLER[i][0]+'.webp'}if(i<URUNLER.length)setTimeout(sira,120)})()});
 addEventListener('wheel',e=>{if(!sekmeAcik()&&e.deltaY>8)pazaraGir()},{passive:true});
 let dokY=null;addEventListener('touchstart',e=>{dokY=e.touches[0].clientY},{passive:true});
 addEventListener('touchmove',e=>{if(dokY!==null&&!sekmeAcik()&&dokY-e.touches[0].clientY>40){dokY=null;pazaraGir()}},{passive:true});

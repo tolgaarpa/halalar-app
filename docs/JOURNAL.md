@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — siyahlık giderildi, geri dönüş
+Tolga: 'giriş ile tünel arasında siyahlık var, hata gibi; geri geldiğimde tekrar girişe gelebileyim'. Düzeltme: iki sayfaya @view-transition (Chrome/Safari'de sayfalar arası çapraz geçiş), dalış sonunda kararma kaldırıldı (4x büyüme, 0,52 sn), pazar modunda ürünler baştan görünür (ışık rampası kaldırıldı), giriş sayfası boşta tünel görsellerini önceden indiriyor. Pazar tünelinin başında (en üstte) yukarı kaydırma/telefonda aşağı çekme -> hit.html. Denendi: girişten tünele geçişte ürünler hemen görünüyor; yukarı kaydırınca girişe dönüyor.
+
 ## 16.11 Taş Fener — giriş sadeleşti
 Tolga: 'çok amatör duruyor, giriş ağır'. Parçalara ayırma + blur kaldırıldı (pahalıydı). Yerine tek katman kamera dalışı: içerik kolajın (heykel) ortasına doğru 0,75 sn'de 7 kat büyür, son kısımda kararır, tünel açılır; index.html önceden indiriliyor (prefetch). Ekranda ara kare doğru; akıcılığı Tolga gerçek tarayıcıda görecek.
 
