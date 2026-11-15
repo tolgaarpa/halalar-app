@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — menü çubuğu binme düzeltmesi
+Tolga: Hit Pazarı yazısının üstüne binen yazılar var. Sebep: sabit menü çubuğu şeffaf gradyandı, kayan bölümler (ör. Bilmen gerekenler başlığı) sol üstteki Hit Pazarı/Halalar ve sağdaki bağlantıların altından geçiyordu. Düzeltme: girişin %55'inden sonra nav.dolu (koyu + buzlu zemin, alt çizgi), section scroll-margin-top 96px, alt dev yazı line-height 1.08 (p kuyruğu bağlantılara değiyordu). Gözle 1440: Bilmen gerekenler ve sayfa sonu temiz. App hit.html eşitlendi. Yerel, yayın bekliyor.
+
 ## 14.11 Taş Fener — açıklamalar + neon kapı yayında
 Tolga "yayınla": iki depo push edildi; app ve web urunler.js (yeni açıklamalar), app kart düzeni (ust1) ve web hit.html (neon Hit tünel kapısı, yeni metin) canlıda doğrulandı.
 
