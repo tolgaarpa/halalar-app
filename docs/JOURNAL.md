@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — yeni dükkân altyapısı
+Tolga 'şirket yok, yakında açacağız, varmış gibi sayfayı uyarla'. Kuruldu: dukkan2.js, dukkan.html, urun.html d2 desteği, hit vitrin slaytı, satis-kosullari.html (yer tutuculu, hukukçu/mali müşavir kontrolü önerilir), panel rozeti, kurallar, xml_cevir.py (örnek XML ile denendi: stok 0 atlanır, %35 kâr, 9'la biten fiyat), app eşitleme web'e bağlantıyla. Örnek ürünle 4 sayfa 1280/375 ölçüldü, taşma yok; örnek veri geri alındı (dükkân boş).
+
 ## 16.11 Taş Fener — Hepsibayi + BEZOS ile başlama
 Tolga 'ikisiyle de başlayalım'. Siteler okundu: Hepsibayi (hepsibayi.com.tr/bayilik-basvurusu) başvuru formu şirket ünvanı, vergi dairesi, VKN, vergi levhası istiyor; ücret/kargo/iade/güncelleme sayfada yazmıyor (meta: ücretsiz, alt limit yok); şirket bilgisi sayfada yok; WhatsApp 0850 840 22 09. BEZOS (bezos.com.tr): Denizli merkezli, 0850 308 49 03, bayilik+XML+entegrasyon ücretsiz, aylık ücret yok (ayrı yıllık 20.000 TL site hizmeti var, gerek yok), şahıs şirketi yeter, 60.000+ ürün, XML 10 dk'da bir güncelleniyor, kargoyu BEZOS çıkarıyor, kategori örnekleri pet/oyuncak/kamera (giyim/hediyelik/ev yazmıyor). İkisi de şirket istiyor; başvuruyu Tolga yapacak. Teknik plan: XML bağlantısı gelince GitHub Actions ile düzenli indirip JSON'a çevirme (tarayıcı doğrudan çekemez).
 
