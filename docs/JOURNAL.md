@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — tünel başlığı büyüdü, Ara beyaz
+Tolga: 'tünelde Hit Pazarı 2 kat, dükkân adı alt satırda 3 kat; Ara sekmesi dükkân gibi beyaz, çerçevesiz, dekupe'. Web index: hp-logo 34->68px (telefon 44), Halalar 34->102px (telefon 84), alt alta. App tünel (.tust): 44px / 84px. Ara (web+app): beyaz fon, çerçevesiz dekupe ürünler, seçili kategori kırmızı. Ekranda bakıldı, taşma yok. Not: Fisher fotoğrafı canlıda hâlâ eski; Tolga yerelde gördü ('şimdi oldu').
+
 ## 16.11 Taş Fener — Fisher ilk fotoğraf masasız
 Tolga: 'müzik setinin ilk fotoğrafındaki masayı silelim, sadece ilk foto'. h/fisher.webp (web+app): masa çokgen maskeyle kesildi, kenarlar yakından kontrol edildi, 848x692'ye kırpıldı; aspect 1.0 -> 1.23. Galerinin diğer açıları değişmedi. Eski dosya scratchpad/fisher-yedek.webp ve git'te.
 
