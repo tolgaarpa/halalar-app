@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — vintage deneme hazır
+Fable hit-deneme.html'i bitirdi (e465dcd): sarı/kırmızı/mavi kolaj girişi, gerçek ürünlerle kolaj (kurt büstü, daktilo, vazo, papağan, polaroid, heykel), Halalar kartı, 4 mavi karo, diğer bölümler aynı içerikle temada, 'Dükkânını sokağa aç - başvuru yakında'. Ben masaüstü girişe baktım: referansa yakın, taşma ve kırık görsel yok. Tolga'ya gösterildi.
+
 ## 15.11 Taş Fener — vintage tema Fable'a verildi
 Tolga yeni referans (sarı zemin, kırmızı/mavi, kolaj, 'Her şeyin bir hikâyesi var') verdi ve 'Fable'a yaptır' dedi. Referans görsel web projesine taşındı. Fable yardımcısı hit-deneme.html'de çalışıyor; kolaj Halalar'ın gerçek ürün görselleriyle kurulacak. Canlı hit.html'e dokunulmuyor (15.11 dersi).
 
