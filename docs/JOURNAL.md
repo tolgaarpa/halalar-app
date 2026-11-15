@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — kategori seçimi sabit ve büyük
+Tolga: 'yazı okunmuyor, ufak; yakına al, yazı ortada kalsın, etrafına diz, sabit, havada asılı sallanan'. kategori.html: tünel hareketi kalktı; 10 görsel başlığın üstünde ve altında iki yay hâlinde, büyük (masaüstü 100-200px) ve Anton etiketli, her biri farklı hızda hafifçe sallanıyor; telefonda başlık üstte, 2'li ızgara. 6 ekran boyunda ölçüldü: çakışma 0, başlığa binme 0, ekran dışı 0.
+
 ## 16.11 Taş Fener — kategori tüneli
 Tolga: 'Pazara gir deyince kategoriler çıksın, aynı tünel mantığı, kendi belirlediğimiz ikonik görseller'. web kategori.html: 10 Halalar kategorisi, her biri ikonik ürünle (veri/kategori-ikon.js: Müzik=Fender, Heykel=Kurt, Tablo=Hendrix, Oyuncak=Astronot, Elektronik=Polaroid, Mutfak=Küp vazo, Nostalji=Mavi çalar saat, Spor=Kask, Sandık=Samsonite, Kitap=70. yıl albümü), tünelde süzülür, üstüne gelince durur, dokununca index.html?kat=... arama o kategoriyle açılır; altta kategori düğmeleri. Hit 'PAZARA GİR' -> kategori.html (app'te web adresine). Denendi: 20 parça, kırık görsel yok, ?kat=Müzik 14 ürün açtı. Yeni dükkânın kategorileri (Giyim/Hediyelik/Ev) ürün gelince eklenecek.
 
