@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — yeni dükkâna deneme ürünleri
+Tolga 'Halalar'ın ürünlerini yeniye de koy, çoklu dükkân tasarımını görelim'. 94 Halalar ürünü DENEME etiketiyle dukkan2.js'e (Giyim 5, Hediyelik 63, Ev dekorasyon 26). Vitrin 2. slayt ve dükkân sayfası ekranda bakıldı.
+
 ## 16.11 Taş Fener — yeni dükkân altyapısı
 Tolga 'şirket yok, yakında açacağız, varmış gibi sayfayı uyarla'. Kuruldu: dukkan2.js, dukkan.html, urun.html d2 desteği, hit vitrin slaytı, satis-kosullari.html (yer tutuculu, hukukçu/mali müşavir kontrolü önerilir), panel rozeti, kurallar, xml_cevir.py (örnek XML ile denendi: stok 0 atlanır, %35 kâr, 9'la biten fiyat), app eşitleme web'e bağlantıyla. Örnek ürünle 4 sayfa 1280/375 ölçüldü, taşma yok; örnek veri geri alındı (dükkân boş).
 
