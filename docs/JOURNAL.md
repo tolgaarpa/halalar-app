@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — tedarikçi kısa listesi (giyim, hediyelik, ev dekorasyon)
+Adaylar: Turuncix (giyim+aksesuar+ev-yaşam, 2022'den beri XML, Ticimax iş birliği sayfası var), YY İthalat (hediyelik; SES İthalat'ın kurduğu firma, Ticimax ile çalışıyor), Ulu İthalat (XML bayilik + dropshipping sayfası). Giyim ek: Tozlu, Modasena, Sateen, Vipbutik, Lafaba, Simisso (listeler). Ev: EWS. Şikâyet sitelerinde üç ana aday için kayıt bulunamadı (ne iyi ne kötü). Bağımsız doğrulama yok; sonraki adım: firma sitelerinden ünvan/MERSİS/bayilik koşulu, örnek XML, Tolga'nın görüşmesi + deneme siparişi.
+
 ## 15.11 Taş Fener — yurt içi dropship tedarikçi araştırması
 Tolga 'yurt içi tedarikle başlayalım, en güvenilir hangisi'. Arama: bağımsız sıralama yok; kaynaklar çoğu tanıtım. Geçen adlar: EasyToptan, DepoXML, Tahtakale Toptan, ToptanTR, Hediyesepeti XML, Lidyana Partner, Turuncix (ev-yaşam), EWS (mutfak/ev), Mexelena/MarkaPati (moda; tanıtım yazısı). Vintage tek parça ürünler XML modeline uymaz. Öneri: kategori seçimi -> 3 aday -> sicil/fatura/şikâyet/test siparişi kontrolü. Tolga'dan kategori bekleniyor.
 
