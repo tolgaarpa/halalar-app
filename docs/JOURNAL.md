@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — Hit Pazarı yeni tasarım modu (yerel)
+Tolga kendi yazdığı tasarım anlayışını yapıştırdı ('dijital mekân; tipografi tasarımın kendisi; giriş mekânın parçası; bilgi dev 01/02/03; kart yığını, ikon, standart buton, dekoratif neon yok'). halalar-web/hit.html yeniden kuruldu: kapı (neon Hit) korundu, içerisi siyah + beyaz + tek turuncu nokta. Vitrin dev ad + sayaç, Gişe (dev sıra numarası + füme cam + 'Sıranı al'), sürüklenen kart sahnesi, dev numaralı açılır bilgiler. Telefonda iki çakışma bulundu ve düzeldi (cam numarayı fazla örtüyordu; Geç/Beğen kartın altına kaydı). app hit.html eşitlendi. Yerel, yayın bekliyor.
+
 ## 15.11 Taş Fener — güvenlik 1. adım (yerel)
 Tolga 'panel sadece bana ait olsun, Koray bir mağaza; sistemi sağlama almaya başla'. firestore.rules: yönetici yalnız Tolga, alan sınırları + telefon deseni + satıcı sabit; talepler okuma yalnız yönetici, müşteri durumu 'durumlar' koleksiyonundan (panel toplu yazım). app index.html yanıt kaçışlı; web hit.html durumlar'dan okuyor, app hit.html eşitlendi. Kural testi yazıldı (14 durum, scratchpad/kural/t.py) ama öykünücü Java 21 istiyor; çalışmadı. Yerel, yayın bekliyor.
 
