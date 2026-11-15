@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — kategori tünelde açılıyor
+Tolga: 'kategori yazısının satır arasını aç, Hit'in üstüne biniyor; kategori seçince liste değil tünel sistemiyle ürünlere girsin'. index.html?kat=X artık tüneli yalnız o kategorinin ürünleriyle kuruyor (en az ~60 parça olacak kadar tekrar), başlıkta kategori adı (ör. MÜZİK); arama listesi açma kaldırıldı. Başlık: satırlar arası 18px (telefon 10), satır yüksekliği 1.08; ölçüldü, binme yok.
+
 ## 16.11 Taş Fener — kategori tüneli çeşitlendi
 Tolga: 'ikonlar bir tık büyük; tekrar ederken aynı foto değil kategoriden başka ürün; Ara 2x; Hit Pazarı %25 büyük'. Kategori ikonları x1.25; 8 turda her kategori ilk turda ikonik görsel, sonra kendi ürünlerinden sırayla (Kitap 1, Spor 3, Sandık 5, Elektronik 6 ürünle sınırlı, tekrar eder). Web tünel ARA 14->28px, Hit Pazarı 68->85px (telefon 55); app tünel Hit Pazarı 44->55px.
 
