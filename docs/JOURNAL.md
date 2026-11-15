@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — vintage deneme 2. tur (Fable'da)
+Tolga: 'örnekteki görkemi hissetmedim', 'fon rengi beyaz olsun'. Görkem referanstaki büyük fotoğrafik objelerden geliyor; referanstan yazısız, saydam zeminli kolaj çıkarıldı (halalar-web/kaynak/referans/kolaj-seffaf.webp; gömülü Halalar kartı canlı kartla örtülecek). Fable'a beyaz zemin + referans oranları + Ş okunurluğu + gömülü kartın örtülmesi verildi.
+
 ## 15.11 Taş Fener — vintage deneme hazır
 Fable hit-deneme.html'i bitirdi (e465dcd): sarı/kırmızı/mavi kolaj girişi, gerçek ürünlerle kolaj (kurt büstü, daktilo, vazo, papağan, polaroid, heykel), Halalar kartı, 4 mavi karo, diğer bölümler aynı içerikle temada, 'Dükkânını sokağa aç - başvuru yakında'. Ben masaüstü girişe baktım: referansa yakın, taşma ve kırık görsel yok. Tolga'ya gösterildi.
 
