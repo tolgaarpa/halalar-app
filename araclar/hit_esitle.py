@@ -10,7 +10,7 @@ s = open(os.path.join(WEB, 'hit.html'), encoding='utf-8').read()
 DEGIS = [
     ('href="urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"', 'href="https://tolgaarpa.github.io/halalar-web/urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"'),  # ikinci dükkân ürünleri web'de
     ('href="dukkan.html"', 'href="https://tolgaarpa.github.io/halalar-web/dukkan.html"'),
-    ('href="kategori.html"', 'href="https://tolgaarpa.github.io/halalar-web/kategori.html"'),  # kategori tüneli web'de
+    ('href="index.html?mod=kategori"', 'href="https://tolgaarpa.github.io/halalar-web/index.html?mod=kategori"'),  # kategori tüneli web'de
     ('src="veri/', 'src="'),                                   # veri dosyaları app kökünde
     ('kaynak/web/', 'img/'),                                   # ürün görselleri
     ('kaynak/vitrin/', 'vitrin/'),                             # dükkân vitrin fotoğrafları

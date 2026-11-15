@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — kategori tüneli = bizim tünel
+Tolga: 'bu değil, bizim tünel gibi olacak'. Halalar tünel motoru (web index.html) kategori moduna kavuştu: index.html?mod=kategori -> ürün yerine 10 kategori ikonu (veri/kategori-ikon.js), 8 tekrar, aralık 110; yakındaki görsellerin altında Anton etiket; başlıkta 'Kategoriler'; dokununca index.html?kat=... (arama o kategoriyle). PAZARA GİR buraya; kategori.html yönlendirme oldu. App hit linki web adresine.
+
 ## 16.11 Taş Fener — kategori seçimi sabit ve büyük
 Tolga: 'yazı okunmuyor, ufak; yakına al, yazı ortada kalsın, etrafına diz, sabit, havada asılı sallanan'. kategori.html: tünel hareketi kalktı; 10 görsel başlığın üstünde ve altında iki yay hâlinde, büyük (masaüstü 100-200px) ve Anton etiketli, her biri farklı hızda hafifçe sallanıyor; telefonda başlık üstte, 2'li ızgara. 6 ekran boyunda ölçüldü: çakışma 0, başlığa binme 0, ekran dışı 0.
 
