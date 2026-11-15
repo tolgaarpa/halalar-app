@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — tünel nesne boyu + KAYDIR, SEÇ
+Tolga: 'obje boyutları hâlâ büyük, eskiden iyiydi; Tinder gibi ürün seçtiğim yeri göremedim'. Web tüneline uygulamadaki ölçek (SC=max(.42,min(1,VW/1440*1.5))) eklendi: telefonda nesneler uygulamadaki gibi. Tünelin altına mavi 'KAYDIR, SEÇ — beğen · teklif ver · satın al' düğmesi: önündeki ürünle desteyi açar (kategori modunda gizli). ARA telefonda 16px (genel kural sonra geldiği için büyük kalıyordu). 390x844'te: taşma yok, düğmeye basınca deste açıldı (Fön Makinesi, Geç/Teklif/Satın al/Beğen).
+
 ## 16.11 Taş Fener — tünelden kart destesine
 Tolga: 'beğen, al, teklif ver, geç kısmımız nerede' -> 'yap bakalım'. Web tünelinde (pazar, kategori, Halalar) ürüne dokununca uygulamanın destesi o üründen açılıyor: index.html#u=<id> (canlıda halalar-app, yerelde port 8766->8769, 8770->8771). Hover kartı 'Beğen, teklif ver →'. Denendi: Polaroid destede ilk kart, alt düğmeler Geç/Teklif/Satın al/Beğen. Kısıt: deste sonrasında bütün Halalar ürünleriyle devam ediyor (kategoriye/pazara göre süzmüyor); destedeki TÜNEL uygulamanın kendi tüneline dönüyor.
 
