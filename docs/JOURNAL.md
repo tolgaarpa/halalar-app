@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — telefonda deneme için ev ağı
+Tolga 'telden açamıyorum'; seçimi 'Ev ağında aç'. Web http://192.168.1.16:8770/hit.html , uygulama http://192.168.1.16:8771/index.html (python http.server 0.0.0.0, yalnız ev Wi-Fi'si). Not: uygulamanın hit sayfasındaki pazar/kategori bağlantıları canlı web adresine gidiyor (canlıda eski sürüm).
+
 ## 16.11 Taş Fener — siyahlık giderildi, geri dönüş
 Tolga: 'giriş ile tünel arasında siyahlık var, hata gibi; geri geldiğimde tekrar girişe gelebileyim'. Düzeltme: iki sayfaya @view-transition (Chrome/Safari'de sayfalar arası çapraz geçiş), dalış sonunda kararma kaldırıldı (4x büyüme, 0,52 sn), pazar modunda ürünler baştan görünür (ışık rampası kaldırıldı), giriş sayfası boşta tünel görsellerini önceden indiriyor. Pazar tünelinin başında (en üstte) yukarı kaydırma/telefonda aşağı çekme -> hit.html. Denendi: girişten tünele geçişte ürünler hemen görünüyor; yukarı kaydırınca girişe dönüyor.
 
