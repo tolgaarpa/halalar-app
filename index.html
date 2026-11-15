@@ -295,13 +295,14 @@ function satinAlAc(id){
 
 // ---- listeler ----
 function satir(id,sag){const u=U(id);return `<div class="satir"><img src="${img(id)}"><div><h3>${u[1]}</h3><div class="k">${u[2]}</div></div><div>${sag}</div></div>`}
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 async function durumTazele(){ if(!VT)return; let degisti=false;
-  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const d=await VT.collection('talepler').doc(x.ref).get();if(!d.exists)return;const v=d.data();
+  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const d=await VT.collection('durumlar').doc(x.ref).get();if(!d.exists)return;const v=d.data();
     if(v.durum!==x.durum||(v.yanit||'')!==(x.yanit||'')){x.durum=v.durum;x.yanit=v.yanit||'';degisti=true}}catch(e){}}));
   if(degisti){kaydet();listeler()} }
 function listeler(){
   document.getElementById('l-begeni').innerHTML=D.begeni.length?D.begeni.slice().reverse().map(id=>satir(id,`<div class="t">${TL(FIYAT[id])}</div><div class="durum" style="color:var(--like)">Beğenildi</div>`)).join(''):'<div class="yok">Henüz beğeni yok. Keşfet\'te sağa kaydır.</div>';
-  document.getElementById('l-islem').innerHTML=D.islem.length?D.islem.map(x=>satir(x.id,`<div class="t">${TL(x.tutar)}</div><div class="durum" style="color:${x.tur==='teklif'?'var(--offer)':'var(--buy)'}">${x.tur==='teklif'?'Teklif · ':'Alım · '}${x.durum}</div>${x.yanit?`<div class="yanit">${x.yanit}</div>`:''}`)).join(''):'<div class="yok">Teklif için yukarı, satın almak için aşağı kaydır.</div>'}
+  document.getElementById('l-islem').innerHTML=D.islem.length?D.islem.map(x=>satir(x.id,`<div class="t">${TL(x.tutar)}</div><div class="durum" style="color:${x.tur==='teklif'?'var(--offer)':'var(--buy)'}">${x.tur==='teklif'?'Teklif · ':'Alım · '}${esc(x.durum)}</div>${x.yanit?`<div class="yanit">${esc(x.yanit)}</div>`:''}`)).join(''):'<div class="yok">Teklif için yukarı, satın almak için aşağı kaydır.</div>'}
 document.querySelectorAll('[data-git]').forEach(b=>b.onclick=()=>{const g=b.dataset.git;
   document.querySelectorAll('nav button').forEach(n=>n.classList.toggle('on',n.dataset.git===g));
   document.querySelectorAll('.sayfa').forEach(s=>s.classList.remove('on'));

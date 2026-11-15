@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — güvenlik 1. adım (yerel)
+Tolga 'panel sadece bana ait olsun, Koray bir mağaza; sistemi sağlama almaya başla'. firestore.rules: yönetici yalnız Tolga, alan sınırları + telefon deseni + satıcı sabit; talepler okuma yalnız yönetici, müşteri durumu 'durumlar' koleksiyonundan (panel toplu yazım). app index.html yanıt kaçışlı; web hit.html durumlar'dan okuyor, app hit.html eşitlendi. Kural testi yazıldı (14 durum, scratchpad/kural/t.py) ama öykünücü Java 21 istiyor; çalışmadı. Yerel, yayın bekliyor.
+
 ## 15.11 Taş Fener — güvenlik eksikleri taraması
 Tolga 'güvenliğimizle ilgili eksiklerimizi tespit et'. Yalnız okuma: firestore.rules, panel.html, urun.html, index.html incelendi; canlı Firestore'a girişsiz liste denemesi 403 (kural yayında); iki deponun git geçmişinde yalnız herkese açık Firebase web anahtarı var (gizli değil). Bulgular Tolga'ya önem sırasıyla verildi; hiçbir dosya değişmedi.
 

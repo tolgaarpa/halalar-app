@@ -96,10 +96,11 @@ function ciz(){
       <button class="btn k" data-d="Kabul edildi">Kabul</button><button class="btn r" data-d="Reddedildi">Ret</button>
       <input inputmode="numeric" placeholder="Karşı teklif ₺"><button class="btn" data-karsi>Karşı teklif ver</button>
       <button class="btn s" data-d="Satıldı">Satıldı</button><button class="btn" data-sil>Sil</button></div></div></div>`}).join('');
-  el.querySelectorAll('.aks').forEach(a=>{const ref=db.collection('talepler').doc(a.dataset.id);
-    a.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>ref.update({durum:b.dataset.d,yanit:b.dataset.d==='Kabul edildi'?'Dükkân kabul etti, seni arayacak.':b.dataset.d==='Reddedildi'?'Dükkân bu teklifi kabul etmedi.':'Ürün satıldı.'}));
-    a.querySelector('[data-karsi]').onclick=()=>{const v=parseInt(a.querySelector('input').value.replace(/\D/g,''))||0;if(v<=0)return;ref.update({durum:'Karşı teklif',yanit:'Dükkânın karşı teklifi: '+TL(v)})};
-    const sil=a.querySelector('[data-sil]');sil.onclick=()=>{if(sil.dataset.emin){ref.delete()}else{sil.dataset.emin=1;sil.textContent='Emin misin? Tekrar bas'}}});
+  el.querySelectorAll('.aks').forEach(a=>{const ref=db.collection('talepler').doc(a.dataset.id),dur=db.collection('durumlar').doc(a.dataset.id);
+    const yaz=v=>{const b=db.batch();b.update(ref,v);b.set(dur,{durum:v.durum,yanit:v.yanit});return b.commit()};
+    a.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>yaz({durum:b.dataset.d,yanit:b.dataset.d==='Kabul edildi'?'Dükkân kabul etti, seni arayacak.':b.dataset.d==='Reddedildi'?'Dükkân bu teklifi kabul etmedi.':'Ürün satıldı.'}));
+    a.querySelector('[data-karsi]').onclick=()=>{const v=parseInt(a.querySelector('input').value.replace(/\D/g,''))||0;if(v<=0)return;yaz({durum:'Karşı teklif',yanit:'Dükkânın karşı teklifi: '+TL(v)})};
+    const sil=a.querySelector('[data-sil]');sil.onclick=()=>{if(sil.dataset.emin){const b=db.batch();b.delete(ref);b.delete(dur);b.commit()}else{sil.dataset.emin=1;sil.textContent='Emin misin? Tekrar bas'}}});
   el.querySelectorAll('[data-kopya]').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.dataset.kopya).then(()=>b.textContent='Kopyalandı').catch(()=>{}));
 }
 </script>

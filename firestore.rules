@@ -1,23 +1,29 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{db}/documents {
-    // Dükkân yöneticileri: Firebase Auth e-posta girişi + bu listede olmak
+    // Genel yönetici: yalnız Tolga (Hit Pazarı paneli). Halalar bir mağazadır, panel yetkisi yok (Tolga 15.11).
     function yonetici() {
-      return request.auth != null && request.auth.token.email in ['tolgaarpa@gmail.com','korayca2001@gmail.com'] && request.auth.token.email_verified == true;
+      return request.auth != null && request.auth.token.email == 'tolgaarpa@gmail.com' && request.auth.token.email_verified == true;
     }
-    // Teklif ve satın alma talepleri
+    // Teklif ve satın alma talepleri (ad + telefon içerir): okuma yalnız yönetici
     match /talepler/{id} {
-      // Müşteri yeni talep oluşturabilir; alanlar ve tipler denetlenir
       allow create: if request.resource.data.keys().hasOnly(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici'])
+                    && request.resource.data.keys().hasAll(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici'])
+                    && request.resource.data.urun is string && request.resource.data.urun.size() > 0 && request.resource.data.urun.size() <= 40
+                    && request.resource.data.urunAd is string && request.resource.data.urunAd.size() > 0 && request.resource.data.urunAd.size() <= 120
+                    && request.resource.data.satici == 'halalar'
                     && request.resource.data.tur in ['teklif','alim']
                     && request.resource.data.tutar is int && request.resource.data.tutar > 0 && request.resource.data.tutar < 10000000
                     && request.resource.data.ad is string && request.resource.data.ad.size() > 1 && request.resource.data.ad.size() < 60
-                    && request.resource.data.tel is string && request.resource.data.tel.size() >= 10 && request.resource.data.tel.size() < 20
+                    && request.resource.data.tel is string && request.resource.data.tel.matches('^[+]?[0-9]{10,15}$')
                     && request.resource.data.durum == 'Beklemede'
                     && request.resource.data.zaman == request.time;
-      // Müşteri yalnız kendi talebini kimliğiyle (tahmin edilemez belge no) okuyabilir; liste yalnız yöneticiye
+      allow read, update, delete: if yonetici();
+    }
+    // Müşterinin gördüğü durum (kişisel bilgi yok): belge no ile okunur, yalnız yönetici yazar
+    match /durumlar/{id} {
       allow get: if true;
-      allow list, update, delete: if yonetici();
+      allow list, write: if yonetici();
     }
   }
 }

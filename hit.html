@@ -377,7 +377,7 @@ function listeler(){
   document.getElementById('s-islem').innerHTML=D.islem.length?D.islem.map(x=>kutu(x.id,`${x.tur==='teklif'?'Teklif':'Alım'} · ${TL(x.tutar)} · ${esc(x.durum)}`)).join(''):'<div class="yok">Henüz teklif yok.</div>';
   const k=D.kisi||{};document.getElementById('fAd').value=k.ad||'';document.getElementById('fTel').value=k.tel||''}
 async function durumTazele(){if(!VT)return;let d=false;
-  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const s=await VT.collection('talepler').doc(x.ref).get();if(!s.exists)return;const v=s.data();if(v.durum!==x.durum){x.durum=v.durum;d=true}}catch(e){}}));
+  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const s=await VT.collection('durumlar').doc(x.ref).get();if(!s.exists)return;const v=s.data();if(v.durum!==x.durum){x.durum=v.durum;d=true}}catch(e){}}));
   if(d){kaydetD();listeler()}}
 document.querySelectorAll('#sekme button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#sekme button').forEach(x=>x.classList.toggle('on',x===b));
