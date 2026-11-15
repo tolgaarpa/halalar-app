@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — telefon uyarlaması
+Tolga (telefondan): 'dükkân ismi çok büyük, 3 kat küçült; ilk giriş anlaşılır değil, web'e göre yapılmış, telefona uyarla'. hit.html telefonda: tek ekran (100svh), HİT PAZARI 15vw, açıklama gizli, kolaj ~44svh + Halalar kartı, söz tek satır, 'KAYDIR, PAZARA GİR' altta sabit, kısa yollar gizli (menüde var). Tünel telefonda: dükkân/kategori adı 84->28px, Hit Pazarı 40px, ARA 16px (çakışıyordu). App tünel adı 28px. 375x812'de ölçüldü, taşma yok. Açık soru: 'tıklayınca eski hit sayfası geliyor' neye tıklayınca?
+
 ## 16.11 Taş Fener — telefonda deneme için ev ağı
 Tolga 'telden açamıyorum'; seçimi 'Ev ağında aç'. Web http://192.168.1.16:8770/hit.html , uygulama http://192.168.1.16:8771/index.html (python http.server 0.0.0.0, yalnız ev Wi-Fi'si). Not: uygulamanın hit sayfasındaki pazar/kategori bağlantıları canlı web adresine gidiyor (canlıda eski sürüm).
 

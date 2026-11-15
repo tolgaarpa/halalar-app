@@ -271,6 +271,20 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
 .sekme-kapat:hover{border-color:#e8201c;color:#e8201c}
 @media(max-width:700px){.hp-menu{top:60px;left:12px}.sekme-kapat{top:70px;right:12px;width:44px;height:44px}}
 @media(prefers-reduced-motion:reduce){.kapi.dag .kapi-ic,.kapi.dag .sahne{transform:none;transition:opacity .2s}#pazaraGir svg{animation:none}.sekme{animation:none}}
+
+/* telefon: giriş tek ekrana sığar; başlık, kolaj + Halalar kartı, söz; "kaydır, pazara gir" altta sabit */
+@media(max-width:700px){
+  .kapi{height:100svh;min-height:0;display:flex;flex-direction:column;padding:64px 0 0;overflow:hidden;--kw:min(calc(100vw - 32px),calc(44svh*.95))}
+  .kapi-ic{flex:1;min-height:0;display:flex;flex-direction:column;align-items:stretch;padding:0 16px}
+  .sol h1{font-size:min(15vw,84px);margin-bottom:4px;transform:rotate(-4deg) skewX(-5deg) scaleY(1.08)}
+  .sol .altb{font-size:11px;letter-spacing:.32em}
+  .sol p{display:none}
+  .gir{position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:6;margin:0;justify-content:center;font-size:min(6.6vw,28px);padding:14px 16px}
+  .kolaj{width:var(--kw);margin:10px auto 0}
+  .soz{font-size:min(6.4vw,30px);margin:6px 0 0;align-self:center;transform:rotate(-4deg) skewX(-8deg)}
+  .soz span{display:inline;margin-right:.25em}
+  .kisayol{display:none}
+}
 @view-transition{navigation:auto}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e3171b%27/%3E%3C/svg%3E">
