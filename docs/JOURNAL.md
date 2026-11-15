@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — giriş düzeltmesi YAYINDA
+Tolga canlıda 'Giriş olmadı, tekrar dene' gördü, 'yayınla'. Firebase tarafı sağlam (Google açık, tolgaarpa.github.io izinli). Olası sebep: uygulama içi tarayıcı (WhatsApp/Instagram) ya da engellenen pencere. Canlı main üstüne ayrı girisfix dalıyla (worktree) yalnız giriş yaması push edildi: uygulama içi tarayıcı uyarısı + hata kodu ekranda (web hit, app hit, panel). Fable haftalık limite takıldı (11:00'de açılır), vintage 4. tur yarım.
+
 ## 15.11 Taş Fener — 4. tur + gerçek üye hesabı
 Tolga: kaydır-seç başlığı, büyük üye kartı, yeni logo her sayfada, diğer sayfalar da bu dilde, üye girişi gerçek olsun. İki depoda vintage dalı açıldı (main canlı kalıyor). Tasarım Fable'da. uye.js + uyeler kuralı yazıldı ve commit edildi (vintage).
 
