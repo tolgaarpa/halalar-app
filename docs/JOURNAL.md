@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — vintage tema Fable'a verildi
+Tolga yeni referans (sarı zemin, kırmızı/mavi, kolaj, 'Her şeyin bir hikâyesi var') verdi ve 'Fable'a yaptır' dedi. Referans görsel web projesine taşındı. Fable yardımcısı hit-deneme.html'de çalışıyor; kolaj Halalar'ın gerçek ürün görselleriyle kurulacak. Canlı hit.html'e dokunulmuyor (15.11 dersi).
+
 ## 15.11 Taş Fener — canlı tasarıma geri dönüş
 Tolga 'hiçbiri değil, bizim versiyona geri gel'. web hit.html 4ee07b6 sürümüne (canlı tasarım + durumlar okuması) döndü, app hit.html eşitlendi ve önceki hâliyle birebir aynı; hit_esitle.py eski hâline döndü. Ders yazıldı (denemeler ayrı dosyada).
 
