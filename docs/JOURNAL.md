@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — vintage 3. tur hazır
+Tolga: 'sadeleştir, siyah fon, tünel teması kaybolmasın'. Fable f0a23e8: #0b0b0d fon, canlıdaki ürün tüneli kolajın arkasında sönük, 4 karo ince bağlantı oldu, alt bölümler sadeleşti, kolaj sarı halesi temizlendi. Masaüstüne baktım: taşma yok, tünel ürünleri arkada seçiliyor. Kalan: krem Halalar kartı çok parlak, Ş çengeli küçük.
+
 ## 15.11 Taş Fener — vintage 2. tur hazır
 Fable (limite takılıp devam etti) 0ff4ec5: sıcak beyaz zemin, kolaj = referanstan saydam kesim, gömülü kart kırpılıp canlı Halalar kartıyla örtüldü, tek açılış hareketi. Masaüstüne baktım: referansa çok yakın, taşma yok. Kalan: Ş çengeli küçük, geniş ekranda kolaj görseli (747px) yumuşak kalabilir, telefonda kart fotoğrafı gizli.
 
