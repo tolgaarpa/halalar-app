@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — 4. tur + gerçek üye hesabı
+Tolga: kaydır-seç başlığı, büyük üye kartı, yeni logo her sayfada, diğer sayfalar da bu dilde, üye girişi gerçek olsun. İki depoda vintage dalı açıldı (main canlı kalıyor). Tasarım Fable'da. uye.js + uyeler kuralı yazıldı ve commit edildi (vintage).
+
 ## 15.11 Taş Fener — vintage 3. tur hazır
 Tolga: 'sadeleştir, siyah fon, tünel teması kaybolmasın'. Fable f0a23e8: #0b0b0d fon, canlıdaki ürün tüneli kolajın arkasında sönük, 4 karo ince bağlantı oldu, alt bölümler sadeleşti, kolaj sarı halesi temizlendi. Masaüstüne baktım: taşma yok, tünel ürünleri arkada seçiliyor. Kalan: krem Halalar kartı çok parlak, Ş çengeli küçük.
 
