@@ -171,8 +171,8 @@ a.kepenk{display:block;text-decoration:none}
 .yonler{display:grid;grid-template-columns:1fr 280px 1fr;grid-template-rows:auto auto auto;gap:22px 50px;align-items:center;justify-items:center}
 .kart{grid-column:2;grid-row:2;width:280px;aspect-ratio:3/4;background:#16161a;border:1px solid #2a2a30;display:flex;flex-direction:column;overflow:hidden;cursor:pointer;box-shadow:0 30px 60px #000a;font:inherit;color:inherit;text-align:left;padding:0;transition:border-color .2s}
 .kart:hover{border-color:var(--ink)}
-.kart .g{flex:1;min-height:0;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 40%,#232329 0%,#141417 70%);width:100%}
-.kart img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,0,0,.6));transition:transform .45s cubic-bezier(.3,1.4,.5,1),opacity .3s}
+.kart .g{flex:1;min-height:0;position:relative;padding:24px;background:radial-gradient(ellipse at 50% 40%,#232329 0%,#141417 70%);width:100%}
+.kart img{position:absolute;left:24px;top:24px;width:calc(100% - 48px);height:calc(100% - 48px);object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,0,0,.6));transition:transform .45s cubic-bezier(.3,1.4,.5,1),opacity .3s}
 .kart .alt{border-top:1px solid #25252a;padding:12px 16px;background:#111114;width:100%}
 .kart .alt b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:20px;line-height:1.25;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .kart .alt small{font-size:12px;color:var(--muted);letter-spacing:.04em}
@@ -263,13 +263,13 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
 .hp-menu .alt-link{display:flex;flex-wrap:wrap;gap:6px 16px;padding:12px 22px 10px;border-top:1px solid #222227;margin-top:6px}
 .hp-menu .alt-link a{font-size:13px;color:#9a958d;text-decoration:none}.hp-menu .alt-link a:hover{color:#f2efe9}
 /* bölümler kendi sekmelerinde */
-.sekme{position:fixed;inset:0;z-index:58;overflow-y:auto;overscroll-behavior:contain;background:#0b0b0d;padding-top:70px;animation:sekmeAc .35s ease-out}
-@keyframes sekmeAc{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.sekme{position:fixed;inset:0;z-index:58;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#0b0b0d;padding-top:140px;animation:sekmeAc .35s ease-out}
+@keyframes sekmeAc{from{transform:translateY(24px)}to{transform:none}}
 .sekme>section{display:none}.sekme>section.on{display:block}
 .sekme>footer{display:block}
 .sekme-kapat{position:fixed;top:84px;right:24px;z-index:59;width:52px;height:52px;border:1px solid #3a3a42;background:#0b0b0d;color:#f2efe9;font:300 34px/1 Barlow,sans-serif;cursor:pointer}
 .sekme-kapat:hover{border-color:#e8201c;color:#e8201c}
-@media(max-width:700px){.hp-menu{top:60px;left:12px}.sekme-kapat{top:70px;right:12px;width:44px;height:44px}}
+@media(max-width:700px){.sekme h2{font-size:min(10vw,44px)!important;line-height:1.05;overflow-wrap:break-word}.hp-menu{top:60px;left:12px}.sekme{padding-top:120px}.sekme-kapat{top:68px;right:12px;width:44px;height:44px}}
 @media(prefers-reduced-motion:reduce){.kapi.dag .kapi-ic,.kapi.dag .sahne{transform:none;transition:opacity .2s}#pazaraGir svg{animation:none}.sekme{animation:none}}
 
 /* telefon: giriş tek ekrana sığar; başlık, kolaj + Halalar kartı, söz; "kaydır, pazara gir" altta sabit */

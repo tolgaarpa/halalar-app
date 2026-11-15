@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — telefonda üst üste binme düzeltmeleri
+Tolga sinirli: 'dikkat etmeden mi yapıyorsun; içerinin boyutları değişti, yazılar üst üste, ilk başta kaydırma yok/ulaşılmıyor'. 390x844'te tek tek bakıldı ve bulunanlar: sekmeler saydam açılıyordu (giriş arkadan görünüp üst üste biniyordu) -> opak açılıyor; × düğmesi vitrin oklarının üstüne biniyordu -> sekme içeriği 120px aşağıdan başlıyor; 'Alışık olduğun gibi...' başlığı ekrandan taşıyordu -> telefonda 10vw; Nasıl çalışır kartında ürün görseli kartın dışına taşıyordu (grid img max-height çözülmüyor, LESSONS 13.11 ile aynı) -> mutlak konum + contain. Kaydırma: dokunma olayı emülasyonda pazara geçişi tetikliyor; gerçek telefonda nerede takıldığı Tolga'dan soruldu. Uygulama destesi telefonda düzgün.
+
 ## 16.11 Taş Fener — telefon uyarlaması
 Tolga (telefondan): 'dükkân ismi çok büyük, 3 kat küçült; ilk giriş anlaşılır değil, web'e göre yapılmış, telefona uyarla'. hit.html telefonda: tek ekran (100svh), HİT PAZARI 15vw, açıklama gizli, kolaj ~44svh + Halalar kartı, söz tek satır, 'KAYDIR, PAZARA GİR' altta sabit, kısa yollar gizli (menüde var). Tünel telefonda: dükkân/kategori adı 84->28px, Hit Pazarı 40px, ARA 16px (çakışıyordu). App tünel adı 28px. 375x812'de ölçüldü, taşma yok. Açık soru: 'tıklayınca eski hit sayfası geliyor' neye tıklayınca?
 
