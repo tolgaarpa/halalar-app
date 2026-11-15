@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — kategori giriş efekti, Ara 3 boy
+Tolga: 'Ara'da popüler kategoriler büyük ve üstte, 3 boy grup; kategoriden içeri girerken giriş efekti, tünelde ilerleyip gidiyor gibi (Way Coffee'de yaptığımız)'. Way'deki #intro mantığı alındı: ?kat=X açılınca ortada kategori ikonu + dev kırmızı ad, kamera kendiliğinden 520'ye süzülür, tabela büyüyerek kaybolur, ürünler derinden belirir (vis*=camZ/350). Kategori tünelinde tıklayınca kamera +1600 dalar, ekran kararır, sonra kategori açılır. Ara (web+app): popülerlik şimdilik kategorideki ürün sayısı; ilk 3 büyük (Mutfak, Tablo, Müzik), sonraki 4 orta, kalanı küçük; büyükler üstte.
+
 ## 16.11 Taş Fener — kategori tünelde açılıyor
 Tolga: 'kategori yazısının satır arasını aç, Hit'in üstüne biniyor; kategori seçince liste değil tünel sistemiyle ürünlere girsin'. index.html?kat=X artık tüneli yalnız o kategorinin ürünleriyle kuruyor (en az ~60 parça olacak kadar tekrar), başlıkta kategori adı (ör. MÜZİK); arama listesi açma kaldırıldı. Başlık: satırlar arası 18px (telefon 10), satır yüksekliği 1.08; ölçüldü, binme yok.
 
