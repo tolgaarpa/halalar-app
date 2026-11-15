@@ -8,6 +8,8 @@ WEB = os.path.expanduser('~/Desktop/halalar-web')
 APP = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 s = open(os.path.join(WEB, 'hit.html'), encoding='utf-8').read()
 DEGIS = [
+    ('href="urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"', 'href="https://tolgaarpa.github.io/halalar-web/urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"'),  # ikinci dükkân ürünleri web'de
+    ('href="dukkan.html"', 'href="https://tolgaarpa.github.io/halalar-web/dukkan.html"'),
     ('src="veri/', 'src="'),                                   # veri dosyaları app kökünde
     ('kaynak/web/', 'img/'),                                   # ürün görselleri
     ('kaynak/vitrin/', 'vitrin/'),                             # dükkân vitrin fotoğrafları
@@ -29,4 +31,5 @@ os.makedirs(os.path.join(APP, 'referans'), exist_ok=True)
 for f in os.listdir(os.path.join(WEB, 'kaynak', 'referans')):
     if f.endswith('.webp'):
         shutil.copy2(os.path.join(WEB, 'kaynak', 'referans', f), os.path.join(APP, 'referans', f))
+shutil.copy2(os.path.join(WEB, 'veri', 'dukkan2.js'), os.path.join(APP, 'dukkan2.js'))
 print('hit.html eşitlendi;', len(os.listdir(os.path.join(APP, 'vitrin'))), 'vitrin fotoğrafı')

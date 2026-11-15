@@ -9,9 +9,9 @@ service cloud.firestore {
     match /talepler/{id} {
       allow create: if request.resource.data.keys().hasOnly(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici'])
                     && request.resource.data.keys().hasAll(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici'])
-                    && request.resource.data.urun is string && request.resource.data.urun.size() > 0 && request.resource.data.urun.size() <= 40
+                    && request.resource.data.urun is string && request.resource.data.urun.size() > 0 && request.resource.data.urun.size() <= 80
                     && request.resource.data.urunAd is string && request.resource.data.urunAd.size() > 0 && request.resource.data.urunAd.size() <= 120
-                    && request.resource.data.satici == 'halalar'
+                    && request.resource.data.satici in ['halalar','dukkan2']
                     && request.resource.data.tur in ['teklif','alim']
                     && request.resource.data.tutar is int && request.resource.data.tutar > 0 && request.resource.data.tutar < 10000000
                     && request.resource.data.ad is string && request.resource.data.ad.size() > 1 && request.resource.data.ad.size() < 60

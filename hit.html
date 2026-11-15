@@ -103,6 +103,8 @@ nav .sepet i{position:absolute;right:0;top:0;min-width:19px;height:19px;border-r
 .foto img{width:100%;height:100%;object-fit:cover;display:block}
 .icerik{display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-width:0;contain:size}
 .kapali .icerik{contain:none}
+.kapali .icerik{justify-content:space-between}.d2kat{margin-top:22px;font:400 clamp(30px,3.4vw,48px)/1.1 Anton,sans-serif;text-transform:uppercase;color:#e8201c}
+a.kepenk{display:block;text-decoration:none}
 .icerik .buyuk-alt{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(26px,3vw,40px);line-height:1.2;color:var(--yumusak);max-width:20ch;text-transform:uppercase}
 .raf9{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:14px}
 .raf9 a{position:relative;min-height:0;background:radial-gradient(ellipse at 50% 40%,#1d1d22 0%,#111114 75%);border:1px solid var(--line);display:grid;place-items:center;text-decoration:none;overflow:hidden;transition:border-color .2s}
@@ -284,9 +286,9 @@ nav .sepet i{position:absolute;right:0;top:0;min-width:19px;height:19px;border-r
         <a class="hap" href="index.html">Halalar tüneline gir</a>
       </div>
     </article>
-    <article class="dukkan kapali" data-ad="Sıradaki vitrin" aria-label="Sıradaki vitrin">
-      <div class="kepenk"><div class="levha">Kepenk yakında açılıyor</div></div>
-      <div class="icerik"><div><p class="alt buyuk-alt">Yeni dükkânlar sokağa katıldıkça burada, Halalar'ın yanında yerini alacak.</p></div></div>
+    <article class="dukkan kapali" id="d2" data-ad="Yeni Dükkân" aria-label="Yeni dükkân">
+      <a class="kepenk" href="https://tolgaarpa.github.io/halalar-web/dukkan.html"><div class="levha" id="d2Levha">Raflar dolduruluyor</div></a>
+      <div class="icerik" id="d2Icerik"><div><p class="alt buyuk-alt" id="d2Slogan"></p><p class="d2kat" id="d2Kat"></p></div><a class="hap" href="https://tolgaarpa.github.io/halalar-web/dukkan.html" id="d2Gir">Dükkâna gir</a></div>
     </article>
   </div>
 </div></section>
@@ -361,6 +363,7 @@ nav .sepet i{position:absolute;right:0;top:0;min-width:19px;height:19px;border-r
 <script src="urunler.js"></script>
 <script src="fiyatlar.js"></script>
 <script src="kategoriler.js"></script>
+<script src="dukkan2.js"></script>
 <script>
 const KEY='halalar-app-v1';   // telefon uygulamasıyla aynı kayıt (aynı alan adı)
 let D={begeni:[],islem:[]};
@@ -402,6 +405,13 @@ addEventListener('scroll',()=>{if(bekle&&scrollY<innerHeight*1.2){bekle=false;so
 const DOKUZ=['ig/ig_fender','h/fisher','3464','ig/ig_maske','h/daktilo','ig/ig_hoparlor','ek/3482_papagan','3490','h/actionman'].filter(U).slice(0,9);
 document.getElementById('raf9').innerHTML=DOKUZ.map(id=>`<a href="index.html#u=${encodeURIComponent(id)}"><img src="${res(id)}" alt="${esc(U(id)[1])}" loading="lazy"><b>${esc(U(id)[1])}</b></a>`).join('');
 // sokak: okla kaydırılan vitrinler
+// ikinci dükkân (veri/dukkan2.js): adı, kategorileri; ürün varsa ilk 9 ürün vitrine
+if(typeof DUKKAN2!=='undefined'){const d=DUKKAN2,a=document.getElementById('d2');a.dataset.ad=d.ad;a.setAttribute('aria-label',d.ad);
+  document.getElementById('d2Slogan').textContent=d.slogan;document.getElementById('d2Kat').innerHTML=d.kategoriler.map(esc).join('<br>');
+  
+  if(d.urunler.length){document.getElementById('d2Levha').textContent=d.ad;const r=document.createElement('div');r.className='raf9';
+    r.innerHTML=d.urunler.filter(u=>u.stok!==0).slice(0,9).map(u=>`<a href="https://tolgaarpa.github.io/halalar-web/urun.html?id=${encodeURIComponent('d2:'+u.id)}"><img src="${esc(u.gorsel)}" alt="${esc(u.ad)}" loading="lazy" referrerpolicy="no-referrer"><b>${esc(u.ad)}</b></a>`).join('');
+    const ic=document.getElementById('d2Icerik');ic.replaceChild(r,ic.firstElementChild);ic.style.contain='size'}}
 const sokak=document.getElementById('sokak'),vit=[...sokak.children],geri=document.getElementById('geri'),ileri=document.getElementById('ileri');
 const kacinci=()=>Math.round(sokak.scrollLeft/(sokak.clientWidth+32));
 function oklar(){const k=kacinci();document.getElementById('vAd').textContent=vit[Math.min(k,vit.length-1)].dataset.ad;geri.disabled=k<=0;ileri.disabled=k>=vit.length-1;document.getElementById('sira').textContent=(k+1)+' / '+vit.length}

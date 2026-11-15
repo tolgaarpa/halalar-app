@@ -56,6 +56,7 @@ h1 small{font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.22em}
 .rozet{font:700 12px/1 "Barlow Condensed",sans-serif}
 .aks input{font:600 13px Barlow,sans-serif}
 @media(max-width:520px){header .hp-logo{font-size:19px}h1{font-size:21px}h1 small{display:none}}
+.d2r{width:84px;height:84px;flex:none;display:grid;place-items:center;text-align:center;font:400 13px/1.1 Anton,sans-serif;color:#e8201c;border:1px solid #3a3a42;aspect-ratio:1}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 </head>
@@ -98,8 +99,8 @@ function ciz(){
   const l=veri.filter(t=>filtre==='hepsi'||t.durum===filtre);
   if(!l.length){el.innerHTML=`<div class="bos">${filtre==='Beklemede'?'Bekleyen talep yok.':'Henüz talep yok.'}</div>`;return}
   el.innerHTML=l.map(t=>{const liste=FIYAT[t.urun]; const z=t.zaman&&t.zaman.toDate?t.zaman.toDate().toLocaleString('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'';
-    return `<div class="talep" style="--c:${RENK[t.durum]||'var(--muted)'}"><img src="img/${esc(t.urun)}.webp" alt="">
-    <div><div class="ust"><h3>${esc(t.urunAd)}</h3><span class="rozet">${t.tur==='teklif'?'Teklif':'Satın alma'} · ${esc(t.durum)}</span></div>
+    return `<div class="talep" style="--c:${RENK[t.durum]||'var(--muted)'}">${String(t.urun).startsWith('d2:')?'<div class="d2r">YENİ<br>DÜKKÂN</div>':`<img src="img/${esc(t.urun)}.webp" alt="">`}
+    <div><div class="ust"><h3>${esc(t.urunAd)}</h3><span class="rozet">${t.satici==='dukkan2'?'Yeni dükkân · ':''}${t.tur==='teklif'?'Teklif':'Satın alma'} · ${esc(t.durum)}</span></div>
     <div class="satir"><span>${t.tur==='teklif'?'Teklif':'Tutar'}: <b>${TL(t.tutar)}</b></span>${liste?`<span>Liste: ${TL(liste)} (örnek)</span>`:''}<span class="zaman">${z}</span></div>
     <div class="kisi"><span>${esc(t.ad)}</span><a href="tel:${esc(t.tel)}">${esc(t.tel)}</a><button class="btn" data-kopya="${esc(t.tel)}">Numarayı kopyala</button></div>
     ${t.yanit?`<div class="yanit">${esc(t.yanit)}</div>`:''}
