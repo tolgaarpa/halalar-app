@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — kendi satışımız (yönlendirme değil)
+Tolga: 'illa yönlendirme mi, satışı ben yapsam; yönlendirmek süreklilik sağlamaz'. Açıklandı: kendi satışı = tedarikçi (yurt içi XML dropship) + ödeme (iyzico/PayTR) + şirket/e-fatura + mesafeli satış belgeleri. Ara çözüm: mevcut talep akışıyla siparişi al, telefonla/havaleyle kapat. Tolga'dan şirket durumu bekleniyor.
+
 ## 15.11 Taş Fener — 'Dijital dükkân', tünel başlığı, gelir ortaklığı araştırması
 'Dijital dükkânlar sokağı' -> 'Dijital dükkân' (web hit, hit-deneme, app hit). Tünel/deste başlığında Hit Pazarı logosu büyük, Halalar kırmızı Anton büyük (web+app index; telefonda iki satır). vintage dalında commit. Yeni dükkân (gelir ortaklığı/dropshipping): kısa araştırma — Amazon.com.tr Gelir Ortaklığı var, oranlar resmi kaynaktan doğrulanamadı (blog: %1-4); Trendyol influencer programı 10 bin Instagram takipçisi istiyor; Hepsiburada/eBay/Etsy Türkiye için doğrulanamadı. Dropshipping ödeme/fatura/iade/şirket ister; öneri gelir ortaklığı. Tolga'dan dükkân adı ve program seçimi bekleniyor; hesap açma Tolga'nın.
 
