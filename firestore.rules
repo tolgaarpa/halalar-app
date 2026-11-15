@@ -25,5 +25,15 @@ service cloud.firestore {
       allow get: if true;
       allow list, write: if yonetici();
     }
+    // Üye hesabı: kişi yalnız kendi belgesini okur/yazar (beğeniler, teklif listesi, iletişim bilgisi)
+    match /uyeler/{uid} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+                    && request.resource.data.keys().hasOnly(['begeni','islem','kisi','guncel'])
+                    && request.resource.data.begeni is list && request.resource.data.begeni.size() <= 500
+                    && request.resource.data.islem is list && request.resource.data.islem.size() <= 200
+                    && request.resource.data.kisi is map
+                    && request.resource.data.guncel == request.time;
+    }
   }
 }
