@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — üye kartı dengesi
+Tolga: 'üye giriş kartının orası dengesiz'. vintage hit.html: başlık+açıklama sol sütunda tek blok, bilet sağda, dikeyde ortalı (masaüstü). Chrome'da giriş hâlâ olmuyor; ekrandaki hata kodu istendi.
+
 ## 15.11 Taş Fener — giriş düzeltmesi YAYINDA
 Tolga canlıda 'Giriş olmadı, tekrar dene' gördü, 'yayınla'. Firebase tarafı sağlam (Google açık, tolgaarpa.github.io izinli). Olası sebep: uygulama içi tarayıcı (WhatsApp/Instagram) ya da engellenen pencere. Canlı main üstüne ayrı girisfix dalıyla (worktree) yalnız giriş yaması push edildi: uygulama içi tarayıcı uyarısı + hata kodu ekranda (web hit, app hit, panel). Fable haftalık limite takıldı (11:00'de açılır), vintage 4. tur yarım.
 
