@@ -11,6 +11,7 @@ DEGIS = [
     ('src="veri/', 'src="'),                                   # veri dosyaları app kökünde
     ('kaynak/web/', 'img/'),                                   # ürün görselleri
     ('kaynak/vitrin/', 'vitrin/'),                             # dükkân vitrin fotoğrafları
+    ('kaynak/referans/', 'referans/'),                         # giriş kolajı
     ('href="urun.html?id=${encodeURIComponent(id)}"', 'href="index.html#u=${encodeURIComponent(id)}"'),  # ürün: uygulamada kart olarak açılır
     ('<a href="https://tolgaarpa.github.io/halalar-app/">Telefon uygulaması</a>', '<a href="https://tolgaarpa.github.io/halalar-web/">Web sitesi</a>'),
 ]
@@ -23,4 +24,9 @@ open(os.path.join(APP, 'hit.html'), 'w', encoding='utf-8').write(s)
 os.makedirs(os.path.join(APP, 'vitrin'), exist_ok=True)
 for f in os.listdir(os.path.join(WEB, 'kaynak', 'vitrin')):
     shutil.copy2(os.path.join(WEB, 'kaynak', 'vitrin', f), os.path.join(APP, 'vitrin', f))
+# giriş kolajı: yalnız sayfanın kullandığı webp'ler (büyük kaynak PNG taşınmaz)
+os.makedirs(os.path.join(APP, 'referans'), exist_ok=True)
+for f in os.listdir(os.path.join(WEB, 'kaynak', 'referans')):
+    if f.endswith('.webp'):
+        shutil.copy2(os.path.join(WEB, 'kaynak', 'referans', f), os.path.join(APP, 'referans', f))
 print('hit.html eşitlendi;', len(os.listdir(os.path.join(APP, 'vitrin'))), 'vitrin fotoğrafı')

@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — vintage 4. tur bitirildi
+Tolga: 'kaydır, seç, teklif yap, satın al; Fable'ın işini sen tamamla'. Başlık 'Alışık olduğun gibi: kaydır, seç, teklif yap, satın al.', 'Teklif yap' etiketi; canlı giriş yaması vintage hit/panel'e taşındı; uye.js + firebase-auth hit/urun/app index'e bağlandı; app hit.html eşitlendi (referans/ klasörü). 7 sayfa ölçüldü, app kaydırma ve web ürün sayfası gözle bakıldı.
+
 ## 15.11 Taş Fener — üye kartı dengesi
 Tolga: 'üye giriş kartının orası dengesiz'. vintage hit.html: başlık+açıklama sol sütunda tek blok, bilet sağda, dikeyde ortalı (masaüstü). Chrome'da giriş hâlâ olmuyor; ekrandaki hata kodu istendi.
 

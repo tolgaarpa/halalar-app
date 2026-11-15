@@ -5,27 +5,28 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Halalar Panel</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:dark;--bg:#0b0b0d;--ink:#f2efe9;--muted:#8a867f;--line:#25252a;--card:#131316;
-  --bekle:#f2c14e;--kabul:#7fd69a;--ret:#ff6b5e;--karsi:#c9a7ff;--satildi:#8fb8ff}
+  --bekle:#ffd21f;--kabul:#7fd69a;--ret:#ff5a4f;--karsi:#8b9bff;--satildi:#cfcac1}
 *{box-sizing:border-box;margin:0;padding:0}
 [hidden]{display:none!important}
-body{background:var(--bg);color:var(--ink);font:400 14px "Space Grotesk",system-ui,sans-serif;min-height:100vh}
+body{background:var(--bg);color:var(--ink);font:400 14px Barlow,system-ui,sans-serif;min-height:100vh}
 header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-h1{font-family:Fraunces,serif;font-weight:400;font-size:24px;letter-spacing:-.02em}
-h1 small{font-family:"Space Grotesk";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-left:8px}
+h1{font-family:Anton,sans-serif;text-transform:uppercase;font-weight:400;font-size:24px;letter-spacing:-.02em}
+h1 small{font-family:Barlow;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-left:8px}
 .filtre{display:flex;gap:6px;flex-wrap:wrap}
-.filtre button,.btn{background:#18181c;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 12px;font:500 12px "Space Grotesk";cursor:pointer}
+.filtre button,.btn{background:#18181c;border:1px solid var(--line);color:var(--ink);border-radius:3px;padding:7px 12px;font:500 12px Barlow;cursor:pointer}
 .filtre button.on{background:var(--ink);color:#111}
 main{max-width:900px;margin:0 auto;padding:16px}
 .giris{max-width:420px;margin:12vh auto;text-align:center;display:grid;gap:14px;padding:0 16px}
 .giris p{color:var(--muted);line-height:1.5}
 .giris .btn{padding:13px 22px;font-size:14px;justify-self:center}
-.talep{display:grid;grid-template-columns:84px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c,var(--bekle));border-radius:14px;padding:14px;margin-bottom:12px}
-.talep img{width:84px;height:84px;object-fit:contain;background:#1b1b20;border-radius:10px;padding:6px}
+.talep{display:grid;grid-template-columns:84px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c,var(--bekle));border-radius:3px;padding:14px;margin-bottom:12px}
+.talep img{width:84px;height:84px;object-fit:contain;background:#1b1b20;border-radius:3px;padding:6px}
 .ust{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
-.ust h3{font-family:Fraunces,serif;font-weight:400;font-size:19px}
+.ust h3{font-family:Anton,sans-serif;text-transform:uppercase;font-weight:400;font-size:19px}
 .rozet{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--c)}
 .satir{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px;color:#c9c5bd;font-variant-numeric:tabular-nums}
 .satir b{color:var(--ink);font-weight:600}
@@ -34,22 +35,32 @@ main{max-width:900px;margin:0 auto;padding:16px}
 .yanit{margin-top:6px;color:var(--karsi);font-size:13px}
 .aks{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;align-items:center}
 .aks .k{border-color:var(--kabul);color:var(--kabul)}.aks .r{border-color:var(--ret);color:var(--ret)}.aks .s{border-color:var(--satildi);color:var(--satildi)}
-.aks input{width:110px;background:#0d0d10;border:1px solid var(--line);border-radius:999px;color:var(--ink);padding:7px 12px;font:500 12px "Space Grotesk"}
+.aks input{width:110px;background:#0d0d10;border:1px solid var(--line);border-radius:3px;color:var(--ink);padding:7px 12px;font:500 12px Barlow}
 .bos{color:var(--muted);text-align:center;padding:60px 0}
 .zaman{color:var(--muted);font-size:12px}
 @media (max-width:520px){.talep{grid-template-columns:60px 1fr}.talep img{width:60px;height:60px}}
 
-/* Hit Pazarı ikonu: minik neon tabela (her sayfanın sol üstünde) */
-.hpi-sol{display:flex;align-items:center;gap:12px}
-.hpi{position:relative;display:inline-grid;place-items:center;width:48px;height:34px;flex:none;text-decoration:none;pointer-events:auto;background:#0b0b0d;border-radius:9px}
-.hpi svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 2px #ff2d55) drop-shadow(0 0 6px #ff2d5588)}
-.hpi svg rect,.hpi svg path{fill:none;stroke:#ff6b85;stroke-width:1.6;stroke-linecap:round}
-.hpi b{position:relative;font:300 18px/1 Fraunces,Georgia,serif;letter-spacing:-.03em;color:#fff1ea;text-shadow:0 0 1px #fff,0 0 5px #ff5a1f,0 0 12px #ff5a1f}
+/* Hit Pazarı logosu: kırmızı çift eğik çizgi + HİT PAZARI (her sayfanın sol üstünde) */
+html{font-synthesis:none}
+.hpi-sol{display:flex;align-items:center;gap:12px;min-width:0}
+.hp-logo{display:inline-flex;align-items:center;gap:.36em;flex:none;text-decoration:none;pointer-events:auto;color:#f2efe9;font:400 22px/1 Anton,"Arial Narrow",Impact,sans-serif;letter-spacing:.005em;white-space:nowrap;text-shadow:none}
+.hp-logo .hp-c{color:#e8201c;font-size:1.1em;letter-spacing:-.04em;transform:skewX(-14deg)}
+/* vintage dili */
+body{font-size:15px}
+h1{font-size:26px;line-height:1.1;letter-spacing:.01em}
+h1 small{font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.22em}
+.giris h1{font-size:44px;color:#e8201c}
+.filtre button,.btn{font:700 14px/1 "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:9px 13px;border-color:#3a3a42}
+.giris .btn{background:#1b2fa0;border-color:#1b2fa0;color:#fff;font:400 18px/1 Anton,sans-serif;letter-spacing:.05em;padding:15px 26px 14px}
+.ust h3{font-size:21px;line-height:1.15}
+.rozet{font:700 12px/1 "Barlow Condensed",sans-serif}
+.aks input{font:600 13px Barlow,sans-serif}
+@media(max-width:520px){header .hp-logo{font-size:19px}h1{font-size:21px}h1 small{display:none}}
 </style>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230b0b0d%27/%3E%3Crect x=%277%27 y=%2714%27 width=%2750%27 height=%2736%27 rx=%279%27 fill=%27none%27 stroke=%27%23ff6b85%27 stroke-width=%273%27/%3E%3Ctext x=%2732%27 y=%2741%27 font-family=%27Georgia,serif%27 font-size=%2722%27 text-anchor=%27middle%27 fill=%27%23fff1ea%27%3EHit%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 </head>
 <body>
-<header><div class="hpi-sol"><a class="hpi" href="hit.html" aria-label="Hit Pazarı"><svg viewBox="0 0 48 34" aria-hidden="true"><rect x="1.5" y="1.5" width="45" height="31" rx="7"/><path d="M6 7.5c-1.6 0-2.2 1.6-1.4 2.4.7.6 1.8.2 1.5-.7"/><path d="M42 7.5c1.6 0 2.2 1.6 1.4 2.4-.7.6-1.8.2-1.5-.7"/><path d="M6 26.5c-1.6 0-2.2-1.6-1.4-2.4.7-.6 1.8-.2 1.5.7"/><path d="M42 26.5c1.6 0 2.2-1.6 1.4-2.4-.7-.6-1.8-.2-1.5.7"/></svg><b>Hit</b></a><h1>Halalar <small>Dükkân paneli</small></h1></div>
+<header><div class="hpi-sol"><a class="hp-logo" href="hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><h1>Halalar <small>Dükkân paneli</small></h1></div>
   <div class="filtre" id="filtre" hidden>
     <button data-f="Beklemede" class="on">Bekleyen</button><button data-f="hepsi">Tümü</button><button id="cikis">Çıkış</button>
   </div></header>
@@ -72,7 +83,7 @@ const TL=n=>(n||0).toLocaleString('tr-TR')+' ₺';
 const RENK={'Beklemede':'var(--bekle)','Kabul edildi':'var(--kabul)','Reddedildi':'var(--ret)','Karşı teklif':'var(--karsi)','Satıldı':'var(--satildi)'};
 let filtre='Beklemede', veri=[], dinle=null;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-document.getElementById('gir').onclick=()=>auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e=>document.getElementById('ghata').textContent='Giriş olmadı: '+e.message);
+document.getElementById('gir').onclick=()=>{if(/FBAN|FBAV|Instagram|WhatsApp|Line\/|; wv\)|GSA\//.test(navigator.userAgent)){document.getElementById('ghata').textContent='Uygulama içi tarayıcıda Google girişi çalışmaz; Safari/Chrome ile aç.';return}auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e=>{if(e.code!=='auth/popup-closed-by-user')document.getElementById('ghata').textContent='Giriş olmadı ('+(e.code||e.message)+')'})};
 document.getElementById('cikis').onclick=()=>auth.signOut();
 document.querySelectorAll('#filtre [data-f]').forEach(b=>b.onclick=()=>{filtre=b.dataset.f;document.querySelectorAll('#filtre [data-f]').forEach(x=>x.classList.toggle('on',x===b));ciz()});
 auth.onAuthStateChanged(u=>{
