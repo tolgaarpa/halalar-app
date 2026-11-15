@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — Hepsibayi ve BEZOS
+Tolga iki aday getirdi. Aramada ikisi için de bağımsız yorum/şikâyet bulunamadı. Hepsibayi: Hepsiburada ile bağı doğrulanmadı (ad benzerliği). BEZOS: App Store'da 'sıfır maliyetle iş kur' diye tanıtılan dropshipping uygulaması; bezos.ai başka (yabancı lojistik) firma. Öneri: aynı doğrulama adımları (ünvan/MERSİS, fatura, kargo, iade, ücret, deneme siparişi).
+
 ## 15.11 Taş Fener — tedarikçi kısa listesi (giyim, hediyelik, ev dekorasyon)
 Adaylar: Turuncix (giyim+aksesuar+ev-yaşam, 2022'den beri XML, Ticimax iş birliği sayfası var), YY İthalat (hediyelik; SES İthalat'ın kurduğu firma, Ticimax ile çalışıyor), Ulu İthalat (XML bayilik + dropshipping sayfası). Giyim ek: Tozlu, Modasena, Sateen, Vipbutik, Lafaba, Simisso (listeler). Ev: EWS. Şikâyet sitelerinde üç ana aday için kayıt bulunamadı (ne iyi ne kötü). Bağımsız doğrulama yok; sonraki adım: firma sitelerinden ünvan/MERSİS/bayilik koşulu, örnek XML, Tolga'nın görüşmesi + deneme siparişi.
 
