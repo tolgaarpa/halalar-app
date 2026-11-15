@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — yeni mod reddedildi
+Tolga: 'bu çok kötü, bekle, neye benzediğini ben vereceğim.' Referans bekleniyor; yerel tasarım yayınlanmayacak.
+
 ## 15.11 Taş Fener — Hit Pazarı yeni tasarım modu (yerel)
 Tolga kendi yazdığı tasarım anlayışını yapıştırdı ('dijital mekân; tipografi tasarımın kendisi; giriş mekânın parçası; bilgi dev 01/02/03; kart yığını, ikon, standart buton, dekoratif neon yok'). halalar-web/hit.html yeniden kuruldu: kapı (neon Hit) korundu, içerisi siyah + beyaz + tek turuncu nokta. Vitrin dev ad + sayaç, Gişe (dev sıra numarası + füme cam + 'Sıranı al'), sürüklenen kart sahnesi, dev numaralı açılır bilgiler. Telefonda iki çakışma bulundu ve düzeldi (cam numarayı fazla örtüyordu; Geç/Beğen kartın altına kaydı). app hit.html eşitlendi. Yerel, yayın bekliyor.
 
