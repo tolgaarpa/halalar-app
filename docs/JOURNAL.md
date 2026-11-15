@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — web teklif + menü düzeltmesi yayında
+Tolga "yayınla" (web ve telefon): iki depo push edildi; web urun.html (Teklif ver/Satın al), web ve app hit.html (nav.dolu menü zemini) canlıda doğrulandı.
+
 ## 15.11 Taş Fener — gerçek teklif panelde
 Tolga canlıdan gerçek bir teklif gönderdi, panel.html'de (Google girişi) göründüğünü doğruladı: talep akışı uçtan uca çalışıyor. Web ürün sayfası teklif/satın alma + menü çubuğu düzeltmesi hâlâ yerel, yayın bekliyor.
 
