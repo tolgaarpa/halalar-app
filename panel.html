@@ -72,7 +72,7 @@ const TL=n=>(n||0).toLocaleString('tr-TR')+' ₺';
 const RENK={'Beklemede':'var(--bekle)','Kabul edildi':'var(--kabul)','Reddedildi':'var(--ret)','Karşı teklif':'var(--karsi)','Satıldı':'var(--satildi)'};
 let filtre='Beklemede', veri=[], dinle=null;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-document.getElementById('gir').onclick=()=>auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e=>document.getElementById('ghata').textContent='Giriş olmadı: '+e.message);
+document.getElementById('gir').onclick=()=>{if(/FBAN|FBAV|Instagram|WhatsApp|Line\/|; wv\)|GSA\//.test(navigator.userAgent)){document.getElementById('ghata').textContent='Uygulama içi tarayıcıda Google girişi çalışmaz; Safari/Chrome ile aç.';return}auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e=>{if(e.code!=='auth/popup-closed-by-user')document.getElementById('ghata').textContent='Giriş olmadı ('+(e.code||e.message)+')'})};
 document.getElementById('cikis').onclick=()=>auth.signOut();
 document.querySelectorAll('#filtre [data-f]').forEach(b=>b.onclick=()=>{filtre=b.dataset.f;document.querySelectorAll('#filtre [data-f]').forEach(x=>x.classList.toggle('on',x===b));ciz()});
 auth.onAuthStateChanged(u=>{

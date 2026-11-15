@@ -389,10 +389,14 @@ document.getElementById('kaydet').onclick=()=>{
 document.getElementById('googleGir').onclick=async e=>{
   if(!auth){document.getElementById('ghata').textContent='Bağlantı kurulamadı, internetini kontrol et.';return}
   const b=e.currentTarget;b.disabled=true;document.getElementById('ghata').textContent='';
-  const p=new firebase.auth.GoogleAuthProvider();
+  // WhatsApp/Instagram gibi uygulama içi tarayıcılarda Google girişe izin vermez
+  if(/FBAN|FBAV|Instagram|WhatsApp|Line\/|; wv\)|GSA\//.test(navigator.userAgent)){document.getElementById('ghata').textContent='Bu sayfa bir uygulamanın içinde açıldı; Google burada girişe izin vermiyor. Sağ üstteki menüden "Tarayıcıda aç" (Safari/Chrome) deyip tekrar dene.';b.disabled=false;return}
+  const p=new firebase.auth.GoogleAuthProvider();p.setCustomParameters({prompt:'select_account'});
   try{await auth.signInWithPopup(p)}
-  catch(err){if(err.code==='auth/popup-blocked'){try{await auth.signInWithRedirect(p);return}catch(e2){err=e2}}
-    if(err.code!=='auth/popup-closed-by-user'&&err.code!=='auth/cancelled-popup-request')document.getElementById('ghata').textContent='Giriş olmadı, tekrar dene.';console.warn(err)}
+  catch(err){console.warn(err);
+    const k=err.code||'';
+    if(k!=='auth/popup-closed-by-user'&&k!=='auth/cancelled-popup-request')
+      document.getElementById('ghata').textContent=k==='auth/popup-blocked'?'Tarayıcı giriş penceresini engelledi. Açılır pencerelere izin verip tekrar dene.':k==='auth/network-request-failed'?'İnternet bağlantısı yok gibi, tekrar dene.':'Giriş olmadı, tekrar dene. (Hata kodu: '+(k||err.message)+')'}
   b.disabled=false};
 document.getElementById('cikis').onclick=()=>auth&&auth.signOut();
 function goster(u){
