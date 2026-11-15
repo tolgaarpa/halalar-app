@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — 'Dijital dükkân', tünel başlığı, gelir ortaklığı araştırması
+'Dijital dükkânlar sokağı' -> 'Dijital dükkân' (web hit, hit-deneme, app hit). Tünel/deste başlığında Hit Pazarı logosu büyük, Halalar kırmızı Anton büyük (web+app index; telefonda iki satır). vintage dalında commit. Yeni dükkân (gelir ortaklığı/dropshipping): kısa araştırma — Amazon.com.tr Gelir Ortaklığı var, oranlar resmi kaynaktan doğrulanamadı (blog: %1-4); Trendyol influencer programı 10 bin Instagram takipçisi istiyor; Hepsiburada/eBay/Etsy Türkiye için doğrulanamadı. Dropshipping ödeme/fatura/iade/şirket ister; öneri gelir ortaklığı. Tolga'dan dükkân adı ve program seçimi bekleniyor; hesap açma Tolga'nın.
+
 ## 15.11 Taş Fener — vintage 4. tur bitirildi
 Tolga: 'kaydır, seç, teklif yap, satın al; Fable'ın işini sen tamamla'. Başlık 'Alışık olduğun gibi: kaydır, seç, teklif yap, satın al.', 'Teklif yap' etiketi; canlı giriş yaması vintage hit/panel'e taşındı; uye.js + firebase-auth hit/urun/app index'e bağlandı; app hit.html eşitlendi (referans/ klasörü). 7 sayfa ölçüldü, app kaydırma ve web ürün sayfası gözle bakıldı.
 
