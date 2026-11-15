@@ -249,7 +249,7 @@ html.ev,html.ev body{overflow:hidden;height:100%}
 .kapi.dag .kapi-ic,.kapi.dag .kisayol,.kapi.dag .sahne{transform:scale(4);transition:transform .6s cubic-bezier(.7,0,.84,0)}
 .kapi.dag .kisayol{transform:translateY(40px);transition:transform .4s ease-in,opacity .25s linear}
 #pazaraGir{cursor:pointer}
-#pazaraGir svg{animation:asagi 1.4s ease-in-out infinite}
+.gir-alt{display:block;margin-top:10px;font:700 12px/1.3 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#cfcac1}
 @keyframes asagi{0%,100%{transform:translateY(-2px)}50%{transform:translateY(5px)}}
 /* logo altında açılan menü */
 nav .marka{cursor:pointer}
@@ -279,7 +279,8 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
   .sol h1{font-size:min(15vw,84px);margin-bottom:4px;transform:rotate(-4deg) skewX(-5deg) scaleY(1.08)}
   .sol .altb{font-size:11px;letter-spacing:.32em}
   .sol p{display:none}
-  .gir{position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:6;margin:0;justify-content:center;font-size:min(6.6vw,28px);padding:14px 16px}
+  .gir{position:fixed;left:16px;right:16px;bottom:calc(40px + env(safe-area-inset-bottom));z-index:6;margin:0;justify-content:center;font-size:min(6.6vw,28px);padding:14px 16px}
+  .gir-alt{position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:6;text-align:center;margin:0;font-size:10.5px;letter-spacing:.12em}
   .kolaj{width:var(--kw);margin:10px auto 0}
   .soz{font-size:min(6.4vw,30px);margin:6px 0 0;align-self:center;transform:rotate(-4deg) skewX(-8deg)}
   .soz span{display:inline;margin-right:.25em}
@@ -288,6 +289,7 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
 @view-transition{navigation:auto}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e3171b%27/%3E%3C/svg%3E">
+<script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/halalar-web/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
 </head>
 <body>
 <svg class="svg-gizli" aria-hidden="true" focusable="false"><defs>
@@ -314,7 +316,7 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
       <h1 class="dv"><span>HİT</span><span>PAZARI</span></h1>
       <span class="altb">Dijital Dükkân</span>
       <p>Tünelde gez; beğen, teklif ver, pazarlık et.</p>
-      <button class="gir dv" id="pazaraGir" type="button" aria-label="Pazara gir">KAYDIR, PAZARA GİR <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" aria-hidden="true"><path d="M12 2v19M4 13l8 8 8-8"/></svg></button>
+      <button class="gir dv" id="pazaraGir" type="button" aria-label="Kaydır, seç: beğen, teklif ver, satın al">KAYDIR, SEÇ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" aria-hidden="true"><path d="M2 12h19M13 4l8 8-8 8"/></svg></button><span class="gir-alt">Beğen · teklif ver · satın al — aşağı kaydır, pazara gir</span>
     </div>
     <div class="kolaj">
       <img src="referans/kolaj-seffaf.webp" alt="" width="747" height="785">
@@ -549,8 +551,10 @@ function pazaraGir(){if(girildi||sekmeAcik())return;girildi=true;
   // kamera kolajın ortasına doğru dalar (tek katman, GPU ile), ekran kararınca pazar tüneli açılır
   const az=matchMedia('(prefers-reduced-motion: reduce)').matches,k=kapi.querySelector('.kolaj img'),r=k?k.getBoundingClientRect():null;
   if(r){const ic=kapi.querySelector('.kapi-ic').getBoundingClientRect();kapi.querySelector('.kapi-ic').style.setProperty('--ox',(r.left+r.width/2-ic.left)+'px');kapi.querySelector('.kapi-ic').style.setProperty('--oy',(r.top+r.height*.42-ic.top)+'px')}
-  kapi.classList.add('dag');setTimeout(()=>location.href='https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar',az?150:520)}
-document.getElementById('pazaraGir').onclick=pazaraGir;
+  kapi.classList.add('dag');setTimeout(()=>location.href=(window.yerelCevir||(x=>x))('https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar'),az?150:520)}
+// mavi düğme: Tinder gibi kart destesi (Geç / Teklif / Satın al / Beğen); aşağı kaydırmak pazar tüneline girer
+function desteAdres(id){const y={'8766':'8769','8770':'8771'}[location.port];const kok=y?`${location.protocol}//${location.hostname}:${y}/`:'https://tolgaarpa.github.io/halalar-app/';return kok+'index.html'+(id?'#u='+encodeURIComponent(id):'')}
+document.getElementById('pazaraGir').onclick=()=>{const L=typeof URUNLER!=='undefined'?URUNLER:[];const u=L[Math.floor(Math.random()*L.length)];location.href=desteAdres(u&&u[0])};
 // tünel görsellerini boşta önceden indir: pazara girince ekran boş/siyah kalmasın
 (window.requestIdleCallback||(f=>setTimeout(f,1200)))(()=>{if(typeof URUNLER==='undefined')return;let i=0;(function sira(){for(let n=0;n<8&&i<URUNLER.length;n++,i++){const im=new Image();im.decoding='async';im.src='img/'+URUNLER[i][0]+'.webp'}if(i<URUNLER.length)setTimeout(sira,120)})()});
 addEventListener('wheel',e=>{if(!sekmeAcik()&&e.deltaY>8)pazaraGir()},{passive:true});

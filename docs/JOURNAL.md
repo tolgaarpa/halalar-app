@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — eski Hit sayfaları, ana sayfada KAYDIR SEÇ
+Tolga: 'hâlâ eski Hit'in olduğu sayfalar çıkıyor; kaydır-geç göremiyorum, ana sayfadaki mavi yere koy'. Sebep: sayfalardaki tolgaarpa.github.io bağlantıları (aydınlatma metni, dükkân girişi, uygulama, app'ten pazar) canlıdaki eski sürüme gidiyordu. Çözüm: 8 sayfaya küçük betik; yerel portlarda (8766/8769/8770/8771) canlı adresleri yerel kopyaya çeviriyor, canlıda hiçbir şey yapmıyor. Ana sayfa mavi düğme 'KAYDIR, SEÇ' -> rastgele üründen kart destesi; altında 'beğen · teklif ver · satın al — aşağı kaydır, pazara gir'. 390x844'te denendi: canlı bağlantı kalmadı, düğme desteyi açtı.
+
 ## 16.11 Taş Fener — tünel nesne boyu + KAYDIR, SEÇ
 Tolga: 'obje boyutları hâlâ büyük, eskiden iyiydi; Tinder gibi ürün seçtiğim yeri göremedim'. Web tüneline uygulamadaki ölçek (SC=max(.42,min(1,VW/1440*1.5))) eklendi: telefonda nesneler uygulamadaki gibi. Tünelin altına mavi 'KAYDIR, SEÇ — beğen · teklif ver · satın al' düğmesi: önündeki ürünle desteyi açar (kategori modunda gizli). ARA telefonda 16px (genel kural sonra geldiği için büyük kalıyordu). 390x844'te: taşma yok, düğmeye basınca deste açıldı (Fön Makinesi, Geç/Teklif/Satın al/Beğen).
 
