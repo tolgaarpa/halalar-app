@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — Hepsibayi + BEZOS ile başlama
+Tolga 'ikisiyle de başlayalım'. Siteler okundu: Hepsibayi (hepsibayi.com.tr/bayilik-basvurusu) başvuru formu şirket ünvanı, vergi dairesi, VKN, vergi levhası istiyor; ücret/kargo/iade/güncelleme sayfada yazmıyor (meta: ücretsiz, alt limit yok); şirket bilgisi sayfada yok; WhatsApp 0850 840 22 09. BEZOS (bezos.com.tr): Denizli merkezli, 0850 308 49 03, bayilik+XML+entegrasyon ücretsiz, aylık ücret yok (ayrı yıllık 20.000 TL site hizmeti var, gerek yok), şahıs şirketi yeter, 60.000+ ürün, XML 10 dk'da bir güncelleniyor, kargoyu BEZOS çıkarıyor, kategori örnekleri pet/oyuncak/kamera (giyim/hediyelik/ev yazmıyor). İkisi de şirket istiyor; başvuruyu Tolga yapacak. Teknik plan: XML bağlantısı gelince GitHub Actions ile düzenli indirip JSON'a çevirme (tarayıcı doğrudan çekemez).
+
 ## 16.11 Taş Fener — Hepsibayi ve BEZOS
 Tolga iki aday getirdi. Aramada ikisi için de bağımsız yorum/şikâyet bulunamadı. Hepsibayi: Hepsiburada ile bağı doğrulanmadı (ad benzerliği). BEZOS: App Store'da 'sıfır maliyetle iş kur' diye tanıtılan dropshipping uygulaması; bezos.ai başka (yabancı lojistik) firma. Öneri: aynı doğrulama adımları (ünvan/MERSİS, fatura, kargo, iade, ücret, deneme siparişi).
 
