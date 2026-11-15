@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — kategori tüneli çeşitlendi
+Tolga: 'ikonlar bir tık büyük; tekrar ederken aynı foto değil kategoriden başka ürün; Ara 2x; Hit Pazarı %25 büyük'. Kategori ikonları x1.25; 8 turda her kategori ilk turda ikonik görsel, sonra kendi ürünlerinden sırayla (Kitap 1, Spor 3, Sandık 5, Elektronik 6 ürünle sınırlı, tekrar eder). Web tünel ARA 14->28px, Hit Pazarı 68->85px (telefon 55); app tünel Hit Pazarı 44->55px.
+
 ## 16.11 Taş Fener — kategori tüneli = bizim tünel
 Tolga: 'bu değil, bizim tünel gibi olacak'. Halalar tünel motoru (web index.html) kategori moduna kavuştu: index.html?mod=kategori -> ürün yerine 10 kategori ikonu (veri/kategori-ikon.js), 8 tekrar, aralık 110; yakındaki görsellerin altında Anton etiket; başlıkta 'Kategoriler'; dokununca index.html?kat=... (arama o kategoriyle). PAZARA GİR buraya; kategori.html yönlendirme oldu. App hit linki web adresine.
 
