@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — gerçek teklif panelde
+Tolga canlıdan gerçek bir teklif gönderdi, panel.html'de (Google girişi) göründüğünü doğruladı: talep akışı uçtan uca çalışıyor. Web ürün sayfası teklif/satın alma + menü çubuğu düzeltmesi hâlâ yerel, yayın bekliyor.
+
 ## 15.11 Taş Fener — web ürün sayfasında teklif/satın alma
 Tolga '1 için başla' (eksik listesi 1: web 'Sor / Rezerve et' bir yere gitmiyordu). halalar-web/urun.html: fiyat (ÖRNEK) + Teklif ver / Satın al düğmeleri, satır içi form (tutar + %70/80/90 hızlı seçim; özet; ad, telefon, KVKK açık rıza), uygulamadaki gonder() ile aynı alanlar Firestore 'talepler'e (urun, urunAd, tur, tutar, ad, tel, durum Beklemede, zaman serverTimestamp, satici halalar) -> dükkân paneline düşer; ortak localStorage 'halalar-app-v1' islem'e yazılır -> Hit Pazarı Tekliflerim'de görünür. Test: veritabanı yazımı taklit edildi (canlı panele sahte talep düşmesin): doğrulama sırası doğru, alanlar kurallardaki izinli liste ile aynı, tutar sayı, kayıt ve onay kutusu doğru; 375'te yana taşma bulundu ve düzeldi (main>div min-width:0). Gerçek gönderim canlıda Tolga ile bir kez denenecek. Yerel, yayın bekliyor.
 
