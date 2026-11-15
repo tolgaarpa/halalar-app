@@ -1,3 +1,6 @@
+## 15.11 Taş Fener — vintage 2. tur hazır
+Fable (limite takılıp devam etti) 0ff4ec5: sıcak beyaz zemin, kolaj = referanstan saydam kesim, gömülü kart kırpılıp canlı Halalar kartıyla örtüldü, tek açılış hareketi. Masaüstüne baktım: referansa çok yakın, taşma yok. Kalan: Ş çengeli küçük, geniş ekranda kolaj görseli (747px) yumuşak kalabilir, telefonda kart fotoğrafı gizli.
+
 ## 15.11 Taş Fener — vintage deneme 2. tur (Fable'da)
 Tolga: 'örnekteki görkemi hissetmedim', 'fon rengi beyaz olsun'. Görkem referanstaki büyük fotoğrafik objelerden geliyor; referanstan yazısız, saydam zeminli kolaj çıkarıldı (halalar-web/kaynak/referans/kolaj-seffaf.webp; gömülü Halalar kartı canlı kartla örtülecek). Fable'a beyaz zemin + referans oranları + Ş okunurluğu + gömülü kartın örtülmesi verildi.
 
