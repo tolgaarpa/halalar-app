@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — Ara ürünleri kademeli
+Tolga: 'Ara'da ürünleri kocaman yapmışsın; kademeli küçülsün: ilk satır 4, altında 5, altında 6, önem sırasına göre'. Ara sonuçları (web+app): 60 sütunlu ızgara, ilk 4 ürün 1/4, sonraki 5 ürün 1/5, kalanlar 1/6 genişlik; yazılar da kademeli küçülüyor. Önem sırası şimdilik: kullanıcının beğendikleri önce, sonra kategori popülerliği (ürün sayısı) — bu yüzden ilk satırlar hep Mutfak & Sofra; gerçek tıklama/satış verisi gelince değişecek. İlk denemede 60 sütun arası boşluk satırı ekrandan taşırıyordu, düzeltildi; 390'da taşma yok.
+
 ## 16.11 Taş Fener — yönler fotoğrafın dört kenarında
 Tolga: 'ekranı daraltma genişletme, sadece sistemi görsünler diye; Satın al'ı en alta indirmişsin, ürün fotoğrafının 4 kenarına koyacaksın'. Deste kenar boşlukları kaldırıldı (kart eski genişliğinde), etiketler kartın üstünde yalnız fotoğraf alanının kenarlarında: Teklif ver üst-orta, Satın al fotoğrafın alt-orta (bilgi panelinin hemen üstü), Geç sol-dikey, Beğen sağ-dikey; okunurluk için hafif gölge. 390x844'te ölçüldü ve bakıldı.
 
