@@ -1,6 +1,12 @@
 ## 16.11 Sessiz Örs — tünel logosu, söz, kart YAYINDA
 Tolga 'yayınla'. halalar-web vintage:main push (75a5bde), yerel main eşitlendi; canlıda index yeni logo boyutu, hit'te kart yok doğrulandı.
 
+## 2026-11-16/17 gece — DSG 89 ürün Flow görselleri tamam (Sessiz Örs)
+- gulrecepaslan Profile 1'e eklendi (u/3); kalan 59 ürün + 10 varyant yeniden + 17 hatalı görsel orada üretildi (~200 üretim, sınıra takılmadı).
+- Kontrol: 86 ürün ref ile tek tek sayfada karşılaştırıldı; hatalar (pantolona tişört, 36b/58b siyah, 17 kot yanlış havalı) yalnız mankenli ref + 'yalnız pantolon' tarifiyle yeniden üretildi.
+- Dekupe isnet-general-use (birefnet çok yavaştı); 32'de logo şeffaflığı delik doldurma ile düzeldi. Takılı kalan 2 headless Chrome (cek.mjs) kapatıldı — Mac ısınıyordu.
+- Web commit yerel (vintage), YAYIN BEKLİYOR. App dukkan2.js güncellendi (commit), app push yok. Yedek: dsg/hit_pazari_flow/.
+
 ## 2026-11-16 gece — DSG Flow seri üretim, 1. gün (Sessiz Örs)
 - Flow fotoğraflı üretim hesap başı günlük sınırlı: tolgaarpa (u/0) ~5, ribbitradar (u/1) ~22, livestockpresslive (u/2) ~70 üretimden sonra 'Başarısız'. Bu Chrome profilinde yalnız bu 3 hesap var.
 - Bitti (3 açı): 27 ürün (39,18,61 + 01-16, 16v_3263..3269, 17). 16v/17v renk varyantlarında Flow ilk referansı (taban kot) izledi, renk yanlış → varyantlar yalnız mankenli görselle yeniden üretilecek (isler.json güncellendi).
