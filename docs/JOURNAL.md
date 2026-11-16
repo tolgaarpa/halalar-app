@@ -1,6 +1,11 @@
 ## 16.11 Sessiz Örs — tünel logosu, söz, kart YAYINDA
 Tolga 'yayınla'. halalar-web vintage:main push (75a5bde), yerel main eşitlendi; canlıda index yeni logo boyutu, hit'te kart yok doğrulandı.
 
+## 2026-11-16 akşam — DSG: Flow ile yeni ürün görselleri (Sessiz Örs)
+- Dekupe (rembg/Gemini) sweat bantlarında başarısız; Tolga: Flow'da yeniden üret. tolgaarpa (u/0) Flow'da referanslı üretim 'Başarısız' veriyor (yalnız metin çalışıyor) → ribbitradar (u/1) projesi 'Kas 16 - 18:38' ile üretildi.
+- 39 Puma, 18 kot, 61 Columbia mont: ön + yan (hayalet manken, beyaz fon, birefnet dekupe temiz) + havalı (askı/duvar). Ürün sayfası galerisi (gorseller), pazar tüneline 'tunel:true' ürünler (index.html ?mod=pazar).
+- Web commit yerel (vintage), push izin bekliyor. Araçlar: scratchpad cors.py (18744: ref servis + indirme), Flow sayfasında hazirla/al JS.
+
 ## 2026-11-16 — DSG dükkânı YAYINDA (Sessiz Örs)
 - 'Yeni Dükkân' yerine DSG: 89 kıyafet, mankenli fotoğraftan dekupe (rembg u2net_cloth_seg × birefnet). Görseller web kaynak/dsg/.
 - Fiyat yok → urun.html yalnız 'Teklif ver' (Satın al gizli). Web 4525ddc canlı.
