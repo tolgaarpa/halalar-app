@@ -373,7 +373,7 @@ function satinAlAc(id){
 function satir(id,sag){const u=U(id);return `<div class="satir"><img src="${img(id)}"><div><h3>${u[1]}</h3><div class="k">${u[2]}</div></div><div>${sag}</div></div>`}
 const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 async function durumTazele(){ if(!VT)return; let degisti=false;
-  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const d=await VT.collection('durumlar').doc(x.ref).get();if(!d.exists)return;const v=d.data();
+  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const d=await VT.collection('durumlar').doc(x.ref).get().then(d=>d.exists?d:VT.collection('talepler').doc(x.ref).get()).catch(()=>VT.collection('talepler').doc(x.ref).get());if(!d.exists)return;const v=d.data();
     if(v.durum!==x.durum||(v.yanit||'')!==(x.yanit||'')){x.durum=v.durum;x.yanit=v.yanit||'';degisti=true}}catch(e){}}));
   if(degisti){kaydet();listeler()} }
 function listeler(){

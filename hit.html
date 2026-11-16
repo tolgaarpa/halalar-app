@@ -505,7 +505,7 @@ function listeler(){
   document.getElementById('sepetN').textContent=D.begeni.length;
   const k=D.kisi||{};document.getElementById('fAd').value=k.ad||'';document.getElementById('fTel').value=k.tel||''}
 async function durumTazele(){if(!VT)return;let d=false;
-  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const s=await VT.collection('durumlar').doc(x.ref).get();if(!s.exists)return;const v=s.data();if(v.durum!==x.durum){x.durum=v.durum;d=true}}catch(e){}}));
+  await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const s=await VT.collection('durumlar').doc(x.ref).get().then(d=>d.exists?d:VT.collection('talepler').doc(x.ref).get()).catch(()=>VT.collection('talepler').doc(x.ref).get());if(!s.exists)return;const v=s.data();if(v.durum!==x.durum){x.durum=v.durum;d=true}}catch(e){}}));
   if(d){kaydetD();listeler()}}
 document.querySelectorAll('#sekme button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#sekme button').forEach(x=>x.classList.toggle('on',x===b));
