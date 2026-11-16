@@ -1,3 +1,6 @@
+## 16.11 Sessiz Örs — logo düzeltmesi YAYINDA
+Tolga 'yayınla'. halalar-web vintage:main push (8f0e0f6), yerel main eşitlendi; canlıda hit ve index yeni logo düğmesiyle doğrulandı.
+
 ## 16.11 Sessiz Örs — logo ana sayfaya gider (YEREL)
 Tolga: 'hit pazarına tıklayınca ana sayfaya gidebilmeliyim'. Sebep: logo tıklaması menüyü açıyordu (preventDefault). HİT PAZARI yazısı artık hit.html bağlantısı; menüyü yanındaki ok (hpAc) açar. hit.html + index.html; 1280 ve 375'te bağlantı engelsiz, ok menüyü açıyor. Commit var, push yok.
 
