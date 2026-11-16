@@ -101,7 +101,7 @@ function ciz(){
   if(!l.length){el.innerHTML=`<div class="bos">${filtre==='Beklemede'?'Bekleyen talep yok.':'Henüz talep yok.'}</div>`;return}
   el.innerHTML=l.map(t=>{const liste=FIYAT[t.urun]; const z=t.zaman&&t.zaman.toDate?t.zaman.toDate().toLocaleString('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'';
     return `<div class="talep" style="--c:${RENK[t.durum]||'var(--muted)'}">${String(t.urun).startsWith('d2:')?'<div class="d2r">YENİ<br>DÜKKÂN</div>':`<img src="img/${esc(t.urun)}.webp" alt="">`}
-    <div><div class="ust"><h3>${esc(t.urunAd)}</h3><span class="rozet">${t.satici==='dukkan2'?'Yeni dükkân · ':''}${t.tur==='teklif'?'Teklif':'Satın alma'} · ${esc(t.durum)}</span></div>
+    <div><div class="ust"><h3>${esc(t.urunAd)}</h3><span class="rozet">${t.satici==='dukkan2'?'DSG · ':''}${t.tur==='teklif'?'Teklif':'Satın alma'} · ${esc(t.durum)}</span></div>
     <div class="satir"><span>${t.tur==='teklif'?'Teklif':'Tutar'}: <b>${TL(t.tutar)}</b></span>${liste?`<span>Liste: ${TL(liste)} (örnek)</span>`:''}<span class="zaman">${z}</span></div>
     <div class="kisi"><span>${esc(t.ad)}</span><a href="tel:${esc(t.tel)}">${esc(t.tel)}</a><button class="btn" data-kopya="${esc(t.tel)}">Numarayı kopyala</button></div>
     ${t.yanit?`<div class="yanit">${esc(t.yanit)}</div>`:''}
