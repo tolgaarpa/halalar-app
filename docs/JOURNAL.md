@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — 'her şey karıştı, kullanımı zor'
+Tolga genel kullanımı zor buluyor. Tespit: iki site + çok giriş noktası (giriş, pazar tüneli, kategori tüneli, Halalar tüneli, uygulama tüneli, deste, Ara, sekmeler, dükkân sayfası, ürün sayfası), aynı iş için birden çok yol. Sadeleştirme önerisi Tolga'ya sunuldu (tek akış: Giriş -> Pazar tüneli -> Kart destesi; geri kalan her şey logo menüsünde). Onay bekleniyor, kod değişmedi.
+
 ## 16.11 Taş Fener — Ara ürünleri kademeli
 Tolga: 'Ara'da ürünleri kocaman yapmışsın; kademeli küçülsün: ilk satır 4, altında 5, altında 6, önem sırasına göre'. Ara sonuçları (web+app): 60 sütunlu ızgara, ilk 4 ürün 1/4, sonraki 5 ürün 1/5, kalanlar 1/6 genişlik; yazılar da kademeli küçülüyor. Önem sırası şimdilik: kullanıcının beğendikleri önce, sonra kategori popülerliği (ürün sayısı) — bu yüzden ilk satırlar hep Mutfak & Sofra; gerçek tıklama/satış verisi gelince değişecek. İlk denemede 60 sütun arası boşluk satırı ekrandan taşırıyordu, düzeltildi; 390'da taşma yok.
 
