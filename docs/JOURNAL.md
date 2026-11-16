@@ -1,3 +1,6 @@
+## 16.11 Sessiz Örs — tünel logosu, söz, öne çıkan kart (YEREL)
+Tolga: ilk istek tünel sayfasındaki logo + PAZAR yazısı içindi (ben ana sayfa başlığını küçültmüştüm). Tünelde (index.html) HİT PAZARI 85->42.5px, dükkân adı 102->51px (telefon 40->20, 28->14), dükkân adı JS ile HİT PAZARI yazısının hizasından başlıyor. Ana sayfa: 'Her şeyin bir hikâyesi var' satırları birbirine biniyordu (line-height 1.03 -> 1.24); öne çıkan dükkân kartı kaldırıldı, kolajın gömülü kart bölgesi yumuşak maskeyle siliniyor. Ders: 'logo' ve 'pazar' kelimeleri tünel başlığını anlatıyordu; hangi sayfa olduğunu sormadan varsaydım. Commit var, push yok.
+
 ## 16.11 Sessiz Örs — logo düzeltmesi YAYINDA
 Tolga 'yayınla'. halalar-web vintage:main push (8f0e0f6), yerel main eşitlendi; canlıda hit ve index yeni logo düğmesiyle doğrulandı.
 
