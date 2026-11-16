@@ -1,6 +1,11 @@
 ## 16.11 Sessiz Örs — tünel logosu, söz, kart YAYINDA
 Tolga 'yayınla'. halalar-web vintage:main push (75a5bde), yerel main eşitlendi; canlıda index yeni logo boyutu, hit'te kart yok doğrulandı.
 
+## 2026-11-16 gece — DSG Flow seri üretim, 1. gün (Sessiz Örs)
+- Flow fotoğraflı üretim hesap başı günlük sınırlı: tolgaarpa (u/0) ~5, ribbitradar (u/1) ~22, livestockpresslive (u/2) ~70 üretimden sonra 'Başarısız'. Bu Chrome profilinde yalnız bu 3 hesap var.
+- Bitti (3 açı): 27 ürün (39,18,61 + 01-16, 16v_3263..3269, 17). 16v/17v renk varyantlarında Flow ilk referansı (taban kot) izledi, renk yanlış → varyantlar yalnız mankenli görselle yeniden üretilecek (isler.json güncellendi).
+- Eksik: 17v x3 kısmi, 19'dan sonrası (~59 ürün). Görseller scratchpad/flow_out, seçim betiği sec.py, yardımcı JS ref/yard.js (eval yasak, javascript_tool ile yapıştırılır). Henüz siteye işlenmedi.
+
 ## 2026-11-16 akşam — DSG: Flow ile yeni ürün görselleri (Sessiz Örs)
 - Dekupe (rembg/Gemini) sweat bantlarında başarısız; Tolga: Flow'da yeniden üret. tolgaarpa (u/0) Flow'da referanslı üretim 'Başarısız' veriyor (yalnız metin çalışıyor) → ribbitradar (u/1) projesi 'Kas 16 - 18:38' ile üretildi.
 - 39 Puma, 18 kot, 61 Columbia mont: ön + yan (hayalet manken, beyaz fon, birefnet dekupe temiz) + havalı (askı/duvar). Ürün sayfası galerisi (gorseller), pazar tüneline 'tunel:true' ürünler (index.html ?mod=pazar).
