@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — düzen: tünel = sergileme, tek menü
+Tolga: 'tünel ürün sergileme yöntemimiz; her dükkânın kendi tüneli + dükkân seçmeden gezilen karışık genel tünel; düzenle; token az'. Yapılan (az maliyetle): tünel sayfasına (web index) giriş sayfasındakiyle aynı logo menüsü: Ana sayfa, Pazar (karışık), Halalar (tüneli), Yeni Dükkân, Kategoriler, Hesabım, Bilmen gerekenler. Giriş mavi düğmesi yeniden 'PAZARA GİR' (karışık tünel); deste tünelde ürüne dokununca ya da 'KAYDIR, SEÇ' ile. Sıradaki (onay bekliyor): yeni dükkânın kendi tüneli (ürün gelince index.html?dukkan=...), app ile web'in tek sitede birleşmesi.
+
 ## 16.11 Taş Fener — 'her şey karıştı, kullanımı zor'
 Tolga genel kullanımı zor buluyor. Tespit: iki site + çok giriş noktası (giriş, pazar tüneli, kategori tüneli, Halalar tüneli, uygulama tüneli, deste, Ara, sekmeler, dükkân sayfası, ürün sayfası), aynı iş için birden çok yol. Sadeleştirme önerisi Tolga'ya sunuldu (tek akış: Giriş -> Pazar tüneli -> Kart destesi; geri kalan her şey logo menüsünde). Onay bekleniyor, kod değişmedi.
 

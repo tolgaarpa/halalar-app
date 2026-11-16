@@ -300,12 +300,12 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
 <nav><a class="marka" href="#" id="marka" aria-label="Hit Pazarı menüsü" aria-expanded="false" aria-controls="hpMenu"><span class="cizgi" aria-hidden="true">//</span><span class="ad">HİT PAZARI</span><span class="alt">Dijital<br>Dükkân</span></a>
   <span class="sag"><a class="l" href="#dukkanlar">Dükkânlar</a><a class="l" href="#nasil">Nasıl çalışır?</a><a class="uye" href="#hesap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-6.6 8.5-6.6s7.700 2.200 8.500 6.600"/></svg><span id="ustHesap">Üye girişi</span></a><a class="sepet" href="#hesap" aria-label="Beğendiklerim"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l1.200 13H3.800z"/><path d="M8.500 10V6.500a3.500 3.500 0 0 1 7 0V10"/></svg><i id="sepetN">0</i></a></span></nav>
 <div class="hp-menu" id="hpMenu" hidden>
-  <a href="#dukkanlar"><b>Dükkânlar</b><small>Vitrinler: Halalar ve yeni dükkân</small></a>
-  <a href="https://tolgaarpa.github.io/halalar-web/index.html?mod=kategori"><b>Kategoriler</b><small>Kategori tüneline gir</small></a>
-  <a href="#hesap"><b>Üye girişi</b><small>Beğenilerin, tekliflerin, bilgilerin</small></a>
-  <a href="#nasil"><b>Nasıl çalışır?</b><small>Kaydır, seç, teklif yap, satın al</small></a>
-  <a href="#bilmen"><b>Bilmen gerekenler</b><small>Fiyat, ödeme, ürün durumu, verilerin</small></a>
-  <a href="#dukkan-ac"><b>Dükkân aç</b><small>Dükkânını sokağa aç</small></a>
+  <a href="index.html?mod=pazar"><b>Pazar</b><small>Bütün dükkânlar, karışık tünel</small></a>
+  <a href="index.html"><b>Halalar</b><small>Halalar'ın tüneli</small></a>
+  <a href="https://tolgaarpa.github.io/halalar-web/dukkan.html"><b>Yeni Dükkân</b><small>Giyim, hediyelik, ev dekorasyonu</small></a>
+  <a href="https://tolgaarpa.github.io/halalar-web/index.html?mod=kategori"><b>Kategoriler</b><small>Kategori seçerek gez</small></a>
+  <a href="#hesap"><b>Hesabım</b><small>Beğenilerim, tekliflerim, üye girişi</small></a>
+  <a href="#bilmen"><b>Bilmen gerekenler</b><small>Fiyat, ödeme, ürün durumu</small></a>
   <div class="alt-link"><a href="satis-kosullari.html">Satış koşulları</a><a href="https://tolgaarpa.github.io/halalar-app/kvkk.html">Aydınlatma metni</a><a href="https://tolgaarpa.github.io/halalar-app/panel.html">Dükkân girişi</a></div>
 </div>
 
@@ -316,7 +316,7 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
       <h1 class="dv"><span>HİT</span><span>PAZARI</span></h1>
       <span class="altb">Dijital Dükkân</span>
       <p>Tünelde gez; beğen, teklif ver, pazarlık et.</p>
-      <button class="gir dv" id="pazaraGir" type="button" aria-label="Kaydır, seç: beğen, teklif ver, satın al">KAYDIR, SEÇ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" aria-hidden="true"><path d="M2 12h19M13 4l8 8-8 8"/></svg></button><span class="gir-alt">Beğen · teklif ver · satın al — aşağı kaydır, pazara gir</span>
+      <button class="gir dv" id="pazaraGir" type="button" aria-label="Pazara gir">PAZARA GİR <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" aria-hidden="true"><path d="M2 12h19M13 4l8 8-8 8"/></svg></button><span class="gir-alt">Bütün dükkânlar tek tünelde · ürüne dokun: beğen, teklif ver, satın al</span>
     </div>
     <div class="kolaj">
       <img src="referans/kolaj-seffaf.webp" alt="" width="747" height="785">
@@ -554,7 +554,7 @@ function pazaraGir(){if(girildi||sekmeAcik())return;girildi=true;
   kapi.classList.add('dag');setTimeout(()=>location.href=(window.yerelCevir||(x=>x))('https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar'),az?150:520)}
 // mavi düğme: Tinder gibi kart destesi (Geç / Teklif / Satın al / Beğen); aşağı kaydırmak pazar tüneline girer
 function desteAdres(id){const y={'8766':'8769','8770':'8771'}[location.port];const kok=y?`${location.protocol}//${location.hostname}:${y}/`:'https://tolgaarpa.github.io/halalar-app/';return kok+'index.html'+(id?'#u='+encodeURIComponent(id):'')}
-document.getElementById('pazaraGir').onclick=()=>{const L=typeof URUNLER!=='undefined'?URUNLER:[];const u=L[Math.floor(Math.random()*L.length)];location.href=desteAdres(u&&u[0])};
+document.getElementById('pazaraGir').onclick=pazaraGir;
 // tünel görsellerini boşta önceden indir: pazara girince ekran boş/siyah kalmasın
 (window.requestIdleCallback||(f=>setTimeout(f,1200)))(()=>{if(typeof URUNLER==='undefined')return;let i=0;(function sira(){for(let n=0;n<8&&i<URUNLER.length;n++,i++){const im=new Image();im.decoding='async';im.src='img/'+URUNLER[i][0]+'.webp'}if(i<URUNLER.length)setTimeout(sira,120)})()});
 addEventListener('wheel',e=>{if(!sekmeAcik()&&e.deltaY>8)pazaraGir()},{passive:true});
