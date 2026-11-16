@@ -244,7 +244,7 @@ a.kepenk{display:block;text-decoration:none}
 
 /* ana sayfa tek ekran: aşağı kaydırınca sayfa parçalanıp pazara (tünele) girilir */
 html.ev,html.ev body{overflow:hidden;height:100%}
-.sekme:not([hidden])~* nav,nav{z-index:62}
+.katman:not([hidden])~* nav,nav{z-index:62}
 .kapi .kapi-ic,.kapi .kisayol,.kapi .sahne{transform-origin:var(--ox,50%) var(--oy,50%)}
 .kapi.dag .kapi-ic,.kapi.dag .kisayol,.kapi.dag .sahne{transform:scale(4);transition:transform .6s cubic-bezier(.7,0,.84,0)}
 .kapi.dag .kisayol{transform:translateY(40px);transition:transform .4s ease-in,opacity .25s linear}
@@ -263,14 +263,14 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
 .hp-menu .alt-link{display:flex;flex-wrap:wrap;gap:6px 16px;padding:12px 22px 10px;border-top:1px solid #222227;margin-top:6px}
 .hp-menu .alt-link a{font-size:13px;color:#9a958d;text-decoration:none}.hp-menu .alt-link a:hover{color:#f2efe9}
 /* bölümler kendi sekmelerinde */
-.sekme{position:fixed;inset:0;z-index:58;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#0b0b0d;padding-top:140px;animation:sekmeAc .35s ease-out}
+.katman{position:fixed;inset:0;z-index:58;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#0b0b0d;padding-top:140px;animation:sekmeAc .35s ease-out}
 @keyframes sekmeAc{from{transform:translateY(24px)}to{transform:none}}
-.sekme>section{display:none}.sekme>section.on{display:block}
-.sekme>footer{display:block}
-.sekme-kapat{position:fixed;top:84px;right:24px;z-index:59;width:52px;height:52px;border:1px solid #3a3a42;background:#0b0b0d;color:#f2efe9;font:300 34px/1 Barlow,sans-serif;cursor:pointer}
-.sekme-kapat:hover{border-color:#e8201c;color:#e8201c}
-@media(max-width:700px){.sekme h2{font-size:min(10vw,44px)!important;line-height:1.05;overflow-wrap:break-word}.hp-menu{top:60px;left:12px}.sekme{padding-top:120px}.sekme-kapat{top:68px;right:12px;width:44px;height:44px}}
-@media(prefers-reduced-motion:reduce){.kapi.dag .kapi-ic,.kapi.dag .sahne{transform:none;transition:opacity .2s}#pazaraGir svg{animation:none}.sekme{animation:none}}
+.katman>section{display:none}.katman>section.on{display:block}
+.katman>footer{display:block}
+.katman-kapat{position:fixed;top:84px;right:24px;z-index:59;width:52px;height:52px;border:1px solid #3a3a42;background:#0b0b0d;color:#f2efe9;font:300 34px/1 Barlow,sans-serif;cursor:pointer}
+.katman-kapat:hover{border-color:#e8201c;color:#e8201c}
+@media(max-width:700px){.katman h2{font-size:min(10vw,44px)!important;line-height:1.05;overflow-wrap:break-word}.hp-menu{top:60px;left:12px}.katman{padding-top:120px}.katman-kapat{top:68px;right:12px;width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.kapi.dag .kapi-ic,.kapi.dag .sahne{transform:none;transition:opacity .2s}#pazaraGir svg{animation:none}.katman{animation:none}}
 
 /* telefon: giriş tek ekrana sığar; başlık, kolaj + Halalar kartı, söz; "kaydır, pazara gir" altta sabit */
 @media(max-width:700px){
@@ -331,7 +331,7 @@ nav .marka[aria-expanded="true"]::after{transform:rotate(225deg) translateY(-1px
   <div class="kisayol"><a href="#bilmen">Bilmen gerekenler</a><a href="index.html">Teklif ver</a><a href="#hesap">Beğendiklerim</a><a href="#dukkan-ac">Dükkân aç</a></div>
 </header>
 
-<div class="sekme" id="sekme" hidden role="dialog" aria-modal="true" aria-label="Hit Pazarı"><button class="sekme-kapat" id="sekmeKapat" type="button" aria-label="Kapat">×</button>
+<div class="katman" id="katman" hidden role="dialog" aria-modal="true" aria-label="Hit Pazarı"><button class="katman-kapat" id="sekmeKapat" type="button" aria-label="Kapat">×</button>
 <section class="bolum" id="dukkanlar"><div class="sar">
   <div class="ust-satir"><h2 id="vAd">Halalar</h2>
     <div class="oklar"><button class="ok" id="geri" aria-label="Önceki vitrin" disabled>←</button><span id="sira">1 / 2</span><button class="ok" id="ileri" aria-label="Sıradaki vitrin">→</button></div></div>
@@ -546,7 +546,7 @@ listeler();
 // ---- ana sayfa: kaydırınca parçalan, pazara gir ----
 document.documentElement.classList.add('ev');
 const kapi=document.getElementById('kapi');let girildi=false;
-const sekmeAcik=()=>!document.getElementById('sekme').hidden;
+const sekmeAcik=()=>!document.getElementById('katman').hidden;
 function pazaraGir(){if(girildi||sekmeAcik())return;girildi=true;
   // kamera kolajın ortasına doğru dalar (tek katman, GPU ile), ekran kararınca pazar tüneli açılır
   const az=matchMedia('(prefers-reduced-motion: reduce)').matches,k=kapi.querySelector('.kolaj img'),r=k?k.getBoundingClientRect():null;
@@ -563,7 +563,7 @@ addEventListener('touchmove',e=>{if(dokY!==null&&!sekmeAcik()&&dokY-e.touches[0]
 addEventListener('keydown',e=>{if(!sekmeAcik()&&['ArrowDown','PageDown',' '].includes(e.key)&&!e.target.closest('input,textarea,button,a')){e.preventDefault();pazaraGir()}});
 addEventListener('pageshow',e=>{if(e.persisted){girildi=false;kapi.classList.remove('dag')}});
 // ---- logo menüsü ve sekmeler ----
-const marka=document.getElementById('marka'),hpMenu=document.getElementById('hpMenu'),sekme=document.getElementById('sekme');
+const marka=document.getElementById('marka'),hpMenu=document.getElementById('hpMenu'),sekme=document.getElementById('katman');
 const menuKapa=()=>{hpMenu.hidden=true;marka.setAttribute('aria-expanded','false')};
 marka.onclick=e=>{e.preventDefault();hpMenu.hidden=!hpMenu.hidden;marka.setAttribute('aria-expanded',String(!hpMenu.hidden))};
 addEventListener('click',e=>{if(!hpMenu.hidden&&!e.target.closest('#hpMenu,#marka'))menuKapa()});

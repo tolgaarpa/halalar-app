@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — hesap sayfası siyah/görünmeyen yazı
+Tolga: 'hesaba giriş sayfası siyah, bazı bilgiler siyah yazı olduğu için görünmüyor'. Sebep: bölümleri açan katmana 'sekme' adını vermiştim; hesap kartındaki Beğenilerim/Tekliflerim sekmeleri de 'sekme' idi -> sekmeler tam ekran siyah katman gibi davranıyordu, aynı kimlik (id) yüzünden sekme tıklamaları da karışıyordu. Katman 'katman' adına taşındı. Girişsiz ve girişli (deneme kullanıcı) hâl ekranda görüldü, sekmeler çalışıyor. Ders: yeni sınıf/kimlik adı vermeden önce dosyada aynı ad var mı grep.
+
 ## 16.11 Taş Fener — YAYINLANDI
 Tolga 'bunu bi yükle, yayınla'. Önce: yeni dükkân deneme ürünleri boşaltıldı; panel ve müşteri durum okuması eski Firestore kurallarıyla da çalışacak şekilde yumuşatıldı (batch yerine sıralı + yedek okuma). origin/main (giriş yaması) vintage'a -X ours ile birleştirildi (vintage zaten yamayı içeriyordu, doğrulandı). İki depo vintage:main push; canlıda hit (PAZARA GİR), app (deste yön etiketleri), dükkân, kolaj, panel, kvkk, uye.js 200 ve yeni içerikte. Yerel main de vintage'a eşitlendi.
 

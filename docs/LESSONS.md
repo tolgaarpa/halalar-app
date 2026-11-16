@@ -8,3 +8,6 @@ Buda üçlüsü ters duruyordu, 94lü küçük ızgarada gözden kaçtı. Önlem
 
 ## 15.11 Hit Pazarı tasarımında canlı sürüm esas (Taş Fener)
 Tolga yazılı bir tasarım yönü ve sonra bir referans görsel verdi; iki uygulama da reddedildi, 'bizim versiyona geri gel' dedi. Önlem: Hit sayfasında büyük tasarım değişikliğini canlı dosyanın üzerine değil ayrı bir deneme dosyasında (ör. hit-deneme.html) yap; Tolga onaylayınca asıl dosyaya taşı. Böylece geri dönüş tek adım olur.
+
+## 16.11 Yeni sınıf/kimlik adı vermeden önce ara (Taş Fener)
+Bölüm katmanına 'sekme' adını verdim; hesap kartının sekmeleri de 'sekme' idi, canlıda hesap sayfası siyaha döndü. Önlem: yeni bir CSS sınıfı ya da id eklemeden önce `grep -n 'ad' dosya` ile aynı adın kullanılıp kullanılmadığına bak; ortak adlar (sekme, kart, liste, menu) yerine işe özel ad ver.
