@@ -1,3 +1,6 @@
+## 16.11 Sessiz Örs — logo ana sayfaya gider (YEREL)
+Tolga: 'hit pazarına tıklayınca ana sayfaya gidebilmeliyim'. Sebep: logo tıklaması menüyü açıyordu (preventDefault). HİT PAZARI yazısı artık hit.html bağlantısı; menüyü yanındaki ok (hpAc) açar. hit.html + index.html; 1280 ve 375'te bağlantı engelsiz, ok menüyü açıyor. Commit var, push yok.
+
 ## 16.11 Sessiz Örs — web ana sayfa düzeni YAYINDA
 Tolga 'yayınla'. halalar-web vintage:main push (d4e9d9d), yerel main eşitlendi; canlıda hit, index, urun, dukkan, satis-kosullari ve veri/hesap-ikon.js 200 ve yeni içerikte.
 
