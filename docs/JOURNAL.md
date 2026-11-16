@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — hesap düzeltmesi YAYINDA
+Tolga 'yayınla'. İki depo vintage:main push, yerel main eşitlendi; canlıda web ve app hit.html 'katman' sürümü doğrulandı.
+
 ## 16.11 Taş Fener — hesap sayfası siyah/görünmeyen yazı
 Tolga: 'hesaba giriş sayfası siyah, bazı bilgiler siyah yazı olduğu için görünmüyor'. Sebep: bölümleri açan katmana 'sekme' adını vermiştim; hesap kartındaki Beğenilerim/Tekliflerim sekmeleri de 'sekme' idi -> sekmeler tam ekran siyah katman gibi davranıyordu, aynı kimlik (id) yüzünden sekme tıklamaları da karışıyordu. Katman 'katman' adına taşındı. Girişsiz ve girişli (deneme kullanıcı) hâl ekranda görüldü, sekmeler çalışıyor. Ders: yeni sınıf/kimlik adı vermeden önce dosyada aynı ad var mı grep.
 
