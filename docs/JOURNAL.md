@@ -1,6 +1,12 @@
 ## 16.11 Sessiz Örs — tünel logosu, söz, kart YAYINDA
 Tolga 'yayınla'. halalar-web vintage:main push (75a5bde), yerel main eşitlendi; canlıda index yeni logo boyutu, hit'te kart yok doğrulandı.
 
+## 2026-11-16 — DSG dükkânı YAYINDA (Sessiz Örs)
+- 'Yeni Dükkân' yerine DSG: 89 kıyafet, mankenli fotoğraftan dekupe (rembg u2net_cloth_seg × birefnet). Görseller web kaynak/dsg/.
+- Fiyat yok → urun.html yalnız 'Teklif ver' (Satın al gizli). Web 4525ddc canlı.
+- Uygulama: dukkan2.js + panel rozeti commit a804221 (vintage), app canlıya itilmedi (önünde 7 yayınlanmamış commit var).
+- Ön tarama: 17 görselde ten rengi şüphesi; Tolga canlıda bakıp kusurluları söyleyecek. 02 'Polo yaka' adı yanlış (marka).
+
 ## 16.11 Sessiz Örs — tünel logosu, söz, öne çıkan kart (YEREL)
 Tolga: ilk istek tünel sayfasındaki logo + PAZAR yazısı içindi (ben ana sayfa başlığını küçültmüştüm). Tünelde (index.html) HİT PAZARI 85->42.5px, dükkân adı 102->51px (telefon 40->20, 28->14), dükkân adı JS ile HİT PAZARI yazısının hizasından başlıyor. Ana sayfa: 'Her şeyin bir hikâyesi var' satırları birbirine biniyordu (line-height 1.03 -> 1.24); öne çıkan dükkân kartı kaldırıldı, kolajın gömülü kart bölgesi yumuşak maskeyle siliniyor. Ders: 'logo' ve 'pazar' kelimeleri tünel başlığını anlatıyordu; hangi sayfa olduğunu sormadan varsaydım. Commit var, push yok.
 
