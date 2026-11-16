@@ -1,3 +1,6 @@
+## 16.11 Sessiz Örs — web ana sayfa düzeni (YEREL, yayın bekliyor)
+Tolga: yazılar üst üste, HİT PAZARI %50 küçülsün, PAZARI HİT'in altında başlasın; logo menüsünde yalnız Kategoriler + Dükkânlar (dükkânlar alt listede); Hesabım, Bilmen gerekenler ve diğer bilgiler sağ üstte hesap simgesinde, her web sayfasında. Yapıldı (halalar-web vintage dalı, commit edildi, push YOK): başlık yarıya, alt yazı sarıyor, söz ekran içine alındı; kısa yollar satırı ve üst çubuktaki 'Nasıl çalışır?' + 'Üye girişi' hesap simgesine taşındı; yeni veri/hesap-ikon.js (hit, index, urun, dukkan, satis-kosullari). 1440/1280/1024/375'te ölçüldü, taşma yok. Uygulamadaki hit.html eşitlenmedi (hit_esitle.py çalıştırılmadı). Tünelde (index.html) logo menüsünden 'Ana sayfa' ve 'Pazar' çıktı.
+
 ## 16.11 Taş Fener — hesap düzeltmesi YAYINDA
 Tolga 'yayınla'. İki depo vintage:main push, yerel main eşitlendi; canlıda web ve app hit.html 'katman' sürümü doğrulandı.
 
