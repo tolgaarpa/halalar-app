@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — yönler fotoğrafın dört kenarında
+Tolga: 'ekranı daraltma genişletme, sadece sistemi görsünler diye; Satın al'ı en alta indirmişsin, ürün fotoğrafının 4 kenarına koyacaksın'. Deste kenar boşlukları kaldırıldı (kart eski genişliğinde), etiketler kartın üstünde yalnız fotoğraf alanının kenarlarında: Teklif ver üst-orta, Satın al fotoğrafın alt-orta (bilgi panelinin hemen üstü), Geç sol-dikey, Beğen sağ-dikey; okunurluk için hafif gölge. 390x844'te ölçüldü ve bakıldı.
+
 ## 16.11 Taş Fener — deste yönleri kartın kenarlarında
 Tolga: 'geç, teklif ver, satın al altta sıralı değil, yönlerin kendi bölgelerinde zarifçe yazacaktı'. App destesi: alt düğme sırası kalktı; Teklif ver kartın üstünde ortada, Satın al altında, Geç solda dikey (aşağıdan yukarı), Beğen sağda dikey; ince Barlow Condensed harfler, kendi renkleri, simgeli; kart kenarlarında boşluk bırakıldı, etiketler destenin çevresine JS ile yerleşiyor. 390x844'te: etiketler ekran içinde, karta binmiyor; Beğen'e dokununca beğeniye eklendi (deneme verisi silindi).
 

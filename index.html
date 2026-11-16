@@ -185,17 +185,15 @@ header .logo{font:400 30px/1 Anton,"Arial Narrow",Impact,sans-serif;letter-spaci
 #ara .katlar button.b2{font-size:16px;padding:9px 13px}
 #ara .katlar button.b3{font-size:12px;padding:7px 11px}
 
-/* yönler kartın kendi kenarlarında: üstte Teklif ver, altta Satın al, solda Geç, sağda Beğen */
-#deste{margin:30px 34px 34px}
+/* yönler ürün fotoğrafının dört kenarında, kartın üstünde (kart küçülmez): üst Teklif ver, alt Satın al, sol Geç, sağ Beğen */
 .ipucu{position:absolute;display:block;padding:0;pointer-events:none;z-index:20}
-.ipucu button{position:absolute;pointer-events:auto;background:none!important;border:0!important;padding:4px 6px;display:flex;align-items:center;gap:7px;font:700 13px/1 "Barlow Condensed",sans-serif!important;letter-spacing:.24em!important;text-transform:uppercase;opacity:.9;white-space:nowrap;transition:opacity .2s,transform .2s}
-.ipucu button:active{opacity:1}
-.ipucu svg{width:15px;height:15px;flex:none}
-.ipucu .b-offer{top:-3px;left:50%;transform:translate(-50%,-100%)}
-.ipucu .b-buy{bottom:-3px;left:50%;transform:translate(-50%,100%)}
-.ipucu .b-nope{left:-31px;top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg)}
-.ipucu .b-like{right:-31px;top:50%;writing-mode:vertical-rl;transform:translateY(-50%)}
-.ipucu .b-nope,.ipucu .b-like{width:28px;padding:6px 0;flex-direction:column;justify-content:center;align-items:center}
+.ipucu button{position:absolute;pointer-events:auto;background:none!important;border:0!important;padding:4px 6px;display:flex;align-items:center;gap:6px;font:700 12px/1 "Barlow Condensed",sans-serif!important;letter-spacing:.24em!important;text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 6px #000,0 0 2px #000;opacity:.92}
+.ipucu svg{width:14px;height:14px;flex:none;filter:drop-shadow(0 1px 3px #000)}
+.ipucu .b-offer{top:8px;left:50%;transform:translateX(-50%)}
+.ipucu .b-buy{bottom:8px;left:50%;transform:translateX(-50%)}
+.ipucu .b-nope,.ipucu .b-like{top:50%;width:26px;padding:6px 0;flex-direction:column;justify-content:center;writing-mode:vertical-rl}
+.ipucu .b-nope{left:6px;transform:translateY(-50%) rotate(180deg)}
+.ipucu .b-like{right:6px;transform:translateY(-50%)}
 .ipucu .b-nope svg,.ipucu .b-like svg{transform:rotate(90deg)}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
@@ -460,8 +458,8 @@ document.body.addEventListener('scroll',()=>{if(document.body.scrollTop)document
 
 // yön etiketlerini destenin çevresine yerleştir
 (()=>{const ip=document.querySelector('.ipucu'),de=document.getElementById('deste'),ap=document.getElementById('app');
-  function yerles(){const r=de.getBoundingClientRect(),a=ap.getBoundingClientRect();if(!r.width)return;
-    Object.assign(ip.style,{left:(r.left-a.left)+'px',top:(r.top-a.top)+'px',width:r.width+'px',height:r.height+'px'})}
+  function yerles(){const r=de.getBoundingClientRect(),a=ap.getBoundingClientRect();if(!r.width)return;const b=146;   // alttaki bilgi paneli: etiketler yalnız fotoğraf alanında
+    Object.assign(ip.style,{left:(r.left-a.left)+'px',top:(r.top-a.top)+'px',width:r.width+'px',height:Math.max(80,r.height-b)+'px'})}
   addEventListener('resize',yerles);new ResizeObserver(yerles).observe(de);setTimeout(yerles,50)})();
 </script>
 </body>
