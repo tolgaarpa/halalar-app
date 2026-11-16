@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — bilgisayarda telefon görünümüne geçme
+Tolga: 'web arayüzünü kullanırken birden telefon moduna geçti'. Sebep: tünelde ürüne dokununca uygulamanın (telefon için 480px) destesi açılıyordu. Düzeltme: ekran 900px ve üstüyse web ürün sayfası (urun.html), altıysa kart destesi; 'KAYDIR, SEÇ' düğmesi yalnız telefonda. Kalıcı çözüm: web ve app'i tek sitede birleştirip destenin geniş ekran sürümü (bekliyor).
+
 ## 16.11 Taş Fener — düzen: tünel = sergileme, tek menü
 Tolga: 'tünel ürün sergileme yöntemimiz; her dükkânın kendi tüneli + dükkân seçmeden gezilen karışık genel tünel; düzenle; token az'. Yapılan (az maliyetle): tünel sayfasına (web index) giriş sayfasındakiyle aynı logo menüsü: Ana sayfa, Pazar (karışık), Halalar (tüneli), Yeni Dükkân, Kategoriler, Hesabım, Bilmen gerekenler. Giriş mavi düğmesi yeniden 'PAZARA GİR' (karışık tünel); deste tünelde ürüne dokununca ya da 'KAYDIR, SEÇ' ile. Sıradaki (onay bekliyor): yeni dükkânın kendi tüneli (ürün gelince index.html?dukkan=...), app ile web'in tek sitede birleşmesi.
 
