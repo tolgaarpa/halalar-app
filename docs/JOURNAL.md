@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — her sayfada Hit Pazarı logosu
+Tolga: 'her sayfada, Ara'da, beğendiklerin, tekliflerinde de Hit Pazarı logosu olsun'. Ara ekranlarına (web+app) üstte '// HİT PAZARI  ARA' başlığı eklendi. Beğeniler/Teklif & Alım sayfalarında logo vardı ama ekranda görünmüyordu: arama kutusuna odaklanınca tarayıcı gövdeyi 41px yukarı itiyordu (body overflow hidden), başlık ekran dışında kalıyordu -> gövde kayması kilitlendi (web+app). 390x844'te: Ara ve Beğeniler'de logo görünüyor.
+
 ## 16.11 Taş Fener — eski Hit sayfaları, ana sayfada KAYDIR SEÇ
 Tolga: 'hâlâ eski Hit'in olduğu sayfalar çıkıyor; kaydır-geç göremiyorum, ana sayfadaki mavi yere koy'. Sebep: sayfalardaki tolgaarpa.github.io bağlantıları (aydınlatma metni, dükkân girişi, uygulama, app'ten pazar) canlıdaki eski sürüme gidiyordu. Çözüm: 8 sayfaya küçük betik; yerel portlarda (8766/8769/8770/8771) canlı adresleri yerel kopyaya çeviriyor, canlıda hiçbir şey yapmıyor. Ana sayfa mavi düğme 'KAYDIR, SEÇ' -> rastgele üründen kart destesi; altında 'beğen · teklif ver · satın al — aşağı kaydır, pazara gir'. 390x844'te denendi: canlı bağlantı kalmadı, düğme desteyi açtı.
 
