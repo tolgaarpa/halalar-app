@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — YAYINLANDI
+Tolga 'bunu bi yükle, yayınla'. Önce: yeni dükkân deneme ürünleri boşaltıldı; panel ve müşteri durum okuması eski Firestore kurallarıyla da çalışacak şekilde yumuşatıldı (batch yerine sıralı + yedek okuma). origin/main (giriş yaması) vintage'a -X ours ile birleştirildi (vintage zaten yamayı içeriyordu, doğrulandı). İki depo vintage:main push; canlıda hit (PAZARA GİR), app (deste yön etiketleri), dükkân, kolaj, panel, kvkk, uye.js 200 ve yeni içerikte. Yerel main de vintage'a eşitlendi.
+
 ## 16.11 Taş Fener — bilgisayarda telefon görünümüne geçme
 Tolga: 'web arayüzünü kullanırken birden telefon moduna geçti'. Sebep: tünelde ürüne dokununca uygulamanın (telefon için 480px) destesi açılıyordu. Düzeltme: ekran 900px ve üstüyse web ürün sayfası (urun.html), altıysa kart destesi; 'KAYDIR, SEÇ' düğmesi yalnız telefonda. Kalıcı çözüm: web ve app'i tek sitede birleştirip destenin geniş ekran sürümü (bekliyor).
 
