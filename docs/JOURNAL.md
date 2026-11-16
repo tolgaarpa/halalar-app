@@ -1,3 +1,6 @@
+## 16.11 Taş Fener — deste yönleri kartın kenarlarında
+Tolga: 'geç, teklif ver, satın al altta sıralı değil, yönlerin kendi bölgelerinde zarifçe yazacaktı'. App destesi: alt düğme sırası kalktı; Teklif ver kartın üstünde ortada, Satın al altında, Geç solda dikey (aşağıdan yukarı), Beğen sağda dikey; ince Barlow Condensed harfler, kendi renkleri, simgeli; kart kenarlarında boşluk bırakıldı, etiketler destenin çevresine JS ile yerleşiyor. 390x844'te: etiketler ekran içinde, karta binmiyor; Beğen'e dokununca beğeniye eklendi (deneme verisi silindi).
+
 ## 16.11 Taş Fener — her sayfada Hit Pazarı logosu
 Tolga: 'her sayfada, Ara'da, beğendiklerin, tekliflerinde de Hit Pazarı logosu olsun'. Ara ekranlarına (web+app) üstte '// HİT PAZARI  ARA' başlığı eklendi. Beğeniler/Teklif & Alım sayfalarında logo vardı ama ekranda görünmüyordu: arama kutusuna odaklanınca tarayıcı gövdeyi 41px yukarı itiyordu (body overflow hidden), başlık ekran dışında kalıyordu -> gövde kayması kilitlendi (web+app). 390x844'te: Ara ve Beğeniler'de logo görünüyor.
 
