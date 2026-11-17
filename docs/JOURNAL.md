@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — deste klavye yazısı kaldırıldı (yerel)
+Tolga: sağdaki 'Klavye: ← geç ...' ibaresi fazla. Yazı kaldırıldı, ok tuşları çalışmaya devam ediyor. Yayın bekliyor (app 7b0a2b6).
+
 ## 17.11 Sessiz Örs — dükkânlar alfabetik/eşit + deste tek renk YAYINDA
 Tolga 'Yayınla'. Web 24f1444, app bfca9e4 main'e push. Canlıda: Dükkânlar DSG, Halalar, Önsal Elektronik sırasıyla 3 ürünlü vitrin, kırık 0; tünel menüsü alfabetik; deste zemini sayfayla aynı.
 
