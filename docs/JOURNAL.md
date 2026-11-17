@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Kendi tünelin: genel kategoriler (yerel)
+Tolga: 'dükkân isimleri değil ürün kategorileri olsun, dükkânı ayrı seçerim'. Pencere tek liste oldu: 14 genel kategori, çoktan aza (Giyim 89, Beyaz Eşya 60 ...). Giyim = DSG'nin 4 kategorisi, Elektronik = Halalar Elektronik & Kamera + Önsal Televizyon. Denendi: Giyim+Müzik+Elektronik = 110 ürün; eski biçim link (h:Müzik~d3:Beyaz Eşya) 74 ürünle çalışıyor. Ayrıca Tolga: uygulamanın adı Hit Pazarı, Halalar yalnız bir dükkân (hafızaya yazıldı).
+
 ## 17.11 Sessiz Örs — eski taslak dosyalar kaldırıldı
 Tolga 'kullanılmıyorsa kaldır'. halalar-web kökündeki kayıtsız urunler.js ve urunler.json (29.10 taslakları) hiçbir sayfaya bağlı değildi; Çöp Kutusu'na taşındı (geri alınabilir). Site veri/urunler.js'i kullanıyor, değişmedi.
 
