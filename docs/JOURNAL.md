@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — dükkân tünelleri + GPT maddeleri (yerel)
+Tolga: 'dsg nin de onsalin da kendi tunellerini yap', 'gptnin onerilerini de yap'. index.html'e ?dukkan=2/3 modu (yalnız o dükkân, logo dükkân adı, deste düğmesi gizli). Önsal'ın 100 fotosu zaten saydam; 5'i için _tunel.webp (4 isnet/taşma dolgusu, 1 dikdörtgen kırpma) gözle kontrol edildi. GPT 3,4,6,8,9,11 yapıldı, yerelde JS ile doğrulandı (menü açıkken tekerlek tünele sokmadı, kapalıyken soktu). Web commit + app index.html commit; yayınlanmadı.
+
 ## 17.11 Sessiz Örs — Önsal Elektronik YAYINDA
 Tolga 'yayınla'. Web vintage:main (aefc9b3), app (62ae9a7), firestore kuralları deploy (dukkan3). Canlıda 308 Önsal fotoğrafı 200, dukkan/urun/hit sayfaları 200.
 

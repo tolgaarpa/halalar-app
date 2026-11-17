@@ -215,13 +215,13 @@ header .logo{font:400 30px/1 Anton,"Arial Narrow",Impact,sans-serif;letter-spaci
   <div class="ipucu">
     <button class="b-nope" data-yon="sol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Geç</button>
     <button class="b-offer" data-yon="yukari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Teklif ver</button>
-    <button class="b-buy" data-yon="asagi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Satın al</button>
+    <button class="b-buy" data-yon="asagi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Satın alma talebi</button>
     <button class="b-like" data-yon="sag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Beğen</button>
   </div>
   <nav>
     <button class="on" data-git="kesfet">Keşfet</button>
     <button data-git="begeni">Beğeniler<span class="rozet" id="r-begeni"></span></button>
-    <button data-git="islem">Tekliflerim<span class="rozet" id="r-islem"></span></button>
+    <button data-git="islem">Teklif ve taleplerim<span class="rozet" id="r-islem"></span></button>
   </nav>
 
   <section class="sayfa" id="s-begeni"><header><div class="hpi-sol"><a class="hp-logo" href="hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><div class="logo">Beğeniler</div></div><button class="geri" data-git="kesfet">Keşfet →</button></header><div class="liste" id="l-begeni"></div></section>
@@ -351,7 +351,7 @@ function teklifAc(id){
     <div class="teklif-kutu"><input id="tk" inputmode="numeric" value="${o[1]}"><span>₺</span></div>
     <div class="hizli">${o.map(v=>`<button data-v="${v}">${TL(v)}</button>`).join('')}</div>
     ${kisiAlanlari()}
-    <div class="not">Teklifin dükkâna iletilir. Cevap "Tekliflerim" sekmesinde görünür, gerekirse dükkân seni arar.</div>
+    <div class="not">Teklifin dükkâna iletilir. Cevap "Teklif ve taleplerim" sekmesinde görünür, gerekirse dükkân seni arar.</div>
     <div class="btns"><button id="vz">Vazgeç</button><button class="ana" id="gn" style="background:var(--offer)">Teklifi gönder</button></div>`);
   sheet.querySelectorAll('.hizli button').forEach(b=>b.onclick=()=>document.getElementById('tk').value=b.dataset.v);
   document.getElementById('vz').onclick=()=>kapat(true);
@@ -360,7 +360,7 @@ function teklifAc(id){
     D.islem.unshift({id,ref,satici:saticiOf(id),tur:'teklif',tutar:v,zaman:Date.now(),durum:'Beklemede'});kaydet();kapat(false);toast('Teklif gönderildi: '+TL(v));ucur(aktif.el,'yukari',ilerle)}}
 function satinAlAc(id){
   const f=FIYAT[id];
-  ac(ust(id,'Satın al','var(--buy)')+`
+  ac(ust(id,'Satın alma talebi','var(--buy)')+`
     <div class="ozet"><div><span>Satıcı</span><span>${SATICILAR[saticiOf(id)].ad}</span></div><div><span>Ürün</span><span>${TL(f)}</span></div><div><span>Teslimat</span><span>Dükkândan teslim</span></div><div><b>Toplam</b><b>${TL(f)}</b></div></div>
     ${kisiAlanlari()}
     <div class="not">Bu ilk sürümde ödeme alınmıyor; talebin dükkâna düşer, dükkân seni arayıp ürünü ayırır.</div>
