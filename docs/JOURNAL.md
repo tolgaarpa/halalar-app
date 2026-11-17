@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — dükkânlar alfabetik/eşit + deste tek renk YAYINDA
+Tolga 'Yayınla'. Web 24f1444, app bfca9e4 main'e push. Canlıda: Dükkânlar DSG, Halalar, Önsal Elektronik sırasıyla 3 ürünlü vitrin, kırık 0; tünel menüsü alfabetik; deste zemini sayfayla aynı.
+
 ## 17.11 Sessiz Örs — Halalar kartında ürünler (yerel)
 Tolga: 'Halalar'ında vitrini yerine ürünlerini koy'. Halalar kartındaki gece vitrini fotoğrafı yerine diğerleri gibi neon tabelalı 3 raflı 6 ürünlü vitrin; düğme metni 'Dükkâna gir'. 1440 ve 390'da bakıldı, kırık görsel 0.
 
