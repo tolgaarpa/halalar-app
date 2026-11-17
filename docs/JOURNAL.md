@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel sonu yazısı (yerel)
+Tolga: DSG tünelinin sonunda kocaman HALALAR çıkıyor. Sebep: index.html'deki tünel sonu yazısı ilk tek dükkânlı zamandan sabit 'halalar' kalmıştı. Artık tünelin adı: DSG, Önsal Elektronik, Pazar, Senin tünelin, kategori adı, kategoriler; yalnız Halalar tünelinde Halalar. 7 mod denendi.
+
 ## 17.11 Sessiz Örs — DSG tüneli denemesi 4 YAYINDA
 Tolga 'böyle daha iyi, deneyelim, yayınla'. index.html'de yalnız ?dukkan=2 için: DSG ürünleri 0.6, pantolonlar 0.48, aralık 42, sayı 374 (ilk push'ta 748 çıktı, denemedeki yarı tur atlanmıştı; aynı turda 0.35 ile düzeltildi), üst/alt orta boşluk 0.3. Pazar ve diğer tüneller aynı (DSG ürünleri orada 0.8). Web 838c963 + aa9b20b canlıda.
 
