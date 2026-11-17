@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Hesabım + geri/ileri YAYINDA
+Tolga 'Yayınla'. Web 3ff1ae1, app 553d17a main'e push; canlıda hit.html hOzet, tünel ve destede overscroll-behavior-x:auto doğrulandı.
+
 ## 17.11 Sessiz Örs — Hesabım giriş yapılmış hâli (yerel)
 Tolga: girişliyken sağda/üstte kocaman 'Üye girişi' yazıyor, sayfayı etkili kullan. Girişliyken başlık 'Hesabım', sol 'Google ile gir' metni yerine 'Merhaba, Ad' + 3 sayı kutusu (beğeni, teklif ve talep, cevap bekleyen; tıklayınca ilgili sekme) + Pazara gir / Kendi tünelin. Sahte kullanıcıyla 1440 ve 390'da denendi. Girişsiz hâl aynı.
 
