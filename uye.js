@@ -11,7 +11,7 @@
   const yaz=x=>{try{yerelYaz.call(localStorage,KEY,JSON.stringify(x))}catch(e){}};
   const temiz=x=>({
     begeni:(x.begeni||[]).filter(i=>typeof i==='string').slice(-500),
-    islem:(x.islem||[]).slice(0,200).map(t=>({id:String(t.id||''),ref:String(t.ref||''),tur:t.tur==='alim'?'alim':'teklif',tutar:Number(t.tutar)||0,durum:String(t.durum||'Beklemede'),zaman:Number(t.zaman)||0,satici:'halalar'})),
+    islem:(x.islem||[]).slice(0,200).map(t=>({id:String(t.id||''),ref:String(t.ref||''),tur:t.tur==='alim'?'alim':'teklif',tutar:Number(t.tutar)||0,durum:String(t.durum||'Beklemede'),zaman:Number(t.zaman)||0,satici:/^d2:/.test(String(t.id))?'dukkan2':/^d3:/.test(String(t.id))?'dukkan3':'halalar'})),
     kisi:{ad:String((x.kisi&&x.kisi.ad)||'').slice(0,59),tel:String((x.kisi&&x.kisi.tel)||'').replace(/[^0-9+]/g,'').slice(0,16)}
   });
   let uid=null,bekle=null,hazir=false;
