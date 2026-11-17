@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — eski taslak dosyalar kaldırıldı
+Tolga 'kullanılmıyorsa kaldır'. halalar-web kökündeki kayıtsız urunler.js ve urunler.json (29.10 taslakları) hiçbir sayfaya bağlı değildi; Çöp Kutusu'na taşındı (geri alınabilir). Site veri/urunler.js'i kullanıyor, değişmedi.
+
 ## 17.11 Sessiz Örs — Kendi tünelin YAYINDA
 Tolga 'Yayınla'. Web 6b46fe7 ve app d969de2 main'e push. Canlıda: hit.html menüsünden pencere açılıyor (18 kategori), Müzik+Üst giyim+Beyaz Eşya tüneli 109 ürün, logo 'Senin tünelin'.
 
