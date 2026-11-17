@@ -238,6 +238,44 @@ nav button{font-size:14px!important;padding:16px 0!important}
 .kart{background:var(--bg);box-shadow:none}
 .kart .gorsel{background:none}
 .kart .bilgi{background:var(--bg)}
+
+/* BİLGİSAYAR (Tolga 17.11): ortada ürün kartı, solda ürün bilgisi, sağda eylemler (teklif kutusu, fiyat, geç/beğen) */
+.yan{display:none}
+@media(min-width:900px){
+#app{display:grid!important;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr) minmax(0,.9fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:36px}
+#app>header{grid-column:1/-1;grid-row:1}
+#deste{grid-column:2;grid-row:2;margin:6px 0 0!important}
+#app>nav{grid-column:1/-1;grid-row:3}
+.yan{display:flex;flex-direction:column;justify-content:center;grid-row:2;min-width:0;padding:20px 0}
+.ipucu{display:none!important}
+.yan.sol{grid-column:1}.yan.sag{grid-column:3;gap:14px}
+.yan.bos{visibility:hidden}
+.kart .gorsel{inset:0!important;padding:20px!important}
+.kart .bilgi{display:none!important}
+.noktalar{bottom:22px!important;right:0!important}
+.acilar{right:16px!important}
+.s-donem{font:700 14px/1.3 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+#sAd{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,3vw,52px);line-height:1.04;margin:16px 0 14px;color:var(--ink)}
+#sAcik{font-size:17px;line-height:1.55;color:#b9b5ad}
+.s-aci{margin-top:18px;font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.e-satir{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:stretch}
+.e-btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;background:none;border:1px solid var(--line);color:var(--ink);font:400 20px/1 Anton,sans-serif;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.e-btn svg{width:20px;height:20px;flex:none}
+.e-teklif{color:var(--offer);border-color:var(--offer)}.e-teklif:hover{background:var(--offer);color:#fff}
+.e-al{color:var(--buy);border-color:var(--buy)}.e-al:hover{background:var(--buy);color:#111}
+.e-al.pasif{opacity:.45}
+.e-gec{color:var(--nope)}.e-gec:hover{border-color:var(--nope);background:#ffffff10}
+.e-begen{color:var(--like);border-color:var(--like)}.e-begen:hover{background:var(--like);color:#fff}
+.e-kutu{display:flex;align-items:center;border:1px solid var(--line);padding:0 14px;cursor:text}
+.e-kutu:focus-within{border-color:var(--offer)}
+.e-kutu input{flex:1;min-width:0;width:100%;background:none;border:0;outline:none;color:var(--ink);font:400 26px/1 Anton,sans-serif}
+.e-kutu input::placeholder{color:#55555e}
+.e-kutu i{font:400 20px Anton,sans-serif;font-style:normal;color:var(--muted)}
+.e-fiyat{display:flex;flex-direction:column;justify-content:center;padding:0 4px}
+.e-fiyat b{font:400 28px/1 Anton,sans-serif;color:var(--ink)}
+.e-fiyat small{margin-top:5px;font:700 11px/1.2 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.e-not{margin-top:6px;font-size:13px;color:var(--muted)}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
@@ -246,6 +284,12 @@ nav button{font-size:14px!important;padding:16px 0!important}
 <div id="app">
   <header><div class="hpi-sol"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><div class="logo">Halalar</div></div><div style="display:flex;gap:10px;align-items:center"><div class="sayac" id="sayac"></div><button class="tunele" id="araAc">Ara</button><button class="tunele" id="tuneleDon">Tünel</button></div></header>
   <div id="deste"></div>
+  <aside class="yan sol" id="solBilgi" aria-live="polite"><div class="s-donem" id="sDonem"></div><h2 id="sAd"></h2><p id="sAcik"></p><div class="s-aci" id="sAci"></div></aside>
+  <aside class="yan sag" id="sagEylem">
+    <div class="e-satir"><button class="e-btn e-teklif" data-yon="yukari" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span>Teklif ver</span></button><label class="e-kutu"><input id="eTk" inputmode="numeric" placeholder="Tutar" aria-label="Teklif tutarı"><i>₺</i></label></div>
+    <div class="e-satir"><button class="e-btn e-al" data-yon="asagi" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span>Satın al</span></button><div class="e-fiyat" id="eFy"></div></div>
+    <div class="e-satir iki"><button class="e-btn e-gec" data-yon="sol" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Geç</span></button><button class="e-btn e-begen" data-yon="sag" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Beğen</span></button></div>
+  </aside>
   <div id="ara"><div class="ara-bas"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><b>Ara</b></div><div class="ust2"><input id="araKutu" type="search" placeholder="Ürün ara: plak, tablo, porselen…" autocomplete="off"><button class="tunele" id="araKapat">Kapat</button></div>
     <div class="katlar" id="katlar"></div><div class="sonuc" id="sonuc"></div></div>
   <div class="ipucu">
@@ -359,7 +403,16 @@ function ciz(){
     const el=document.createElement('div');el.className='kart';el.innerHTML=kartHTML(SIRA[k]);
     const d=k-D.sira; el.style.transform=`translateY(${d*10}px) scale(${1-d*0.04})`; el.style.zIndex=10-d;
     if(d===0)surukle(el,SIRA[k]); deste.appendChild(el)}
-  sayac()}
+  sayac();yanGuncelle()}
+// bilgisayar yan panelleri: solda ürün bilgisi, sağda eylemler (teklif kutusu, fiyat)
+function yanGuncelle(){const sol=document.getElementById('solBilgi');if(!sol)return;const id=SIRA[D.sira],u=id&&U(id);
+  document.getElementById('sagEylem').classList.toggle('bos',!u);sol.classList.toggle('bos',!u);if(!u)return;
+  document.getElementById('sDonem').textContent=EK[id]?[EK[id].sad,KAT(id)].join(' · '):[KAT(id),u[3]==='—'?'':u[3]].filter(Boolean).join(' · ')||'Halalar koleksiyonu';
+  document.getElementById('sAd').textContent=u[1];document.getElementById('sAcik').textContent=u[2];
+  const n=FOTOLAR(id).length;document.getElementById('sAci').textContent=n>1?n+' açı · fotoğrafa dokun':'';
+  const f=fiyat(id)||0;document.getElementById('eFy').innerHTML=f?`<b>${TL(f)}</b>${EK[id]?'':'<small>örnek fiyat</small>'}`:'<b>Teklif ile</b><small>fiyatı teklifle belirlenir</small>';
+  const t=document.getElementById('eTk');t.value='';t.placeholder=f?String(Math.round(f*.8/50)*50):'Tutar';
+  document.querySelector('#sagEylem .e-al').classList.toggle('pasif',!f)}
 function sayac(){document.getElementById('sayac').textContent=Math.min(D.sira+1,SIRA.length)+' / '+SIRA.length;
   const b=D.begeni.length,i=D.islem.length;
   const rb=document.getElementById('r-begeni'),ri=document.getElementById('r-islem');
@@ -401,6 +454,9 @@ function karar(el,id,yon){
   else if(yon==='yukari')teklifAc(id);
   else satinAlAc(id)}
 document.querySelectorAll('.ipucu button').forEach(b=>b.onclick=()=>{if(!aktif||D.sira>=SIRA.length)return;karar(aktif.el,aktif.id,b.dataset.yon)});
+document.querySelectorAll('#sagEylem .e-btn').forEach(b=>b.onclick=()=>{if(!aktif||D.sira>=SIRA.length)return;const y=b.dataset.yon,v=document.getElementById('eTk').value.replace(/\D/g,'');
+  karar(aktif.el,aktif.id,y);if(y==='yukari'&&v){const tk=document.getElementById('tk');if(tk)tk.value=v}});
+document.getElementById('eTk').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();document.querySelector('#sagEylem .e-teklif').click()}});
 // bilgisayarda klavye: ← geç, → beğen, ↑ teklif ver, ↓ satın alma talebi
 addEventListener('keydown',e=>{const y={ArrowLeft:'sol',ArrowRight:'sag',ArrowUp:'yukari',ArrowDown:'asagi'}[e.key];if(!y||(e.target.closest&&e.target.closest('input,textarea')))return;
   if(document.getElementById('sheet').classList.contains('on')||document.querySelector('.sayfa.on')||document.getElementById('ara').classList.contains('on'))return;
@@ -539,7 +595,7 @@ document.body.addEventListener('scroll',()=>{if(document.body.scrollTop)document
 // yön etiketlerini destenin çevresine yerleştir
 (()=>{const ip=document.querySelector('.ipucu'),de=document.getElementById('deste'),ap=document.getElementById('app');
   function yerles(){const r=de.getBoundingClientRect(),a=ap.getBoundingClientRect();if(!r.width)return;const gen=innerWidth>=900,b=gen?0:146;   // etiketler yalnız fotoğraf alanında (bilgisayarda fotoğraf solda, bilgi sağda)
-    Object.assign(ip.style,{left:(r.left-a.left)+'px',top:(r.top-a.top)+'px',width:(gen?r.width*.62:r.width)+'px',height:Math.max(80,r.height-b)+'px'})}
+    Object.assign(ip.style,{left:(r.left-a.left)+'px',top:(r.top-a.top)+'px',width:r.width+'px',height:Math.max(80,r.height-b)+'px'})}
   addEventListener('resize',yerles);new ResizeObserver(yerles).observe(de);setTimeout(yerles,50)})();
 </script>
 </body>
