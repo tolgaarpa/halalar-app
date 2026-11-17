@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — DSG denemesi 4 (yayın yok)
+Tolga: sorun uzun pantolonlar, ufak ve seyrek deneyelim. deneme-dsg.html: DSG boyutu 0.6, Alt giyim (pantolon) 0.48, aralık 42, sayı %30 az (374), orta boşluk kaldı. 390/1440'ta canlıdaki DSG tüneliyle karşılaştırıldı: tek tek ürünler seçiliyor, pantolon duvarı yok.
+
 ## 17.11 Sessiz Örs — DSG denemesi 3 (yayın yok)
 Tolga 'dene bakalım': deneme-dsg.html'de DSG boyutu 0.8x1.3=1.04 (2 kat yerine), aralık +%10 ve sayı -%10 (481) ve orta boşluk kaldı. 390/1440'ta canlıdaki DSG tüneliyle karşılaştırıldı: ürünler belirgin büyük, ekranı kaplamıyor.
 
