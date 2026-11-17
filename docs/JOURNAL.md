@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — DSG denemesi 2 (yayın yok)
+Tolga: birbirinden %10 uzak, sayı %10 az, orta biraz boş. deneme-dsg.html'de yalnız DSG için: aralık 32→35.2, sayı 534→481, üst/alt kenar ürünleri ortadan ≥0.3. 390 ve 1440'ta deneme 1 ile karşılaştırıldı; ürünler 2 kat büyük olduğu için yakındakiler hâlâ ekranı kaplıyor (Tolga'ya söylendi).
+
 ## 17.11 Sessiz Örs — DSG tünel denemesi (yayın yok)
 Tolga: 'yayınlama, sadece dene: DSG ürünlerini 2 kat büyüt, sayıyı yarıya düşür'. Ayrı dosya deneme-dsg.html (canlı index.html'e dokunulmadı, _config.yml ile yayından hariç; push edilmedi). DSG boyut x0.8 → x1.6, tekrar 12 → 6 tur (1068 → 534 ürün). 390 ve 1440'ta önce/sonra görüntüsü Tolga'ya gönderildi. Yerel deneme: python3 -m http.server 8766 (halalar-web) → localhost:8766/deneme-dsg.html?dukkan=2.
 
