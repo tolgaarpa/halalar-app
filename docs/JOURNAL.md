@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — çok dükkân düzeltmeleri (yerel)
+Tolga GPT incelemesini yapıştırdı, 'doğru bulduklarını yap'. Kodda doğrulandı ve düzeltildi: (1) Pazar ve kendi tünelinde arama yalnız Halalar'daydı → tüm dükkânlar ('buzdolabı' 18 sonuç); (2) 'Kaydır, seç' DSG/Önsal kimliğini Halalar destesine yolluyordu → ?pazar=1, deste 288 ürün, Önsal gerçek fiyatla, DSG teklif-yalnız; (3) hit.html listeleri yalnız Halalar → DSG/Önsal da (denendi); (4) uye.js satıcıyı hep halalar yazıyordu → kimlikten; (5) Kategoriler tüneline 4 dükkân kategorisi; (6) Pazar başında küçük kaydırmayla ana sayfaya düşme → uzun çekiş gerekir. Ek bulgu: Önsal'ın 14 ürününde kimlik 80+ karakter, kural reddediyordu → 120. GPT'nin 'Nasıl çalışır bağlantısı yok' maddesi yanlış (hesap menüsünde var). Satış koşulları/KVKK bilgileri Tolga'dan bekleniyor.
+
 ## 17.11 Sessiz Örs — tünelde menü açılınca ürün kartı gizlenir (yerel)
 Tolga telefondan ekran görüntüsü: hesap menüsü açıkken ürün kartı (Altus buzdolabı) menünün üstünde kalıyordu (kart z-index 70 > nav 60). Artık hesap/logo menüsü ya da 'Kendi tünelin' açıkken kart kapanır ve yeniden açılmaz, tünel kaymaz; menü kapanınca tünel devam eder. 390px'te denendi. Yayın bekliyor.
 
