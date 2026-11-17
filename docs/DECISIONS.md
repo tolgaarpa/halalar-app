@@ -4,3 +4,6 @@
 
 ## 2026-11-15 Panel yalnız Tolga'nın (Taş Fener)
 Tolga: 'panel sadece bana ait olsun, Halalar yani Koray burada bir mağaza sadece.' Genel yönetici yalnız tolgaarpa@gmail.com; Koray'ın panel yetkisi kaldırıldı. Müşteri ad/telefonu (talepler) yalnız yönetici okur; müşteriye görünen durum ayrı 'durumlar' koleksiyonunda.
+
+## 2026-11-17 Dükkânlar eşit ve alfabetik; tek zemin rengi (Sessiz Örs)
+Tolga: Dükkânlar Halalar'la açılmasın ('fazla ayrıcalık'), bütün dükkânlar ürünler gibi yan yana görünsün, listeler alfabetik. Ayrıca destede kart/panel rengi sayfadan farklı olmasın. Uygulama: dükkân kartları localeCompare('tr') sırasıyla; deste kartı zemin #0b0b0d.

@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — dükkânlar eşit/alfabetik, deste tek renk (yerel)
+Tolga: destede kart rengi farkı istenmiyor; ana sayfa Dükkânlar Halalar vitriniyle açılmasın, bütün dükkânlar görünsün; dükkân listeleri alfabetik. hit.html #dukkanlar ızgara (DSG 89, Halalar 94, Önsal 105 ürün), menüler DSG-Halalar-Önsal; app deste zemini sayfayla aynı. 1440 ve 390'da bakıldı, taşma yok.
+
 ## 17.11 Sessiz Örs — deste bilgisayar düzeni YAYINDA
 Tolga 'yayınla'. App 271e372 main'e push. Canlıda 1440'ta deste 1280 genişlikte, bilgi paneli sağda; 390'da telefon düzeni aynı.
 
