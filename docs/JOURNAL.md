@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — deste bilgisayar düzeni (yerel)
+Tolga: web'de 'Kaydır, seç'e geçince minicik telefon ekranına dönüyor. App index.html'e ≥900px medya düzeni: geniş kart (fotoğraf sol, bilgi sağ büyük yazı), ortada teklif/talep penceresi, klavye okları (↑ ile teklif penceresi açıldı, denendi), telefonda değişiklik yok (390'da aynı).
+
 ## 17.11 Sessiz Örs — her tünelin kendi destesi YAYINDA
 Tolga: 'her tünelde Kaydır-seç olsun, bastığı tünelin ürünlerini kaydırsın', 'yap yayınla'. Web: düğme her tünelde (bilgisayar dahil), desteAdres tünel türünü ?t= ile yollar. App: TUNEL listesi t'ye göre (pazar/dukkan/sec/kat/Halalar), başlık ve dönüş. 6 tünel türü yerelde denendi, canlıda Önsal tüneli → deste 105 ürün 'Önsal Elektronik'; dükkânlar vitrini 3'ü açık; tünel kartı düzeltmesi aktif.
 
