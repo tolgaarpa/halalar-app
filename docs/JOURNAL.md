@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — DSG denemesi 3 (yayın yok)
+Tolga 'dene bakalım': deneme-dsg.html'de DSG boyutu 0.8x1.3=1.04 (2 kat yerine), aralık +%10 ve sayı -%10 (481) ve orta boşluk kaldı. 390/1440'ta canlıdaki DSG tüneliyle karşılaştırıldı: ürünler belirgin büyük, ekranı kaplamıyor.
+
 ## 17.11 Sessiz Örs — DSG denemesi 2 (yayın yok)
 Tolga: birbirinden %10 uzak, sayı %10 az, orta biraz boş. deneme-dsg.html'de yalnız DSG için: aralık 32→35.2, sayı 534→481, üst/alt kenar ürünleri ortadan ≥0.3. 390 ve 1440'ta deneme 1 ile karşılaştırıldı; ürünler 2 kat büyük olduğu için yakındakiler hâlâ ekranı kaplıyor (Tolga'ya söylendi).
 
