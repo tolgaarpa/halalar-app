@@ -233,6 +233,11 @@ nav button{font-size:14px!important;padding:16px 0!important}
 .klavye{display:block!important}
 }
 .klavye{display:none;text-align:right;padding:10px 0 0;font:700 11px/1 "Barlow Condensed",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* tek renk zemin (Tolga): kart, fotoğraf alanı ve bilgi paneli sayfayla aynı renk; ayrı kutu rengi yok */
+.kart{background:var(--bg);box-shadow:none}
+.kart .gorsel{background:none}
+.kart .bilgi{background:var(--bg)}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
