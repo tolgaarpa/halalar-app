@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — deste bilgisayar düzeni YAYINDA
+Tolga 'yayınla'. App 271e372 main'e push. Canlıda 1440'ta deste 1280 genişlikte, bilgi paneli sağda; 390'da telefon düzeni aynı.
+
 ## 17.11 Sessiz Örs — deste bilgisayar düzeni (yerel)
 Tolga: web'de 'Kaydır, seç'e geçince minicik telefon ekranına dönüyor. App index.html'e ≥900px medya düzeni: geniş kart (fotoğraf sol, bilgi sağ büyük yazı), ortada teklif/talep penceresi, klavye okları (↑ ile teklif penceresi açıldı, denendi), telefonda değişiklik yok (390'da aynı).
 
