@@ -11,3 +11,6 @@ Tolga yazılı bir tasarım yönü ve sonra bir referans görsel verdi; iki uygu
 
 ## 16.11 Yeni sınıf/kimlik adı vermeden önce ara (Taş Fener)
 Bölüm katmanına 'sekme' adını verdim; hesap kartının sekmeleri de 'sekme' idi, canlıda hesap sayfası siyaha döndü. Önlem: yeni bir CSS sınıfı ya da id eklemeden önce `grep -n 'ad' dosya` ile aynı adın kullanılıp kullanılmadığına bak; ortak adlar (sekme, kart, liste, menu) yerine işe özel ad ver.
+
+## 17.11 Site ve uygulama tek proje (Sessiz Örs)
+Siteyi 3 dükkânlı yaptım, uygulama eski tek dükkânlı tünel/ana sayfa kopyasıyla kaldı; Tolga 'Pazara gir deyince hâlâ Halalar geliyor' diye defalarca söyledi. Önlem: her değişiklikte halalar-web ve halalar-app'te etkilenen yeri grep'le, ikisini birlikte düzelt ve 390px'te ikisini de dene. Uygulamada tünel/ana sayfa kopyası tutma; sitedekine bağlan.
