@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — kıyafet %20 YAYINDA
+Tolga 'Yayınla'. Web db82288, app 60f110f main'e push; canlıda doğrulandı.
+
 ## 17.11 Sessiz Örs — tünelde kıyafetler %20 küçük (yerel)
 Tolga: 'kıyafet kategorisini %20 küçült'. Yalnız bu: index.html'de d2: ürünlerinin boyutu x0.8 (başka parametre değişmedi). 390'da Giyim tüneli önce/sonra karşılaştırıldı. Yayın bekliyor.
 
