@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Kendi tünelin YAYINDA
+Tolga 'Yayınla'. Web 6b46fe7 ve app d969de2 main'e push. Canlıda: hit.html menüsünden pencere açılıyor (18 kategori), Müzik+Üst giyim+Beyaz Eşya tüneli 109 ürün, logo 'Senin tünelin'.
+
 ## 17.11 Sessiz Örs — Kendi tünelin (yerel)
 Tolga: 'kullanıcı kendi tünelini oluşturabilsin, görmek istediği kategorileri seçsin, o tünelde gezsin'. Logo menüsüne 'Kendi tünelin' eklendi; açılan pencerede üç dükkânın kategorileri ürün sayısıyla seçiliyor, 'Tünele gir' seçilen kategorilerin ürünleriyle karışık tünel açıyor (index.html?sec=...). Denendi: telefonda Müzik+Üst giyim+Beyaz Eşya = 109 ürün (14+35+60), tünelde logo 'Senin tünelin', logoya dokununca seçim geri açılıyor, Kapat tüneli serbest bırakıyor. Yayınlanmadı.
 
