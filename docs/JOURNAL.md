@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — ürün önerileri + dükkân linki (yerel)
+Tolga: 'dükkâna tıklayınca sadece Halalar geliyor' ve 'ürün sayfasının altına öneriler, önce o dükkândan, sonra pazardan'. Sebep: app destesindeki HİT PAZARI logosu app'in eski hit.html kopyasına (yalnız Halalar + Yeni Dükkân) gidiyordu; linkler sitedeki ana sayfaya çevrildi, eski kopya yönlendirme yaptı. urun.html'e veri/oneri.js: aynı dükkândan 8 (aynı kategori önde) + Pazardan öneriler 8 (diğer dükkânlar). Önsal, Halalar ve DSG ürününde denendi, kırık görsel 0, telefonda taşma yok.
+
 ## 17.11 Sessiz Örs — çok dükkân düzeltmeleri YAYINDA
 Tolga 'Yayınla'. firestore:rules deploy (ürün kimliği ≤120), web e796764 ve app 06a469b main'e push. Canlıda doğrulandı: Pazar araması 18 Önsal buzdolabı, Önsal ürününden deste linki ?pazar=1, deste 288 ürün ve başlık 'Pazar', hit.html hesap listeleri 194 dükkân ürününü tanıyor, tünel menü/kart düzeltmesi aktif.
 
