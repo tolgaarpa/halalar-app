@@ -8,16 +8,16 @@ WEB = os.path.expanduser('~/Desktop/halalar-web')
 APP = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 s = open(os.path.join(WEB, 'hit.html'), encoding='utf-8').read()
 DEGIS = [
-    ('href="urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"', 'href="https://tolgaarpa.github.io/halalar-web/urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"'),  # ikinci dükkân ürünleri web'de
-    ('href="dukkan.html"', 'href="https://tolgaarpa.github.io/halalar-web/dukkan.html"'),
-    ("location.href='index.html?mod=pazar'", "location.href=(window.yerelCevir||(x=>x))('https://tolgaarpa.github.io/halalar-web/index.html?mod=pazar')"),  # pazar tüneli web'de
-    ('href="index.html?mod=kategori"', 'href="https://tolgaarpa.github.io/halalar-web/index.html?mod=kategori"'),  # kategori tüneli web'de
+    ('href="urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"', 'href="https://tolgaarpa.github.io/hitpazari/urun.html?id=${encodeURIComponent(\'d2:\'+u.id)}"'),  # ikinci dükkân ürünleri web'de
+    ('href="dukkan.html"', 'href="https://tolgaarpa.github.io/hitpazari/dukkan.html"'),
+    ("location.href='index.html?mod=pazar'", "location.href=(window.yerelCevir||(x=>x))('https://tolgaarpa.github.io/hitpazari/index.html?mod=pazar')"),  # pazar tüneli web'de
+    ('href="index.html?mod=kategori"', 'href="https://tolgaarpa.github.io/hitpazari/index.html?mod=kategori"'),  # kategori tüneli web'de
     ('src="veri/', 'src="'),                                   # veri dosyaları app kökünde
     ('kaynak/web/', 'img/'),                                   # ürün görselleri
     ('kaynak/vitrin/', 'vitrin/'),                             # dükkân vitrin fotoğrafları
     ('kaynak/referans/', 'referans/'),                         # giriş kolajı
     ('href="urun.html?id=${encodeURIComponent(id)}"', 'href="index.html#u=${encodeURIComponent(id)}"'),  # ürün: uygulamada kart olarak açılır
-    ('<a href="https://tolgaarpa.github.io/halalar-app/">Telefon uygulaması</a>', '<a href="https://tolgaarpa.github.io/halalar-web/">Web sitesi</a>'),
+    ('<a href="https://tolgaarpa.github.io/halalar-app/">Telefon uygulaması</a>', '<a href="https://tolgaarpa.github.io/hitpazari/">Web sitesi</a>'),
 ]
 for a, b in DEGIS:
     if a not in s:
