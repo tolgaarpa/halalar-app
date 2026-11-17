@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel ürün kartı düğmeye binmiyor (yerel)
+Tolga telefondan: ürün kartı 'Kaydır, seç' düğmesinin üstüne biniyordu. index.html kartYer: kart ölçülüp düğmenin üst kenarının 14px üstüne ve ekran kenarları içine yerleşir (dokunma ve fare ikisinde de). 390'da kart altı 696 < düğme 757; 1440'ta ekran içinde. App tüneli artık sitedeki olduğu için uygulamada da geçerli.
+
 ## 17.11 Sessiz Örs — Dükkânlar vitrini açıldı (yerel)
 Tolga hit.html#dukkanlar 'hâlâ aynı' (kızgın). Sebep: DSG ve Önsal vitrinleri 'kapali' sınıfıyla kepenk inik kalıyordu, yalnız Halalar açık görünüyordu. vitrinKur ürünü olan dükkânda kepengi kaldırıp neon tabela + 3 raf + 6 ürün (küçük kopyalar) koyuyor. 1440 ve 390'da bakıldı: DSG ve Önsal açık, kırık görsel 0, taşma yok.
 
