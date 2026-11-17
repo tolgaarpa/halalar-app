@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — DSG tünel denemesi (yayın yok)
+Tolga: 'yayınlama, sadece dene: DSG ürünlerini 2 kat büyüt, sayıyı yarıya düşür'. Ayrı dosya deneme-dsg.html (canlı index.html'e dokunulmadı, _config.yml ile yayından hariç; push edilmedi). DSG boyut x0.8 → x1.6, tekrar 12 → 6 tur (1068 → 534 ürün). 390 ve 1440'ta önce/sonra görüntüsü Tolga'ya gönderildi. Yerel deneme: python3 -m http.server 8766 (halalar-web) → localhost:8766/deneme-dsg.html?dukkan=2.
+
 ## 17.11 Sessiz Örs — kıyafet %20 YAYINDA
 Tolga 'Yayınla'. Web db82288, app 60f110f main'e push; canlıda doğrulandı.
 
