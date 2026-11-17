@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — DSG tüneli denemesi 4 YAYINDA
+Tolga 'böyle daha iyi, deneyelim, yayınla'. index.html'de yalnız ?dukkan=2 için: DSG ürünleri 0.6, pantolonlar 0.48, aralık 42, sayı 374 (ilk push'ta 748 çıktı, denemedeki yarı tur atlanmıştı; aynı turda 0.35 ile düzeltildi), üst/alt orta boşluk 0.3. Pazar ve diğer tüneller aynı (DSG ürünleri orada 0.8). Web 838c963 + aa9b20b canlıda.
+
 ## 17.11 Sessiz Örs — DSG denemesi 4 (yayın yok)
 Tolga: sorun uzun pantolonlar, ufak ve seyrek deneyelim. deneme-dsg.html: DSG boyutu 0.6, Alt giyim (pantolon) 0.48, aralık 42, sayı %30 az (374), orta boşluk kaldı. 390/1440'ta canlıdaki DSG tüneliyle karşılaştırıldı: tek tek ürünler seçiliyor, pantolon duvarı yok.
 
