@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel ilk stratejiye geri (yerel)
+Tolga: 'çorbaya döndü, ilk Halalar stratejisi çok iyiydi'. Üç turluk kademe denemesi (200bf22 orta boşluk, 07f8af2 dar çerçeve, f52247b dinamik kenara açılma) geri alındı; index.html 200bf22 öncesine döndü (aralık 32, tekrar 12, iç ofset 0.35, çerçeve 1.4x1.35). Hata yok. Ders: tünel yerleşimini birden fazla parametreyle aynı anda değiştirme; Tolga'nın sorduğu tek şeyi (tekrar sayısı) değiştir.
+
 ## 17.11 Sessiz Örs — tünel kademeli yerleşim (yerel)
 Tolga: tünel çok boş kaldı, öneri istedi; 'önerini yap'. Sabit orta boşluk kaldırıldı; çizimde yaklaşan ürün (dz -2400→-400) kenara doğru açılır (çerçevenin %78'ine kadar, yumuşak geçiş), uzaktakiler ortayı doldurur. Aralık 46→36, büyük ürün boyutu %80→%90, iç ofset 0.35'e döndü; telefonda dar çerçeve (X 0.95) korunuyor. 390 ve 1440'ta Giyim ve Pazar bakıldı. Yayın bekliyor (telefon yanları düzeltmesiyle birlikte).
 

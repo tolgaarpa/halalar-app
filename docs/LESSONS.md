@@ -14,3 +14,6 @@ Bölüm katmanına 'sekme' adını verdim; hesap kartının sekmeleri de 'sekme'
 
 ## 17.11 Site ve uygulama tek proje (Sessiz Örs)
 Siteyi 3 dükkânlı yaptım, uygulama eski tek dükkânlı tünel/ana sayfa kopyasıyla kaldı; Tolga 'Pazara gir deyince hâlâ Halalar geliyor' diye defalarca söyledi. Önlem: her değişiklikte halalar-web ve halalar-app'te etkilenen yeri grep'le, ikisini birlikte düzelt ve 390px'te ikisini de dene. Uygulamada tünel/ana sayfa kopyası tutma; sitedekine bağlan.
+
+## 17.11 Tünel yerleşimi: tek değişiklik, önce/sonra (Sessiz Örs)
+Tolga 'kalabalık, tekrar sayısıysa azalt' dedi; ben aralık, boyut, orta boşluk, çerçeve ve dinamik kenara açılmayı üç turda birlikte değiştirdim, tünel 'çorbaya döndü', ilk Halalar stratejisine geri dönüldü. Önlem: tünel yerleşiminde Tolga'nın söylediği tek parametreyi değiştir, önce/sonra aynı derinlikte ekran görüntüsüyle göster; ilk strateji (aralık 32, tekrar 12, iç ofset 0.35, çerçeve 1.4x1.35) referanstır.
