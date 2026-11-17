@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Hesabım giriş yapılmış hâli (yerel)
+Tolga: girişliyken sağda/üstte kocaman 'Üye girişi' yazıyor, sayfayı etkili kullan. Girişliyken başlık 'Hesabım', sol 'Google ile gir' metni yerine 'Merhaba, Ad' + 3 sayı kutusu (beğeni, teklif ve talep, cevap bekleyen; tıklayınca ilgili sekme) + Pazara gir / Kendi tünelin. Sahte kullanıcıyla 1440 ve 390'da denendi. Girişsiz hâl aynı.
+
 ## 17.11 Sessiz Örs — iki parmakla geri/ileri, tünel hızı (yerel)
 Tolga: Pazar tünelinde fareyle/dokunmatik yüzeyle iki parmakla geri-ileri çalışmıyor, aşağı kaydırmak zor. Sebep: overscroll-behavior:none (Chrome'un geri-ileri hareketini kapatır) + tekerlek dinleyicisi yatay hareketi de engelliyordu. Düzeltme: overscroll-behavior-x:auto (web tünel + app), yatay ağırlıklı tekerlek olayı engellenmez; dikey çarpan 1.4→2.4 (satır/sayfa modları ayrı); ana sayfada yatay hareket pazara sokmaz. Yapay olaylarla denendi: dikey engellenip 72 birim ilerledi, yatay engellenmedi.
 
