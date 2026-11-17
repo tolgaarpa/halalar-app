@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — site adresi hitpazari
+Tolga ana sayfa linkinin 'halalar-web' uzantılı olmasına kızdı (Halalar yalnız bir dükkân). GitHub deposu hitpazari olarak yeniden adlandırıldı; yeni adres tolgaarpa.github.io/hitpazari/ canlı (200), eski adres 404. İki depodaki tüm 'github.io/halalar-web' adresleri yeni adla değiştirildi (web 5, app 6 dosya), yerel commit; push 'Yayınla' bekliyor. Uygulama adresi (halalar-app: panel, kvkk) değişmedi.
+
 ## 17.11 Sessiz Örs — genel kategoriler YAYINDA
 Tolga 'Yayınla'. Web b8c6851 main'e push. Canlıda: pencerede 14 kategori (ilk Giyim 89), Giyim+Müzik+Elektronik tüneli 110 ürün.
 
