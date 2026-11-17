@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — ana sayfa görseli A/B denemesi (yerel)
+Tolga: ortadaki kolaj, öne çıkan kartı kalkınca sağ altı boş/çirkin kaldı; iki seçenek istedi. A (hit-a.html): görsel gizli, tünel görünür. B (hit-b.html): kolaj Flow Nano Banana ile yeniden düzenlendi (kart çıkarıldı, vazo altı, koltuk ayakları, kitaplar tamamlandı; yazı yok), kenarları sayfa karanlığına eriyor. İkisi masaüstü 1440 ve telefon 390'da bakıldı, yatay taşma yok. Flow indirmesi Tolga'nın ekranında 'kaydet' penceresi açtı; Tolga masaüstüne kaydetti, dosyalar hit_pazari/gorsel-kaynak/'a taşındı.
+
 ## 17.11 Sessiz Örs — hitpazari adresi YAYINDA
 Tolga 'Yayınla'. Web da9621e ve app a61048e main'e push. Canlıda: web ve app sayfalarında 'github.io/halalar-web' kalmadı; hit, index, dukkan (DSG/Önsal), satış koşulları, og.jpg 200; telefon denetiminde kırık görsel 0 (bir fotoda yeniden adlandırma sonrası geçici 503, tekrar denemede 200).
 
