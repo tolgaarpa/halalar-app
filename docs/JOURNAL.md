@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — çıkış yolları denetimi + aynı noktaya dönüş (yerel)
+Tolga: 'bir yere girince geri çıkmak zor, eksikleri görmüyor musun', 'bir noktadan birine gittiğimde aynı noktaya dönebilmeliyim'. 390'da 16 ekran tek tek açılıp çıkış öğeleri listelendi (araçlar: scratchpad/cikis.mjs, akis.mjs, akis2.mjs). Her ekranda çıkış vardı ama dönüş hep başa oluyordu. Düzeltme: tünel derinliği adreste (?z=, tıklamada/1,5 sn'de/ayrılırken kaydedilir) → ürüne/desteye gidip dönünce aynı derinlik; ürün sayfası 'Geri' geldiğin yere history.back ile (tünel, önceki ürün, Dükkânlar katmanı açık); dışarıdan gelindiyse ürünün dükkân tüneli; deste linki z taşır, desteden 'Tünel' aynı derinliğe. Uçtan uca denendi: DSG tüneli z=2600 → ürün → Tünele dön z=2600 → deste → Tünel z=2600; ana sayfa → Bütün dükkânlar → ürün → öneri → Geri → Geri → Dükkânlar katmanı açık.
+
 ## 17.11 Sessiz Örs — Tünele dön YAYINDA
 Tolga 'Yayınla'. Web 3413a0c, app cfe313d main'e push; canlıda urun ve kvkk'da düğme doğrulandı.
 

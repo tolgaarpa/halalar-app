@@ -17,3 +17,6 @@ Siteyi 3 dükkânlı yaptım, uygulama eski tek dükkânlı tünel/ana sayfa kop
 
 ## 17.11 Tünel yerleşimi: tek değişiklik, önce/sonra (Sessiz Örs)
 Tolga 'kalabalık, tekrar sayısıysa azalt' dedi; ben aralık, boyut, orta boşluk, çerçeve ve dinamik kenara açılmayı üç turda birlikte değiştirdim, tünel 'çorbaya döndü', ilk Halalar stratejisine geri dönüldü. Önlem: tünel yerleşiminde Tolga'nın söylediği tek parametreyi değiştir, önce/sonra aynı derinlikte ekran görüntüsüyle göster; ilk strateji (aralık 32, tekrar 12, iç ofset 0.35, çerçeve 1.4x1.35) referanstır.
+
+## 17.11 Gezinme: her ekranda çıkış ve aynı noktaya dönüş (Sessiz Örs)
+Tolga 40 kez tek tek kontrol ettiğini, çıkış/geri eksiklerini benim görmem gerektiğini söyledi. Önlem: yeni ekran ya da bağlantı eklerken telefonda (390) gerçek akışı uçtan uca çalıştır (gir → çık → aynı yere döndü mü); scratchpad akış betikleri gibi tıklayarak dene. Kural: her ekranda üstte görünür çıkış, dönüş geldiğin noktaya (tünel derinliği dahil).
