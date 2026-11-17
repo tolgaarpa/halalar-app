@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — öneriler + dükkân linki YAYINDA
+Tolga 'Yayınla'. Web 610a467, app 0f0c8fd main'e push. Canlıda: urun.html Önsal ürününde 'Önsal Elektronik dükkânından' + 'Pazardan öneriler' 16 kart, kırık 0; app'in eski hit.html'i sitedeki ana sayfaya (3 dükkân vitrini) yönlendiriyor; app linkleri sitedeki hit.html.
+
 ## 17.11 Sessiz Örs — ürün önerileri + dükkân linki (yerel)
 Tolga: 'dükkâna tıklayınca sadece Halalar geliyor' ve 'ürün sayfasının altına öneriler, önce o dükkândan, sonra pazardan'. Sebep: app destesindeki HİT PAZARI logosu app'in eski hit.html kopyasına (yalnız Halalar + Yeni Dükkân) gidiyordu; linkler sitedeki ana sayfaya çevrildi, eski kopya yönlendirme yaptı. urun.html'e veri/oneri.js: aynı dükkândan 8 (aynı kategori önde) + Pazardan öneriler 8 (diğer dükkânlar). Önsal, Halalar ve DSG ürününde denendi, kırık görsel 0, telefonda taşma yok.
 
