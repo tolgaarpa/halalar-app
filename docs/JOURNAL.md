@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — çok dükkân düzeltmeleri YAYINDA
+Tolga 'Yayınla'. firestore:rules deploy (ürün kimliği ≤120), web e796764 ve app 06a469b main'e push. Canlıda doğrulandı: Pazar araması 18 Önsal buzdolabı, Önsal ürününden deste linki ?pazar=1, deste 288 ürün ve başlık 'Pazar', hit.html hesap listeleri 194 dükkân ürününü tanıyor, tünel menü/kart düzeltmesi aktif.
+
 ## 17.11 Sessiz Örs — çok dükkân düzeltmeleri (yerel)
 Tolga GPT incelemesini yapıştırdı, 'doğru bulduklarını yap'. Kodda doğrulandı ve düzeltildi: (1) Pazar ve kendi tünelinde arama yalnız Halalar'daydı → tüm dükkânlar ('buzdolabı' 18 sonuç); (2) 'Kaydır, seç' DSG/Önsal kimliğini Halalar destesine yolluyordu → ?pazar=1, deste 288 ürün, Önsal gerçek fiyatla, DSG teklif-yalnız; (3) hit.html listeleri yalnız Halalar → DSG/Önsal da (denendi); (4) uye.js satıcıyı hep halalar yazıyordu → kimlikten; (5) Kategoriler tüneline 4 dükkân kategorisi; (6) Pazar başında küçük kaydırmayla ana sayfaya düşme → uzun çekiş gerekir. Ek bulgu: Önsal'ın 14 ürününde kimlik 80+ karakter, kural reddediyordu → 120. GPT'nin 'Nasıl çalışır bağlantısı yok' maddesi yanlış (hesap menüsünde var). Satış koşulları/KVKK bilgileri Tolga'dan bekleniyor.
 
