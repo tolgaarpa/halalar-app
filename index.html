@@ -300,6 +300,20 @@ nav button{font-size:14px!important;padding:16px 0!important}
 .e-kutu::before{content:"Teklifin";position:absolute;transform:translateY(-26px);font:700 11px/1 "Barlow Condensed",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .e-kutu{position:relative;margin-top:14px}
 }
+
+/* TELEFON (Tolga: web ve telefon uyumlu): bilgisayardaki sade düğmeler kartın altında tek sıra (Geç · Teklif ver · Satın al · Beğen); kenar etiketleri yok */
+@media(max-width:899px){
+.ipucu{display:none!important}
+.yan.sag{display:flex;flex-direction:row;gap:8px;padding:10px 14px 2px}
+.yan.sag.bos{visibility:hidden}
+.e-satir{display:contents}
+.e-kutu,.e-fiyat{display:none}
+.e-btn{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:56px;background:none;border:1px solid #3a3a42;color:var(--ink);font:400 13px/1 Anton,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:6px 2px;cursor:pointer}
+.e-btn svg{width:17px;height:17px;color:var(--muted)}
+.e-btn:active{border-color:var(--ink);background:#ffffff12}
+.e-gec{order:1}.e-teklif{order:2}.e-al{order:3}.e-begen{order:4}
+.e-al.pasif{opacity:.45}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
