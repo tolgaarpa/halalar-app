@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel telefonda yanlar dolu (yerel)
+Tolga: telefonda 3 ve 9 yönü boş, 12 ve 6 kalabalık. Sebep: çerçeve genişliği X=1.4 dikey ekranda yan ürünleri ekran dışına atıyordu, üstüne yan kenarlarda ortadan 0.35 boşluk bırakmıştım. Düzeltme: dikey ekranda X=0.95, yan kenar boşluğu kaldırıldı, üst/alt boşluk 0.4*X. 390'da Giyim ve Pazar, 1440'ta Pazar bakıldı.
+
 ## 17.11 Sessiz Örs — tünel kademesi YAYINDA
 Tolga 'Yayınla'. Web 200bf22, app 285f38a main'e push. Canlıda Giyim ve Pazar tünelleri telefon boyunda hatasız (ilk denemede GitHub yeniden derlerken geçici 503, tekrar 0 hata).
 
