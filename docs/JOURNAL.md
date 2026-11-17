@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — app yayında + Önsal Elektronik dükkânı (yerel)
+Tolga 'yayınla önce': app vintage:main push (1b0dcd9). Sonra onsalelektronik.com'daki tüm ürünler (105, JSON-LD'den ad/fiyat/açıklama/foto) yeni dükkân 'Önsal Elektronik' olarak eklendi: web aefc9b3 (vintage). dukkan.html ve urun.html çok dükkânlı (d2:/d3: öneki), hit.html sokakta 3. vitrin. Yerelde 105 ürün, 308 foto, ürün sayfası fiyat+satın al doğrulandı. firestore.rules'a dukkan3 eklendi, dağıtılmadı.
+
 ## 17.11 Sessiz Örs — DSG 89 ürün YAYINDA
 Tolga 'Yayınla'. halalar-web vintage:main push (33b0a05), yerel main eşitlendi; Pages build tamam, 267 DSG görseli canlıda 200 döndü.
 
