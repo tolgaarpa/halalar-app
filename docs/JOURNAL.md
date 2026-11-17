@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel sonu yazısı + dükkân bağlantıları YAYINDA
+Tolga 'Yayınla'. Web ff2a8d3, app de0e90c main'e push; canlıda doğrulandı.
+
 ## 17.11 Sessiz Örs — dükkân bağlantıları tünele (yerel)
 Tolga: menüde DSG ve Önsal statik sayfaya gidiyor, hepsi kendi tüneline gidecekti. hit.html ve index.html'de dukkan.html / dukkan.html?d=3 bağlantıları (menü + Dükkânlar kartları, 8 yer) index.html?dukkan=2 / ?dukkan=3 oldu. Statik dükkân sayfası kaldırılmadı, ürün sayfası ve önerilerden hâlâ açılıyor.
 
