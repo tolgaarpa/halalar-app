@@ -276,6 +276,30 @@ nav button{font-size:14px!important;padding:16px 0!important}
 .e-fiyat small{margin-top:5px;font:700 11px/1.2 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .e-not{margin-top:6px;font-size:13px;color:var(--muted)}
 }
+
+/* BİLGİSAYAR sade düzen (Tolga: sıkışık ve fazla renkli olmasın): tek renk, geniş aralık; teklif/fiyat üstte, düğme altında */
+@media(min-width:900px){
+#app{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) minmax(0,.85fr)!important;column-gap:72px!important}
+.yan.sol{padding-right:8px}
+#sAd{margin:20px 0 18px}
+#sAcik{max-width:34ch}
+.yan.sag{gap:0!important}
+.e-satir{display:flex!important;flex-direction:column;gap:12px;padding:26px 0;border-top:1px solid var(--line)}
+.e-satir:first-child{border-top:0;padding-top:0}
+.e-satir.iki{flex-direction:row;gap:12px}
+.e-satir.iki .e-btn{flex:1}
+.e-kutu,.e-fiyat{order:-1}
+.e-btn{min-height:54px;font-size:18px;letter-spacing:.06em;color:var(--ink)!important;border:1px solid #3a3a42!important;background:none!important}
+.e-btn:hover{border-color:var(--ink)!important;background:#ffffff0d!important}
+.e-btn svg{width:18px;height:18px;color:var(--muted)}
+.e-kutu{border:0;border-bottom:1px solid #3a3a42;padding:0 0 8px}
+.e-kutu:focus-within{border-color:var(--ink)}
+.e-kutu input{font-size:34px}
+.e-fiyat{padding:0}
+.e-fiyat b{font-size:34px}
+.e-kutu::before{content:"Teklifin";position:absolute;transform:translateY(-26px);font:700 11px/1 "Barlow Condensed",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.e-kutu{position:relative;margin-top:14px}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
