@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — ana sayfa: A yayında, C denemesi (yerel)
+Tolga 'ortası boş olanı yayınla': hit.html'de kolaj gizlendi, tünel görünür; web 3494a3f canlıda. B'yi beğenmedi ('yarısı gradyanlı yarısı değil'); istenen: aynı ürünler, temiz kenar. C: Flow'da beyaz düz zeminde yeni kolaj, birefnet ile kesildi, sayfada hiç gradyan/maske yok (hit-c.html). Flow indirmeleri Tolga'nın ekranında habersiz 'Kaydet' penceresi açtı — Tolga kızdı; bundan sonra indirme öncesi haber verilecek. 2 zoom-out denemesi tutmadı (biri çok küçük, biri aynı).
+
 ## 17.11 Sessiz Örs — ana sayfa görseli A/B denemesi (yerel)
 Tolga: ortadaki kolaj, öne çıkan kartı kalkınca sağ altı boş/çirkin kaldı; iki seçenek istedi. A (hit-a.html): görsel gizli, tünel görünür. B (hit-b.html): kolaj Flow Nano Banana ile yeniden düzenlendi (kart çıkarıldı, vazo altı, koltuk ayakları, kitaplar tamamlandı; yazı yok), kenarları sayfa karanlığına eriyor. İkisi masaüstü 1440 ve telefon 390'da bakıldı, yatay taşma yok. Flow indirmesi Tolga'nın ekranında 'kaydet' penceresi açtı; Tolga masaüstüne kaydetti, dosyalar hit_pazari/gorsel-kaynak/'a taşındı.
 
