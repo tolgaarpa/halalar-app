@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — hitpazari adresi YAYINDA
+Tolga 'Yayınla'. Web da9621e ve app a61048e main'e push. Canlıda: web ve app sayfalarında 'github.io/halalar-web' kalmadı; hit, index, dukkan (DSG/Önsal), satış koşulları, og.jpg 200; telefon denetiminde kırık görsel 0 (bir fotoda yeniden adlandırma sonrası geçici 503, tekrar denemede 200).
+
 ## 17.11 Sessiz Örs — site adresi hitpazari
 Tolga ana sayfa linkinin 'halalar-web' uzantılı olmasına kızdı (Halalar yalnız bir dükkân). GitHub deposu hitpazari olarak yeniden adlandırıldı; yeni adres tolgaarpa.github.io/hitpazari/ canlı (200), eski adres 404. İki depodaki tüm 'github.io/halalar-web' adresleri yeni adla değiştirildi (web 5, app 6 dosya), yerel commit; push 'Yayınla' bekliyor. Uygulama adresi (halalar-app: panel, kvkk) değişmedi.
 
