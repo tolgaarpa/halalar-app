@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — GPT 2. inceleme: doğru maddeler (yerel)
+Kodda doğrulandı: (2) telefonda Nasıl çalışır yönleri 2x2'ye dağılıyordu → kartın etrafında haç düzeni (390'da bakıldı); (4) panel başlığı 'Halalar Panel', Önsal talepleri etiketsiz → 'Hit Pazarı paneli', Halalar/DSG/Önsal etiketi; (5) telefonda Dükkânlar ızgarasına yol yoktu → HİT PAZARI menüsünde 'Bütün dükkânlar' (hit + tünel; denendi, katman açılıyor, menü kapanıyor). Yanlış maddeler: Nasıl çalışır/Bilmen/Dükkân aç bağlantıları hesap menüsünde var; beğeni/teklif Google hesabına eşitleniyor (uye.js). KVKK/satış bilgileri Tolga'dan bekleniyor.
+
 ## 17.11 Sessiz Örs — Hesabım + geri/ileri YAYINDA
 Tolga 'Yayınla'. Web 3ff1ae1, app 553d17a main'e push; canlıda hit.html hOzet, tünel ve destede overscroll-behavior-x:auto doğrulandı.
 
