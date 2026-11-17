@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8"><script>/* Hit Pazarı tek proje: uygulama yalnız kart destesidir. Ürünle (#u=) gelinmediyse Hit Pazarı ana sayfasına gider; eski yalnız-Halalar tüneli açılmaz. */(()=>{if(/^#u=/.test(location.hash)||/[?&]pazar=1/.test(location.search))return;const y={'8769':'8766','8771':'8770'}[location.port];location.replace((y?location.protocol+'//'+location.hostname+':'+y+'/':'https://tolgaarpa.github.io/hitpazari/')+'hit.html')})();</script>
+<meta charset="utf-8"><script>/* Hit Pazarı tek proje: uygulama yalnız kart destesidir. Ürünle (#u=) gelinmediyse Hit Pazarı ana sayfasına gider; eski yalnız-Halalar tüneli açılmaz. */(()=>{if(/^#u=/.test(location.hash)||/[?&](pazar=1|t=)/.test(location.search))return;const y={'8769':'8766','8771':'8770'}[location.port];location.replace((y?location.protocol+'//'+location.hostname+':'+y+'/':'https://tolgaarpa.github.io/hitpazari/')+'hit.html')})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="theme-color" content="#0b0b0d">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -256,8 +256,21 @@ const WEB='https://tolgaarpa.github.io/hitpazari/',EK={};
   dk.urunler.filter(x=>x.stok!==0).forEach(x=>{const tam=p=>/^https?:/.test(p)?p:WEB+p;
     EK[on+x.id]={u:[on+x.id,x.ad,x.aciklama||'','—'],g:(x.gorseller&&x.gorseller.length?x.gorseller:[x.gorsel]).map(tam),fiyat:x.fiyat||0,kat:x.kategori,satici:dk.id,sad:dk.ad,teslim:dk.teslim||'',tunel:!!x.tunel}})});
 // ?pazar=1 (sitede Pazar tünelinden ya da başka dükkân ürününden gelindi): deste bütün dükkânların ürünleriyle
-const PAZAR=new URLSearchParams(location.search).get('pazar')==='1';
-if(PAZAR)addEventListener('DOMContentLoaded',()=>{const l=document.querySelector('#s-kesfet .logo, header .logo');if(l)l.textContent='Pazar';document.title='Hit Pazarı · Pazar'});
+// Deste, sitede girilen tünelin ürünleriyle açılır (?t=): pazar | dukkan:2 | dukkan:3 | sec:<seçim> | kat:<Halalar kategorisi> | boş = Halalar
+const QS=new URLSearchParams(location.search),TS=QS.get('t')||(QS.get('pazar')==='1'?'pazar':'');
+const PAZAR=TS==='pazar';
+const EKT=on=>Object.values(EK).filter(e=>e.tunel&&e.u[0].startsWith(on)).map(e=>e.u);
+const TUNEL=(()=>{const web=(()=>{const y={'8769':'8766','8771':'8770'}[location.port];return y?location.protocol+'//'+location.hostname+':'+y+'/':'https://tolgaarpa.github.io/hitpazari/'})();
+  if(PAZAR)return {ad:'Pazar',liste:URUNLER.concat(EKT('d2:'),EKT('d3:')),donus:web+'index.html?mod=pazar'};
+  let m=TS.match(/^dukkan:([23])$/);if(m){const dk=m[1]==='2'?(typeof DUKKAN2!=='undefined'&&DUKKAN2):(typeof DUKKAN3!=='undefined'&&DUKKAN3);return {ad:dk?dk.ad:'Dükkân',liste:EKT('d'+m[1]+':'),donus:web+'index.html?dukkan='+m[1]}}
+  m=TS.match(/^sec:(.+)$/);if(m){const L=m[1].split('~').filter(Boolean),G={'d2:Üst giyim':'Giyim','d2:Alt giyim':'Giyim','d2:Dış giyim':'Giyim','d2:Takım':'Giyim','h:Elektronik & Kamera':'Elektronik','d3:Televizyon':'Elektronik'};
+    const genel=k=>G[k]||k.slice(k.indexOf(':')+1),S=new Set(L.map(k=>k.includes(':')?genel(k):k));
+    const h=URUNLER.filter(u=>typeof KATEGORI!=='undefined'&&S.has(genel('h:'+KATEGORI[u[0]]))),e=[].concat(EKT('d2:'),EKT('d3:')).filter(u=>S.has(genel(u[0].slice(0,3)+EK[u[0]].kat)));
+    return {ad:'Senin tünelin',liste:h.concat(e),donus:web+'index.html?sec='+encodeURIComponent(m[1])}}
+  m=TS.match(/^kat:(.+)$/);if(m)return {ad:m[1],liste:URUNLER.filter(u=>typeof KATEGORI!=='undefined'&&KATEGORI[u[0]]===m[1]),donus:web+'index.html?kat='+encodeURIComponent(m[1])};
+  return {ad:'Halalar',liste:URUNLER,donus:web+'index.html'}})();
+if(!TUNEL.liste.length)TUNEL.liste=URUNLER;
+if(TS)addEventListener('DOMContentLoaded',()=>{const l=document.querySelector('header .logo');if(l)l.textContent=TUNEL.ad;document.title='Hit Pazarı · '+TUNEL.ad});
 const SATICILAR={halalar:{ad:'Halalar'}};
 const saticiOf=id=>EK[id]?EK[id].satici:'halalar';
 const saticiAd=id=>EK[id]?EK[id].sad:'Halalar';
@@ -283,7 +296,7 @@ const TL=n=>n.toLocaleString('tr-TR')+' ₺';
 const U=id=>URUNLER.find(u=>u[0]===id)||(EK[id]&&EK[id].u);
 const img=id=>EK[id]?EK[id].g[0]:`img/${id}.webp`;
 // karışık ama sabit sıra
-let SIRA=URUNLER.concat(PAZAR?Object.values(EK).filter(e=>e.tunel).map(e=>e.u):[]).map((u,i)=>[u[0],(i*0.6180339)%1]).sort((a,b)=>a[1]-b[1]).map(x=>x[0]);
+let SIRA=TUNEL.liste.map((u,i)=>[u[0],(i*0.6180339)%1]).sort((a,b)=>a[1]-b[1]).map(x=>x[0]);
 // ürün listesi değiştiyse (ekleme/çıkarma) eski kalınan yer geçersiz: deste baştan başlar
 const LISTE=SIRA.slice().sort().join(',');
 if(D.liste!==LISTE){D.liste=LISTE;D.sira=0;delete D.order;kaydet()}
@@ -405,9 +418,9 @@ ciz();
 (()=>{const kutu=document.getElementById('araKutu'),kl=document.getElementById('katlar'),so=document.getElementById('sonuc'),pen=document.getElementById('ara');let kat='';
   const norm=t=>(t||'').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i');
   // popülerlik (şimdilik kategorideki ürün sayısı): ilk 3 büyük, sonraki 4 orta, kalanı küçük
-  const AL=URUNLER.concat(PAZAR?Object.values(EK).map(e=>e.u):[]);
+  const AL=TUNEL.liste;
   const SAY={};AL.forEach(u=>{const k=KAT(u[0]);if(k)SAY[k]=(SAY[k]||0)+1});
-  const katlar=['Tümü'].concat([...new Set([].concat(typeof KATEGORILER!=='undefined'?KATEGORILER:[],PAZAR?Object.values(EK).map(e=>e.kat):[]))].filter(k=>SAY[k]).sort((a,b)=>SAY[b]-SAY[a]));
+  const katlar=['Tümü'].concat([...new Set([].concat(typeof KATEGORILER!=='undefined'?KATEGORILER:[],TUNEL.liste.filter(u=>EK[u[0]]).map(u=>EK[u[0]].kat)))].filter(k=>SAY[k]).sort((a,b)=>SAY[b]-SAY[a]));
   kl.innerHTML=katlar.map((k,i)=>`<button data-k="${k==='Tümü'?'':k}" class="${i===0?'b3':i<=3?'b1':i<=7?'b2':'b3'}">${k}</button>`).join('');
   function goster(){const q=norm(kutu.value).trim();
     kl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===kat));
@@ -471,7 +484,7 @@ const T=(()=>{
   requestAnimationFrame(render);
   document.getElementById('direkBasla').onclick=()=>kapat_();
   // 'Tünel' düğmesi sitedeki tünele döner: Pazar destesinden Pazar tüneline, Halalar destesinden Halalar tüneline
-  document.getElementById('tuneleDon').onclick=()=>{const y={'8769':'8766','8771':'8770'}[location.port];location.href=(y?location.protocol+'//'+location.hostname+':'+y+'/':'https://tolgaarpa.github.io/hitpazari/')+(PAZAR?'index.html?mod=pazar':'index.html')};
+  document.getElementById('tuneleDon').onclick=()=>{location.href=TUNEL.donus};
   return {pick:(x,y)=>pick(x,y),get drawn(){return drawn},get camZ(){return camZ},set target(v){target=clamp(v)},get acik(){return acik}};
 })();
 // Hit Pazarı sayfasından gelen ürün (#u=ID): o ürün sıradaki kart olur, tünel kapanır
