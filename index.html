@@ -202,6 +202,37 @@ header .logo{font:400 30px/1 Anton,"Arial Narrow",Impact,sans-serif;letter-spaci
 #ara .oge b{font-size:13px;line-height:1.2}#ara .oge.s5 b{font-size:11.5px}#ara .oge.s6 b{font-size:10.5px}
 #ara .oge small{font-size:10px}#ara .oge.s6 small{display:none}
 #ara .oge img{padding:4%}
+
+/* BİLGİSAYAR: deste telefon sütunu değil, geniş ekran düzeni (fotoğraf solda büyük, bilgi sağda); telefon görünümü aynı kalır */
+@media(min-width:900px){
+#app{max-width:1280px;padding-left:32px;padding-right:32px}
+header{padding:20px 0 12px}
+#deste{margin:6px 0 0}
+.kart .gorsel{inset:0 38% 0 0;padding:56px 70px}
+.kart .bilgi{left:62%;top:0;bottom:0;min-height:0;border-top:0;border-left:1px solid var(--line);padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.kart .ust1{flex-direction:column;align-items:flex-start;gap:14px}
+.kart .donem{font-size:14px!important;letter-spacing:.16em;white-space:normal}
+.kart .fiyat{font-size:46px}
+.kart .fiyat small{font-size:11px}
+.kart h2{font-size:clamp(34px,3.2vw,54px);line-height:1.04;margin:22px 0 16px}
+.kart p{font-size:17px;line-height:1.5;-webkit-line-clamp:9}
+.noktalar{bottom:22px;right:38%}
+.acilar{right:calc(38% + 16px);top:16px;font-size:12px}
+.damga{font-size:34px;padding:8px 16px}
+.ipucu button{font-size:15px!important}
+.ipucu .b-offer{top:14px}.ipucu .b-buy{bottom:14px}.ipucu .b-nope{left:12px}.ipucu .b-like{right:12px}
+nav{max-width:1280px}
+nav button{font-size:14px!important;padding:16px 0!important}
+#sheet{left:50%;right:auto;bottom:50%;width:min(560px,92vw);border:1px solid var(--line);border-radius:6px;transform:translate(-50%,60%) scale(.96);opacity:0;pointer-events:none;transition:transform .25s,opacity .25s}
+#sheet.on{transform:translate(-50%,50%);opacity:1;pointer-events:auto}
+#sheet .tut{display:none}
+#perde{position:fixed}
+.liste{padding:16px 0 90px}
+.satir{grid-template-columns:96px 1fr auto;gap:18px}.satir img{width:96px;height:96px}
+.satir h3{font-size:22px}.satir .k{font-size:13px}.satir .t{font-size:22px}
+.klavye{display:block!important}
+}
+.klavye{display:none;text-align:right;padding:10px 0 0;font:700 11px/1 "Barlow Condensed",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
@@ -209,7 +240,7 @@ header .logo{font:400 30px/1 Anton,"Arial Narrow",Impact,sans-serif;letter-spaci
 <body>
 <div id="app">
   <header><div class="hpi-sol"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><div class="logo">Halalar</div></div><div style="display:flex;gap:10px;align-items:center"><div class="sayac" id="sayac"></div><button class="tunele" id="araAc">Ara</button><button class="tunele" id="tuneleDon">Tünel</button></div></header>
-  <div id="deste"></div>
+  <div id="deste"></div><div class="klavye">Klavye: ← geç · → beğen · ↑ teklif · ↓ satın al</div>
   <div id="ara"><div class="ara-bas"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><b>Ara</b></div><div class="ust2"><input id="araKutu" type="search" placeholder="Ürün ara: plak, tablo, porselen…" autocomplete="off"><button class="tunele" id="araKapat">Kapat</button></div>
     <div class="katlar" id="katlar"></div><div class="sonuc" id="sonuc"></div></div>
   <div class="ipucu">
@@ -365,6 +396,10 @@ function karar(el,id,yon){
   else if(yon==='yukari')teklifAc(id);
   else satinAlAc(id)}
 document.querySelectorAll('.ipucu button').forEach(b=>b.onclick=()=>{if(!aktif||D.sira>=SIRA.length)return;karar(aktif.el,aktif.id,b.dataset.yon)});
+// bilgisayarda klavye: ← geç, → beğen, ↑ teklif ver, ↓ satın alma talebi
+addEventListener('keydown',e=>{const y={ArrowLeft:'sol',ArrowRight:'sag',ArrowUp:'yukari',ArrowDown:'asagi'}[e.key];if(!y||(e.target.closest&&e.target.closest('input,textarea')))return;
+  if(document.getElementById('sheet').classList.contains('on')||document.querySelector('.sayfa.on')||document.getElementById('ara').classList.contains('on'))return;
+  if(!aktif||D.sira>=SIRA.length)return;e.preventDefault();karar(aktif.el,aktif.id,y)});
 
 // ---- teklif / satın al ----
 const sheet=document.getElementById('sheet'),perde=document.getElementById('perde');
@@ -498,8 +533,8 @@ document.body.addEventListener('scroll',()=>{if(document.body.scrollTop)document
 
 // yön etiketlerini destenin çevresine yerleştir
 (()=>{const ip=document.querySelector('.ipucu'),de=document.getElementById('deste'),ap=document.getElementById('app');
-  function yerles(){const r=de.getBoundingClientRect(),a=ap.getBoundingClientRect();if(!r.width)return;const b=146;   // alttaki bilgi paneli: etiketler yalnız fotoğraf alanında
-    Object.assign(ip.style,{left:(r.left-a.left)+'px',top:(r.top-a.top)+'px',width:r.width+'px',height:Math.max(80,r.height-b)+'px'})}
+  function yerles(){const r=de.getBoundingClientRect(),a=ap.getBoundingClientRect();if(!r.width)return;const gen=innerWidth>=900,b=gen?0:146;   // etiketler yalnız fotoğraf alanında (bilgisayarda fotoğraf solda, bilgi sağda)
+    Object.assign(ip.style,{left:(r.left-a.left)+'px',top:(r.top-a.top)+'px',width:(gen?r.width*.62:r.width)+'px',height:Math.max(80,r.height-b)+'px'})}
   addEventListener('resize',yerles);new ResizeObserver(yerles).observe(de);setTimeout(yerles,50)})();
 </script>
 </body>
