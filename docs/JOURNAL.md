@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel ilk strateji YAYINDA
+Tolga 'Yayınla'. Web e5700ef, app 35f4516 main'e push; canlıda eski yerleşim (IRI yok), Pazar tüneli telefon boyunda JS hatası yok (bir küçük fotoda yayın sonrası geçici 503, tekrar 200).
+
 ## 17.11 Sessiz Örs — tünel ilk stratejiye geri (yerel)
 Tolga: 'çorbaya döndü, ilk Halalar stratejisi çok iyiydi'. Üç turluk kademe denemesi (200bf22 orta boşluk, 07f8af2 dar çerçeve, f52247b dinamik kenara açılma) geri alındı; index.html 200bf22 öncesine döndü (aralık 32, tekrar 12, iç ofset 0.35, çerçeve 1.4x1.35). Hata yok. Ders: tünel yerleşimini birden fazla parametreyle aynı anda değiştirme; Tolga'nın sorduğu tek şeyi (tekrar sayısı) değiştir.
 
