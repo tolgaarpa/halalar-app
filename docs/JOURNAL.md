@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünelde kıyafetler %20 küçük (yerel)
+Tolga: 'kıyafet kategorisini %20 küçült'. Yalnız bu: index.html'de d2: ürünlerinin boyutu x0.8 (başka parametre değişmedi). 390'da Giyim tüneli önce/sonra karşılaştırıldı. Yayın bekliyor.
+
 ## 17.11 Sessiz Örs — tünel ilk strateji YAYINDA
 Tolga 'Yayınla'. Web e5700ef, app 35f4516 main'e push; canlıda eski yerleşim (IRI yok), Pazar tüneli telefon boyunda JS hatası yok (bir küçük fotoda yayın sonrası geçici 503, tekrar 200).
 
