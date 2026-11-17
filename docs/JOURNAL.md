@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — iki parmakla geri/ileri, tünel hızı (yerel)
+Tolga: Pazar tünelinde fareyle/dokunmatik yüzeyle iki parmakla geri-ileri çalışmıyor, aşağı kaydırmak zor. Sebep: overscroll-behavior:none (Chrome'un geri-ileri hareketini kapatır) + tekerlek dinleyicisi yatay hareketi de engelliyordu. Düzeltme: overscroll-behavior-x:auto (web tünel + app), yatay ağırlıklı tekerlek olayı engellenmez; dikey çarpan 1.4→2.4 (satır/sayfa modları ayrı); ana sayfada yatay hareket pazara sokmaz. Yapay olaylarla denendi: dikey engellenip 72 birim ilerledi, yatay engellenmedi.
+
 ## 17.11 Sessiz Örs — deste telefon uyumu YAYINDA
 Tolga 'Yayınla'. App 42ec0f7 main'e push; canlıda 390'da kart altında 4 sade düğme, taşma yok.
 
