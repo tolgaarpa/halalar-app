@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Dükkânlar vitrini açıldı (yerel)
+Tolga hit.html#dukkanlar 'hâlâ aynı' (kızgın). Sebep: DSG ve Önsal vitrinleri 'kapali' sınıfıyla kepenk inik kalıyordu, yalnız Halalar açık görünüyordu. vitrinKur ürünü olan dükkânda kepengi kaldırıp neon tabela + 3 raf + 6 ürün (küçük kopyalar) koyuyor. 1440 ve 390'da bakıldı: DSG ve Önsal açık, kırık görsel 0, taşma yok.
+
 ## 17.11 Sessiz Örs — tek proje YAYINDA
 Tolga 'Yayınla'. Web b2a90e2, app d9462ff main'e push. Canlıda: halalar-app kökü sitedeki Hit Pazarı ana sayfasına gidiyor, Pazar destesi 288 ürün 'Pazar' başlığıyla, tünel menüsünde Önsal var, ürün sayfası geri bağlantısı 'tünele dön'.
 
