@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — deste bilgisayar sadeleşti (yerel)
+Tolga: 'çok sıkışık, fazla renkli'. Sağ panel tek renk (beyaz yazı, gri çerçeve), bloklar arası çizgi ve geniş boşluk, teklif tutarı ve fiyat büyük üstte, düğme altında; sütun aralığı 72px. 1440'ta bakıldı.
+
 ## 17.11 Sessiz Örs — deste bilgisayar: 3 sütun (yerel)
 Tolga: ürünü ortala, solda ürün bilgileri, sağda teklif ver/satın al/beğen/geç ikonları; teklifin yanında teklif kutusu, satın alın yanında fiyat. #app ≥900px grid (0.9/1.6/0.9), yan paneller yanGuncelle() ile her kartta güncellenir. Denendi: 1440 ve 1280'de düzen, tutar 5000 yazıp Teklif ver → teklif penceresi 5000 ile açıldı; 390'da yan paneller gizli, telefon aynı.
 
