@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Kendi tünelin (yerel)
+Tolga: 'kullanıcı kendi tünelini oluşturabilsin, görmek istediği kategorileri seçsin, o tünelde gezsin'. Logo menüsüne 'Kendi tünelin' eklendi; açılan pencerede üç dükkânın kategorileri ürün sayısıyla seçiliyor, 'Tünele gir' seçilen kategorilerin ürünleriyle karışık tünel açıyor (index.html?sec=...). Denendi: telefonda Müzik+Üst giyim+Beyaz Eşya = 109 ürün (14+35+60), tünelde logo 'Senin tünelin', logoya dokununca seçim geri açılıyor, Kapat tüneli serbest bırakıyor. Yayınlanmadı.
+
 ## 17.11 Sessiz Örs — beyaz eşya logoları YAYINDA
 Tolga ekran görüntüsünde Hoover etiketinde grilik gösterdi: etiket %94 opaktı, koyu üründe grileşiyor, logo kutusu ise saf beyaz kalıyordu. Etiket tam beyaz yapıldı, 60 görsel yeniden üretildi ve görüldü. Tolga 'yayınla': web e850c4f main'e push, canlıda doğrulandı.
 
