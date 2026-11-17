@@ -1,0 +1,8 @@
+# Site yayınında gizlenecek iç dosyalar (GitHub Pages / Jekyll). Depoda kalırlar.
+exclude:
+  - CLAUDE.md
+  - AGENTS.md
+  - docs/
+  - artifacts/
+  - araclar/
+  - dekupe/
