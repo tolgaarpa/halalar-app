@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Önsal beyaz eşyaya marka logosu (yerel)
+Tolga: 'beyaz eşyalara ufak da olsa markaların logosunu koyalım, tüneldeki versiyona'. 60 beyaz eşyanın tünel görseline küçük logo basıldı (Altus 37, Hoover 22, Demirdöküm 1), beyaz yuvarlak etiket içinde, ürünün gövdesine oturacak yerde (davlumbazda boşlukta kalmasın diye gövde araması). Dükkân ve ürün sayfası fotoları aynı kaldı. Web ec9c2df, push edilmedi; 'Yayınla' bekliyor.
+
 ## 17.11 Sessiz Örs — denetim düzeltmeleri YAYINDA
 Tolga 'Yayınla'. Web 943f441, app 70c8ea9. Canlıda: og.jpg ve küçük fotolar 200, Pazar telefonda 3,6 MB, olmayan ürün 'Ürün bulunamadı', JS hatası 0. İç dosyalar (docs, CLAUDE.md, artifacts, hit-deneme) artık içerik vermiyor (GitHub hata sayfası 404/503).
 
