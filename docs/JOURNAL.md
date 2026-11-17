@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel kademeli yerleşim (yerel)
+Tolga: tünel çok boş kaldı, öneri istedi; 'önerini yap'. Sabit orta boşluk kaldırıldı; çizimde yaklaşan ürün (dz -2400→-400) kenara doğru açılır (çerçevenin %78'ine kadar, yumuşak geçiş), uzaktakiler ortayı doldurur. Aralık 46→36, büyük ürün boyutu %80→%90, iç ofset 0.35'e döndü; telefonda dar çerçeve (X 0.95) korunuyor. 390 ve 1440'ta Giyim ve Pazar bakıldı. Yayın bekliyor (telefon yanları düzeltmesiyle birlikte).
+
 ## 17.11 Sessiz Örs — tünel telefonda yanlar dolu (yerel)
 Tolga: telefonda 3 ve 9 yönü boş, 12 ve 6 kalabalık. Sebep: çerçeve genişliği X=1.4 dikey ekranda yan ürünleri ekran dışına atıyordu, üstüne yan kenarlarda ortadan 0.35 boşluk bırakmıştım. Düzeltme: dikey ekranda X=0.95, yan kenar boşluğu kaldırıldı, üst/alt boşluk 0.4*X. 390'da Giyim ve Pazar, 1440'ta Pazar bakıldı.
 
