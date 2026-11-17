@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünel kademesi YAYINDA
+Tolga 'Yayınla'. Web 200bf22, app 285f38a main'e push. Canlıda Giyim ve Pazar tünelleri telefon boyunda hatasız (ilk denemede GitHub yeniden derlerken geçici 503, tekrar 0 hata).
+
 ## 17.11 Sessiz Örs — tünel kademesi (yerel)
 Tolga: ?sec=Giyim çok kalabalık, ortada fazla ürün arkadakileri kapatıyor. Sebep: 89 ürün x 12 tekrar = 1068 öğe, büyük giyim fotoğrafları, iç ofset 0.35 ile ürünler ortaya giriyordu. Düzeltme: tekrar = 700/ürün sayısı (3-12 arası; Giyim 8 tur, 712 öğe), dükkân ürünü ağırlıklı tünelde aralık 32→46 ve boyut %80, iç ofset 0.2, üst/alt kenar ürünleri ortadan ≥0.55, yan kenar ürünleri ≥0.35 uzakta (orta görüş hattı boş). Önce/sonra karşılaştırıldı; Halalar, Pazar, Giyim'de JS hatası yok. Not: ilk denemede değişken adı BUYUK çakıştı (sayfa açılmıyordu) → IRI; canlıya çıkmadan yakalandı.
 
