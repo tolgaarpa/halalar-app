@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünelde telefon dokunuşu ürün sayfasına
+Tolga: 'telefonda tünele tıkladığımda yine Halalar'a gitti'. Sebep: index.html tıklamada telefon genişliğinde (<900px) Halalar ürünleri halalar-app kart destesine yollanıyordu. Artık her cihazda urun.html. 390px'te Pazar tünelinde Halalar ürünü (Rüzgâr Çanı) tıklandı, Hit Pazarı ürün sayfası açıldı. Yerel, yayın bekliyor.
+
 ## 17.11 Sessiz Örs — ana sayfa: A yayında, C denemesi (yerel)
 Tolga 'ortası boş olanı yayınla': hit.html'de kolaj gizlendi, tünel görünür; web 3494a3f canlıda. B'yi beğenmedi ('yarısı gradyanlı yarısı değil'); istenen: aynı ürünler, temiz kenar. C: Flow'da beyaz düz zeminde yeni kolaj, birefnet ile kesildi, sayfada hiç gradyan/maske yok (hit-c.html). Flow indirmeleri Tolga'nın ekranında habersiz 'Kaydet' penceresi açtı — Tolga kızdı; bundan sonra indirme öncesi haber verilecek. 2 zoom-out denemesi tutmadı (biri çok küçük, biri aynı).
 
