@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tünelde menü açılınca ürün kartı gizlenir (yerel)
+Tolga telefondan ekran görüntüsü: hesap menüsü açıkken ürün kartı (Altus buzdolabı) menünün üstünde kalıyordu (kart z-index 70 > nav 60). Artık hesap/logo menüsü ya da 'Kendi tünelin' açıkken kart kapanır ve yeniden açılmaz, tünel kaymaz; menü kapanınca tünel devam eder. 390px'te denendi. Yayın bekliyor.
+
 ## 17.11 Sessiz Örs — yeni kolaj + telefon dokunuşu YAYINDA
 Tolga 'Yayınla'. hit.html'e deneme C uygulandı (hit-c.html ile yorum dışında aynı), web afafbca main'e push. Canlıda: hit.html kolaj-c.webp yüklüyor (1313 px), telefonda yatay taşma yok; Pazar tünelinde telefon boyunda Halalar ürününe dokununca Hit Pazarı ürün sayfası (Hohner Melodika) açıldı.
 
