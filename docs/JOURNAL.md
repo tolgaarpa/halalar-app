@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — denetim düzeltmeleri YAYINDA
+Tolga 'Yayınla'. Web 943f441, app 70c8ea9. Canlıda: og.jpg ve küçük fotolar 200, Pazar telefonda 3,6 MB, olmayan ürün 'Ürün bulunamadı', JS hatası 0. İç dosyalar (docs, CLAUDE.md, artifacts, hit-deneme) artık içerik vermiyor (GitHub hata sayfası 404/503).
+
 ## 17.11 Sessiz Örs — denetim düzeltmeleri (yerel)
 Tolga 'yapabildiklerini yapmaya başla'. Denetimin 1,2,3,4,8(kısmen),9,10. maddeleri yapıldı; yerelde doğrulandı: Pazar telefonda 3,6 MB (önce 16,5), Pazar'da 105 Önsal + 89 DSG, Önsal tünelinde 'buzdolabı' araması 18 sonuç ve Önsal kategorileri, olmayan ürün linkinde 'Bu ürün artık yok' + ilgili dükkân, tüm sayfalarda og/description/ikon, JS hatası 0. Küçük fotolar kaynak/k/ (288 dosya, 3 MB). og.jpg 1200x630 kolajdan.
 
