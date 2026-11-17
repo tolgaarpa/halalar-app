@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Halalar Panel</title>
+<title>Hit Pazarı · Panel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -67,7 +67,7 @@ h1 small{font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.22em}
     <button data-f="Beklemede" class="on">Bekleyen</button><button data-f="hepsi">Tümü</button><button id="cikis">Çıkış</button>
   </div></header>
 <main id="main"><div class="giris" id="giris">
-  <h1>Dükkân paneli</h1>
+  <h1>Hit Pazarı paneli</h1>
   <p>Uygulamadan gelen teklifleri ve satın alma taleplerini burada görürsün. Yalnız yetkili Google hesabı girebilir.</p>
   <button class="btn" id="gir">Google ile giriş yap</button>
   <p id="ghata" style="color:var(--ret)"></p>
@@ -101,7 +101,7 @@ function ciz(){
   if(!l.length){el.innerHTML=`<div class="bos">${filtre==='Beklemede'?'Bekleyen talep yok.':'Henüz talep yok.'}</div>`;return}
   el.innerHTML=l.map(t=>{const liste=FIYAT[t.urun]; const z=t.zaman&&t.zaman.toDate?t.zaman.toDate().toLocaleString('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'';
     return `<div class="talep" style="--c:${RENK[t.durum]||'var(--muted)'}">${String(t.urun).startsWith('d2:')?'<div class="d2r">YENİ<br>DÜKKÂN</div>':`<img src="img/${esc(t.urun)}.webp" alt="">`}
-    <div><div class="ust"><h3>${esc(t.urunAd)}</h3><span class="rozet">${t.satici==='dukkan2'?'DSG · ':''}${t.tur==='teklif'?'Teklif':'Satın alma'} · ${esc(t.durum)}</span></div>
+    <div><div class="ust"><h3>${esc(t.urunAd)}</h3><span class="rozet">${t.satici==='dukkan2'?'DSG · ':t.satici==='dukkan3'?'Önsal · ':'Halalar · '}${t.tur==='teklif'?'Teklif':'Satın alma'} · ${esc(t.durum)}</span></div>
     <div class="satir"><span>${t.tur==='teklif'?'Teklif':'Tutar'}: <b>${TL(t.tutar)}</b></span>${liste?`<span>Liste: ${TL(liste)} (örnek)</span>`:''}<span class="zaman">${z}</span></div>
     <div class="kisi"><span>${esc(t.ad)}</span><a href="tel:${esc(t.tel)}">${esc(t.tel)}</a><button class="btn" data-kopya="${esc(t.tel)}">Numarayı kopyala</button></div>
     ${t.yanit?`<div class="yanit">${esc(t.yanit)}</div>`:''}
