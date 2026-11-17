@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Önsal fotoğrafları YAYINDA
+Tolga 'Yayınla'. Web 189900e, app d94fe3b main'e push; canlıda dukkan3.js yeni fotoğraflarla, 4 yeni dosya 200.
+
 ## 17.11 Sessiz Örs — Önsal yarım fotoğraflar (yerel)
 Tolga: destede yarım görünen ürünler (su ısıtıcısı). Sebep: Önsal'ın kendi fotoğrafları bazı ürünlerde detay kırpması. 105 ana fotoğraf ve galeriler tek tek tarandı. Al 728 I su ısıtıcısının iki fotoğrafı da kesikti → Trendyol'daki tam fotoğraf (1200x1800) birefnet ile dekupe; radyatör (birefnet) ve beyaz kurutma makinesi (dikdörtgen maske) beyaz kutudan çıkarıldı; 3 Hoover'ın ana fotoğrafı _tunel dekupesi oldu; 15 üründen 19 kesik detay fotoğrafı galeriden çıkarıldı; HBR tünel logolu görseli yenilendi. Eksik dosya 0. Yayın bekliyor.
 
