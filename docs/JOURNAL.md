@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — C: lamba tamamlandı (yerel)
+Tolga: girişteki ürünler yarım olmasın, lamba ayağı kesik. Flow'da 2 deneme (tam ürün istemi, sola genişletme) lambayı yine kenarda kesik bıraktı; durdum. Yerelde: lamba ayağı sağ yarısından aynalanıp tamamlandı, lambanın altındaki kenarda kesik kitap parçası silindi. 1440 ve 390'da bakıldı: heykel, vazo (ayağıyla), koltuk, makine, at, lamba tam. Yayın bekliyor (telefon dokunuş düzeltmesiyle birlikte).
+
 ## 17.11 Sessiz Örs — tünelde telefon dokunuşu ürün sayfasına
 Tolga: 'telefonda tünele tıkladığımda yine Halalar'a gitti'. Sebep: index.html tıklamada telefon genişliğinde (<900px) Halalar ürünleri halalar-app kart destesine yollanıyordu. Artık her cihazda urun.html. 390px'te Pazar tünelinde Halalar ürünü (Rüzgâr Çanı) tıklandı, Hit Pazarı ürün sayfası açıldı. Yerel, yayın bekliyor.
 
