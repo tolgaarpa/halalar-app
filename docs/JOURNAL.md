@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — tek proje YAYINDA
+Tolga 'Yayınla'. Web b2a90e2, app d9462ff main'e push. Canlıda: halalar-app kökü sitedeki Hit Pazarı ana sayfasına gidiyor, Pazar destesi 288 ürün 'Pazar' başlığıyla, tünel menüsünde Önsal var, ürün sayfası geri bağlantısı 'tünele dön'.
+
 ## 17.11 Sessiz Örs — tek proje: uygulama sitedeki tünele bağlandı (yerel)
 Tolga: 'Pazara gir deyince hâlâ Halalar geliyor', 'web'i düzeltiyorsan telefon versiyonunu da düzelt'. Sebep: halalar-app kökü açılışta kendi eski Halalar-yalnız tünelini gösteriyordu, 'Tünel' düğmesi de ona dönüyordu. Artık app yalnız deste: ürünsüz açılış sitedeki ana sayfaya, 'Tünel' sitedeki Pazar/Halalar tüneline. Denendi: app kökü → hit.html; Pazar destesi 'Tünel' → Pazar tüneli; Halalar ürünüyle deste açılıyor. Hafızaya ve LESSONS'a kural yazıldı.
 
