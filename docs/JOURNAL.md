@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Tünele dön YAYINDA
+Tolga 'Yayınla'. Web 3413a0c, app cfe313d main'e push; canlıda urun ve kvkk'da düğme doğrulandı.
+
 ## 17.11 Sessiz Örs — her sayfada Tünele dön (yerel)
 Tolga: DSG ürününe girdi, telefondan çıkamadı; her ekranda üstte tünele dön olmalı. urun.html'de küçük '← DSG' statik dükkân sayfasına gidiyordu. Artık urun, dukkan, satis-kosullari (web) ve kvkk (app) üst çubuğu sabit (kaydırınca da görünür), belirgin '← Tünele dön' düğmesi: ürün sayfasında geldiğin tünel, yoksa ürünün dükkân tüneli; dükkân sayfasında o dükkânın tüneli; diğerlerinde Pazar. 390'da 1500px kaydırıp 5 sayfada denendi. Deste ('Tünel' düğmesi) ve hit.html katmanları (×) zaten vardı.
 
