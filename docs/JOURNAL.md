@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — Halalar kartında ürünler (yerel)
+Tolga: 'Halalar'ında vitrini yerine ürünlerini koy'. Halalar kartındaki gece vitrini fotoğrafı yerine diğerleri gibi neon tabelalı 3 raflı 6 ürünlü vitrin; düğme metni 'Dükkâna gir'. 1440 ve 390'da bakıldı, kırık görsel 0.
+
 ## 17.11 Sessiz Örs — dükkânlar eşit/alfabetik, deste tek renk (yerel)
 Tolga: destede kart rengi farkı istenmiyor; ana sayfa Dükkânlar Halalar vitriniyle açılmasın, bütün dükkânlar görünsün; dükkân listeleri alfabetik. hit.html #dukkanlar ızgara (DSG 89, Halalar 94, Önsal 105 ürün), menüler DSG-Halalar-Önsal; app deste zemini sayfayla aynı. 1440 ve 390'da bakıldı, taşma yok.
 
