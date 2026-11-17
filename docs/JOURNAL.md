@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — deste sade düzeni YAYINDA + telefon uyumu (yerel)
+Tolga 'güzel yayınla': app 397bde0 canlıda (1440'ta yan paneller, 390'da gizli). Sonra 'web ve tel için uyumlu olsunlar': telefonda kartın altına aynı sade düğmeler tek sıra (Geç · Teklif ver · Satın al · Beğen), renkli kenar etiketleri kalktı. 390'da Teklif ver penceresi açıldı, taşma yok. Yayın bekliyor.
+
 ## 17.11 Sessiz Örs — deste bilgisayar sadeleşti (yerel)
 Tolga: 'çok sıkışık, fazla renkli'. Sağ panel tek renk (beyaz yazı, gri çerçeve), bloklar arası çizgi ve geniş boşluk, teklif tutarı ve fiyat büyük üstte, düğme altında; sütun aralığı 72px. 1440'ta bakıldı.
 
