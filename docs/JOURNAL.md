@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — her tünelin kendi destesi YAYINDA
+Tolga: 'her tünelde Kaydır-seç olsun, bastığı tünelin ürünlerini kaydırsın', 'yap yayınla'. Web: düğme her tünelde (bilgisayar dahil), desteAdres tünel türünü ?t= ile yollar. App: TUNEL listesi t'ye göre (pazar/dukkan/sec/kat/Halalar), başlık ve dönüş. 6 tünel türü yerelde denendi, canlıda Önsal tüneli → deste 105 ürün 'Önsal Elektronik'; dükkânlar vitrini 3'ü açık; tünel kartı düzeltmesi aktif.
+
 ## 17.11 Sessiz Örs — tünel ürün kartı düğmeye binmiyor (yerel)
 Tolga telefondan: ürün kartı 'Kaydır, seç' düğmesinin üstüne biniyordu. index.html kartYer: kart ölçülüp düğmenin üst kenarının 14px üstüne ve ekran kenarları içine yerleşir (dokunma ve fare ikisinde de). 390'da kart altı 696 < düğme 757; 1440'ta ekran içinde. App tüneli artık sitedeki olduğu için uygulamada da geçerli.
 
