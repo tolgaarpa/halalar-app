@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — site genel denetimi (değişiklik yok)
+Tolga: 'tüm sitemizi kontrol et, önerin var mı'. 12 sayfa × masaüstü/telefon canlıda tarandı: JS hatası 0, kırık görsel 0, yatay taşma 0. Bulgular: (1) urun.html bilinmeyen id'de sessizce Halalar'ın ilk ürününü gösteriyor; (2) hiçbir sayfada açıklama/paylaşım önizlemesi (og) yok; (3) Pazar tüneli telefonda ~16 MB; (4) Önsal Pazar tünelinde yok ama 'bütün dükkânlar tek tünelde' yazıyor; (5) dükkân tünelinde 'Ara' yalnız Halalar'da arar; (6) Önsal fiyatları 17.11 kopyası, güncellenmez; (7) Önsal satıcı bilgisi (unvan/adres) ve kendi satış koşulları yok; (8) iki depo PUBLIC, app docs'ta e-posta, web'de docs/CLAUDE.md/hit-deneme.html açık; (9) satis-kosullari favicon yok; (10) Halalar 'ÖRNEK FİYAT'. Tolga'ya öncelik sırasıyla sunuldu, karar bekleniyor.
+
 ## 17.11 Sessiz Örs — dükkân tünelleri + GPT maddeleri YAYINDA
 Tolga 'Yayınla'. Web vintage:main (7c420de), app (380a3ff), yerel main'ler eşitlendi. Canlıda tünel kodu, 'Tünelde gez', 'Teklif ve taleplerim', _tunel fotoları ve app 'Satın alma talebi' doğrulandı.
 
