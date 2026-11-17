@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — DSG 89 ürün YAYINDA
+Tolga 'Yayınla'. halalar-web vintage:main push (33b0a05), yerel main eşitlendi; Pages build tamam, 267 DSG görseli canlıda 200 döndü.
+
 ## 16.11 Sessiz Örs — tünel logosu, söz, kart YAYINDA
 Tolga 'yayınla'. halalar-web vintage:main push (75a5bde), yerel main eşitlendi; canlıda index yeni logo boyutu, hit'te kart yok doğrulandı.
 
