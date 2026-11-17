@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — yeni kolaj + telefon dokunuşu YAYINDA
+Tolga 'Yayınla'. hit.html'e deneme C uygulandı (hit-c.html ile yorum dışında aynı), web afafbca main'e push. Canlıda: hit.html kolaj-c.webp yüklüyor (1313 px), telefonda yatay taşma yok; Pazar tünelinde telefon boyunda Halalar ürününe dokununca Hit Pazarı ürün sayfası (Hohner Melodika) açıldı.
+
 ## 17.11 Sessiz Örs — C: lamba tamamlandı (yerel)
 Tolga: girişteki ürünler yarım olmasın, lamba ayağı kesik. Flow'da 2 deneme (tam ürün istemi, sola genişletme) lambayı yine kenarda kesik bıraktı; durdum. Yerelde: lamba ayağı sağ yarısından aynalanıp tamamlandı, lambanın altındaki kenarda kesik kitap parçası silindi. 1440 ve 390'da bakıldı: heykel, vazo (ayağıyla), koltuk, makine, at, lamba tam. Yayın bekliyor (telefon dokunuş düzeltmesiyle birlikte).
 
