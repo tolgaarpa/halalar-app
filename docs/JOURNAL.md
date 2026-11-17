@@ -1,3 +1,6 @@
+## 17.11 Sessiz Örs — beyaz eşya logoları YAYINDA
+Tolga ekran görüntüsünde Hoover etiketinde grilik gösterdi: etiket %94 opaktı, koyu üründe grileşiyor, logo kutusu ise saf beyaz kalıyordu. Etiket tam beyaz yapıldı, 60 görsel yeniden üretildi ve görüldü. Tolga 'yayınla': web e850c4f main'e push, canlıda doğrulandı.
+
 ## 17.11 Sessiz Örs — Önsal beyaz eşyaya marka logosu (yerel)
 Tolga: 'beyaz eşyalara ufak da olsa markaların logosunu koyalım, tüneldeki versiyona'. 60 beyaz eşyanın tünel görseline küçük logo basıldı (Altus 37, Hoover 22, Demirdöküm 1), beyaz yuvarlak etiket içinde, ürünün gövdesine oturacak yerde (davlumbazda boşlukta kalmasın diye gövde araması). Dükkân ve ürün sayfası fotoları aynı kaldı. Web ec9c2df, push edilmedi; 'Yayınla' bekliyor.
 
