@@ -314,7 +314,34 @@ nav button{font-size:14px!important;padding:16px 0!important}
 .e-gec{order:1}.e-teklif{order:2}.e-al{order:3}.e-begen{order:4}
 .e-al.pasif{opacity:.45}
 }
-</style>
+
+/* tema: Gündüz beyaz (Hit Pazarı tünel menüsünden seçilir, Gece varsayılan) */
+html[data-tema="gunduz"]{--bg:#fff;--ink:#111114;--muted:#77777f;--line:#e4e4e8;--card:#fff;--nope:#4a4a52;--offer:#1b2fa0;--buy:#d9a400}
+html[data-tema="gunduz"] .hp-logo{color:#111114}
+html[data-tema="gunduz"] .kart img{filter:drop-shadow(0 18px 22px rgba(0,0,0,.18))}
+html[data-tema="gunduz"] .kart p,html[data-tema="gunduz"] #sAcik,html[data-tema="gunduz"] .ozet{color:#4a4a52}
+html[data-tema="gunduz"] .ipucu svg{filter:none}
+html[data-tema="gunduz"] .tunele{border-color:#c9c9d0}
+html[data-tema="gunduz"] .satir img,html[data-tema="gunduz"] #sheet .ust img{background:#f6f6f8}
+html[data-tema="gunduz"] #sheet{background:#fff}
+html[data-tema="gunduz"] #sheet .tut{background:#c9c9d0}
+html[data-tema="gunduz"] .teklif-kutu,html[data-tema="gunduz"] .kisi input{background:#fff}
+html[data-tema="gunduz"] .kisi input{border-color:#c9c9d0}
+html[data-tema="gunduz"] .hizli button,html[data-tema="gunduz"] .btns button{background:#f6f6f8}
+html[data-tema="gunduz"] .btns .ana{color:#fff}
+html[data-tema="gunduz"] .btns .ana[style*="--buy"]{color:#111}
+html[data-tema="gunduz"] .rza input{accent-color:#111114}
+html[data-tema="gunduz"] #toast,html[data-tema="gunduz"] #secim{color:#fff}
+html[data-tema="gunduz"] .noktalar i{background:#0003}
+html[data-tema="gunduz"] .noktalar i.on{background:var(--ink)}
+html[data-tema="gunduz"] .e-btn{border-color:#c9c9d0!important}
+html[data-tema="gunduz"] .e-btn:hover,html[data-tema="gunduz"] .e-btn:active{border-color:#111114!important;background:#0000000a!important}
+html[data-tema="gunduz"] .e-kutu{border-bottom-color:#c9c9d0}
+html[data-tema="gunduz"] .e-kutu input::placeholder{color:#8a8a92}
+html[data-tema="gunduz"] #tunel .tust{background:linear-gradient(#ffffffcc,#ffffff00)}
+html[data-tema="gunduz"] #tunel .talt{background:linear-gradient(#ffffff00,#ffffffee 45%)}
+html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tust .hit{text-shadow:none}
+</style><script>try{if(localStorage.getItem('hp-tema')==='gunduz')document.documentElement.dataset.tema='gunduz'}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
 </head>
@@ -614,7 +641,7 @@ const T=(()=>{
       it.op=(1-fog*0.6)*vis;it.sw=it.w*SC*k;it.sh=it.sw*im.naturalHeight/im.naturalWidth;it.sx=VW/2+(it.x*VW*0.5)*k;it.sy=VH/2+(it.y*VH*0.5)*k;
       if(it.sx+it.sw<-50||it.sx-it.sw>VW+50||it.sy+it.sh<-50||it.sy-it.sh>VH+50)continue;drawn.push(it)}
     drawn.sort((a,b)=>a.dz-b.dz);
-    g.setTransform(DPR,0,0,DPR,0,0);g.globalAlpha=1;g.clearRect(0,0,VW,VH);g.fillStyle='rgba(11,11,13,.45)';g.fillRect(0,0,VW,VH);
+    g.setTransform(DPR,0,0,DPR,0,0);g.globalAlpha=1;g.clearRect(0,0,VW,VH);g.fillStyle=document.documentElement.dataset.tema==='gunduz'?'rgba(255,255,255,.45)':'rgba(11,11,13,.45)';g.fillRect(0,0,VW,VH);
     for(const it of drawn){g.save();g.globalAlpha=it.op;g.translate(it.sx,it.sy);g.rotate(it.rot);g.drawImage(IMG[it.u[0]],-it.sw/2,-it.sh/2,it.sw,it.sh);g.restore()}
     requestAnimationFrame(render)}
   requestAnimationFrame(render);
