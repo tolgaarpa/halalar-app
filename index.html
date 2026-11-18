@@ -338,6 +338,7 @@ html[data-tema="gunduz"] .e-btn{border-color:#c9c9d0!important}
 html[data-tema="gunduz"] .e-btn:hover,html[data-tema="gunduz"] .e-btn:active{border-color:#111114!important;background:#0000000a!important}
 html[data-tema="gunduz"] .e-kutu{border-bottom-color:#c9c9d0}
 html[data-tema="gunduz"] .e-kutu input::placeholder{color:#8a8a92}
+.kn-k{filter:drop-shadow(1.5px 0 0 #e8201c) drop-shadow(-1.5px 0 0 #e8201c) drop-shadow(0 1.5px 0 #e8201c) drop-shadow(0 -1.5px 0 #e8201c)!important}.kn-y{filter:drop-shadow(1.5px 0 0 #12a150) drop-shadow(-1.5px 0 0 #12a150) drop-shadow(0 1.5px 0 #12a150) drop-shadow(0 -1.5px 0 #12a150)!important}html[data-tema="gunduz"] .kn-s,#ara .kn-s{filter:drop-shadow(1.5px 0 0 #111114) drop-shadow(-1.5px 0 0 #111114) drop-shadow(0 1.5px 0 #111114) drop-shadow(0 -1.5px 0 #111114)!important}
 html[data-tema="gunduz"] #tunel .tust{background:linear-gradient(#ffffffcc,#ffffff00)}
 html[data-tema="gunduz"] #tunel .talt{background:linear-gradient(#ffffff00,#ffffffee 45%)}
 html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tust .hit{text-shadow:none}
@@ -392,6 +393,8 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
 <!-- Hit Pazarı'nın diğer dükkânları (DSG, Önsal): sitedeki canlı veriden -->
 <script src="https://tolgaarpa.github.io/hitpazari/veri/dukkan2.js"></script>
 <script src="https://tolgaarpa.github.io/hitpazari/veri/dukkan3.js"></script>
+<script>/* dekupe konturu: sitedeki veri/kontur.js ile aynı kural; kırmızı, yeşil şimdilik örnek */
+let knM=null;function knS(id){if(!knM)knM=new Map(typeof DUKKAN3!=='undefined'?DUKKAN3.urunler.map((u,i)=>['d3:'+u.id,{k:u.kategori,i}]):[]);const b=knM.get(id);if(!b)return '';return b.i%9===0?'kn-k':b.i%9===4?'kn-y':b.k==='Beyaz Eşya'?'kn-s':''}</script>
 <script>
 // ---- durum (telefonda saklanır) ----
 // satıcı alanı: ilk fazda yalnız Halalar; sonra başka satıcılar eklenecek
@@ -456,7 +459,7 @@ const deste=document.getElementById('deste');
 const FOTOLAR=id=>EK[id]?EK[id].g:[img(id)].concat(((typeof GALERI!=='undefined'&&GALERI[id])||[]).map(g=>`img/${g}.webp`));
 const KAT=id=>EK[id]?EK[id].kat:(typeof KATEGORI!=='undefined'&&KATEGORI[id])||'';
 function kartHTML(id){const u=U(id),f=FOTOLAR(id);return `
-  <div class="gorsel"><img src="${f[0]}" alt="${u[1]}"></div>
+  <div class="gorsel"><img class="${knS(u[0])}" src="${f[0]}" alt="${u[1]}"></div>
   ${f.length>1?`<div class="acilar">${f.length} AÇI · DOKUN</div><div class="noktalar">${f.map((x,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div>`:''}
   <div class="bilgi"><div class="ust1"><div class="donem">${EK[id]?[EK[id].sad,KAT(id)].join(' · '):[KAT(id),u[3]==='—'?'':u[3]].filter(Boolean).join(' · ')||'Halalar koleksiyonu'}</div><div class="fiyat">${fiyatYaz(id)}${EK[id]?'':'<small>ÖRNEK</small>'}</div></div><h2>${u[1]}</h2><p>${u[2]}</p></div>
   <div class="damga d-like">Beğen</div><div class="damga d-nope">Geç</div>
@@ -534,7 +537,7 @@ const sheet=document.getElementById('sheet'),perde=document.getElementById('perd
 function ac(html){sheet.innerHTML='<div class="tut"></div>'+html;sheet.classList.add('on');perde.classList.add('on')}
 function kapat(geri){sheet.classList.remove('on');perde.classList.remove('on');if(geri&&aktif)aktif.geriAl()}
 perde.onclick=()=>kapat(true);
-function ust(id,bas,renk){const u=U(id);return `<div class="ust"><img src="${img(id)}"><div><div class="bas" style="color:${renk}">${bas}</div><h3>${u[1]}</h3><div class="liste-fiyat">${EK[id]?(EK[id].fiyat?'Fiyat '+TL(EK[id].fiyat):'Fiyatı teklifle belirlenir')+' · '+EK[id].sad:'Liste fiyatı '+TL(FIYAT[id])+' (örnek)'}</div></div></div>`}
+function ust(id,bas,renk){const u=U(id);return `<div class="ust"><img class="${knS(id)}" src="${img(id)}"><div><div class="bas" style="color:${renk}">${bas}</div><h3>${u[1]}</h3><div class="liste-fiyat">${EK[id]?(EK[id].fiyat?'Fiyat '+TL(EK[id].fiyat):'Fiyatı teklifle belirlenir')+' · '+EK[id].sad:'Liste fiyatı '+TL(FIYAT[id])+' (örnek)'}</div></div></div>`}
 function teklifAc(id){
   const f=fiyat(id)||0,o=f?[0.7,0.8,0.9].map(r=>Math.round(f*r/50)*50):[];
   ac(ust(id,'Teklif ver','var(--offer)')+`
@@ -561,7 +564,7 @@ function satinAlAc(id){
     D.islem.unshift({id,ref,satici:saticiOf(id),tur:'alim',tutar:f,zaman:Date.now(),durum:'Beklemede'});kaydet();kapat(false);toast('Talebin dükkâna iletildi');ucur(aktif.el,'asagi',ilerle)}}
 
 // ---- listeler ----
-function satir(id,sag){const u=U(id);if(!u)return '';return `<div class="satir"><img src="${img(id)}"><div><h3>${u[1]}</h3><div class="k">${u[2]}</div></div><div>${sag}</div></div>`}
+function satir(id,sag){const u=U(id);if(!u)return '';return `<div class="satir"><img class="${knS(id)}" src="${img(id)}"><div><h3>${u[1]}</h3><div class="k">${u[2]}</div></div><div>${sag}</div></div>`}
 const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 async function durumTazele(){ if(!VT)return; let degisti=false;
   await Promise.all(D.islem.filter(x=>x.ref).map(async x=>{try{const d=await VT.collection('durumlar').doc(x.ref).get().then(d=>d.exists?d:VT.collection('talepler').doc(x.ref).get()).catch(()=>VT.collection('talepler').doc(x.ref).get());if(!d.exists)return;const v=d.data();
@@ -591,7 +594,7 @@ ciz();
     // önem sırası: beğendiklerin önce, sonra popüler kategoriler; ilk satır 4, sonra 5, sonra 6'şar (kademeli küçülür)
     {let B=[];try{B=(JSON.parse(localStorage.getItem('halalar-app-v1'))||{}).begeni||[]}catch(e){}const puan=u=>(B.includes(u[0])?1000:0)+(SAY[KAT(u[0])]||0);L.sort((x,y)=>puan(y)-puan(x))}
     const kd=i=>i<4?'s4':i<9?'s5':'s6';
-    so.innerHTML=L.length?L.map((u,i)=>`<button class="oge ${kd(i)}" data-id="${u[0]}"><img loading="lazy" src="${img(u[0])}" alt=""><b>${u[1]}</b><small>${KAT(u[0])} · ${fiyatYaz(u[0])}</small></button>`).join(''):'<div class="yok">Bu aramada ürün yok.</div>';
+    so.innerHTML=L.length?L.map((u,i)=>`<button class="oge ${kd(i)}" data-id="${u[0]}"><img class="${knS(u[0])}" loading="lazy" src="${img(u[0])}" alt=""><b>${u[1]}</b><small>${KAT(u[0])} · ${fiyatYaz(u[0])}</small></button>`).join(''):'<div class="yok">Bu aramada ürün yok.</div>';
     so.querySelectorAll('.oge').forEach(b=>b.onclick=()=>{if(!SIRA.includes(b.dataset.id)){SIRA.push(b.dataset.id)}oneAl(b.dataset.id);pen.classList.remove('on');ciz()})}
   kl.onclick=e=>{const b=e.target.closest('button');if(!b)return;kat=b.dataset.k;goster()};
   kutu.oninput=goster;
