@@ -315,6 +315,9 @@ nav button{font-size:14px!important;padding:16px 0!important}
 .e-al.pasif{opacity:.45}
 }
 
+/* telefonda uzun dükkân adı sayaca binmez: sayaç düğmelerin altına iner */
+@media(max-width:600px){header .hpi-sol{flex:1}header .logo{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>div:last-child{flex:none;flex-wrap:wrap;justify-content:flex-end;width:max-content;row-gap:5px}header>div:last-child .tunele{white-space:nowrap}header .sayac{order:3;flex-basis:100%;text-align:right;white-space:nowrap}}
+@media(max-width:360px){header>div:last-child{gap:6px!important}header .tunele{padding:7px 7px;letter-spacing:.08em}}
 /* tema: Gündüz beyaz (Hit Pazarı tünel menüsünden seçilir, Gece varsayılan) */
 html[data-tema="gunduz"]{--bg:#fff;--ink:#111114;--muted:#77777f;--line:#e4e4e8;--card:#fff;--nope:#4a4a52;--offer:#1b2fa0;--buy:#d9a400}
 html[data-tema="gunduz"] .hp-logo{color:#111114}
@@ -421,6 +424,9 @@ if(!TUNEL.liste.length)TUNEL.liste=URUNLER;
 // 'Tünel' düğmesi tünele bıraktığın derinlikte döner (?z=)
 {const z=parseInt(QS.get('z'))||0;if(z>0)TUNEL.donus+=(TUNEL.donus.includes('?')?'&':'?')+'z='+z}
 if(TS)addEventListener('DOMContentLoaded',()=>{const l=document.querySelector('header .logo');if(l)l.textContent=TUNEL.ad;document.title='Hit Pazarı · '+TUNEL.ad});
+// uzun dükkân adı başlığa sığana kadar küçülür, kısa adlar aynı kalır
+function adSigdir(){const l=document.querySelector('header .logo');if(!l)return;l.style.fontSize='';let f=parseFloat(getComputedStyle(l).fontSize);while(l.scrollWidth>l.clientWidth&&f>15){f-=1;l.style.fontSize=f+'px'}}
+addEventListener('DOMContentLoaded',()=>{adSigdir();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(adSigdir)});addEventListener('resize',adSigdir);
 const SATICILAR={halalar:{ad:'Halalar'}};
 const saticiOf=id=>EK[id]?EK[id].satici:'halalar';
 const saticiAd=id=>EK[id]?EK[id].sad:'Halalar';
