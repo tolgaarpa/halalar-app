@@ -21,7 +21,10 @@
   const yerelYaz=Storage.prototype.setItem;
   Storage.prototype.setItem=function(k,v){yerelYaz.call(this,k,v);if(this===localStorage&&k===KEY&&uid){clearTimeout(bekle);bekle=setTimeout(gonder,1500)}};
   auth.onAuthStateChanged(async u=>{
-    uid=u?u.uid:null;hazir=false;if(!u)return;
+    uid=u?u.uid:null;hazir=false;
+    // giriş durumu her sayfada görünsün: yalnız 'giriş var' işareti tutulur, kişisel bilgi tutulmaz
+    try{if(u)yerelYaz.call(localStorage,'hp-uye','1');else localStorage.removeItem('hp-uye')}catch(e){}dispatchEvent(new Event('hpuye'));
+    if(!u)return;
     try{
       const s=await db.collection('uyeler').doc(u.uid).get(),uz=s.exists?s.data():{},yer=oku();
       // birleştir: beğeniler birleşimi, teklifler belge no'ya göre, bilgiler önce bu cihaz

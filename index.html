@@ -318,6 +318,8 @@ nav button{font-size:14px!important;padding:16px 0!important}
 /* telefonda uzun dükkân adı sayaca binmez: sayaç düğmelerin altına iner */
 @media(max-width:600px){header .hpi-sol{flex:1}header .logo{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}header>div:last-child{flex:none;flex-wrap:wrap;justify-content:flex-end;width:max-content;row-gap:5px}header>div:last-child .tunele{white-space:nowrap}header .sayac{order:3;flex-basis:100%;text-align:right;white-space:nowrap}}
 @media(max-width:360px){header>div:last-child{gap:6px!important}header .tunele{padding:7px 7px;letter-spacing:.08em}}
+.hesap-yol{display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap;background:#1b2fa0!important;border-color:#1b2fa0!important;color:#fff!important}.hesap-yol[hidden]{display:none}
+@media(max-width:600px){header>div:last-child{display:grid!important;grid-template-columns:auto auto;gap:5px 8px}header>div:last-child #araAc{grid-column:1;grid-row:1}header>div:last-child #tuneleDon{grid-column:2;grid-row:1}header>div:last-child .hesap-yol{grid-column:1;grid-row:2;padding:4px 7px;justify-content:center;font-size:11px}header>div:last-child .sayac{grid-column:2;grid-row:2;align-self:center}}
 /* tema: Gündüz beyaz (Hit Pazarı tünel menüsünden seçilir, Gece varsayılan) */
 html[data-tema="gunduz"]{--bg:#fff;--ink:#111114;--muted:#77777f;--line:#e4e4e8;--card:#fff;--nope:#4a4a52;--offer:#1b2fa0;--buy:#d9a400}
 html[data-tema="gunduz"] .hp-logo{color:#111114}
@@ -351,7 +353,7 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
 </head>
 <body>
 <div id="app">
-  <header><div class="hpi-sol"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><div class="logo">Halalar</div></div><div style="display:flex;gap:10px;align-items:center"><div class="sayac" id="sayac"></div><button class="tunele" id="araAc">Ara</button><button class="tunele" id="tuneleDon">Tünel</button></div></header>
+  <header><div class="hpi-sol"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><div class="logo">Halalar</div></div><div style="display:flex;gap:10px;align-items:center"><div class="sayac" id="sayac"></div><button class="tunele" id="araAc">Ara</button><button class="tunele" id="tuneleDon">Tünel</button><a class="tunele hesap-yol" id="hesapYol" hidden href="https://tolgaarpa.github.io/hitpazari/hit.html#hesap">Hesabım</a></div></header>
   <div id="deste"></div>
   <aside class="yan sol" id="solBilgi" aria-live="polite"><div class="s-donem" id="sDonem"></div><h2 id="sAd"></h2><p id="sAcik"></p><div class="s-aci" id="sAci"></div></aside>
   <aside class="yan sag" id="sagEylem">
@@ -426,7 +428,9 @@ if(!TUNEL.liste.length)TUNEL.liste=URUNLER;
 if(TS)addEventListener('DOMContentLoaded',()=>{const l=document.querySelector('header .logo');if(l)l.textContent=TUNEL.ad;document.title='Hit Pazarı · '+TUNEL.ad});
 // uzun dükkân adı başlığa sığana kadar küçülür, kısa adlar aynı kalır
 function adSigdir(){const l=document.querySelector('header .logo');if(!l)return;l.style.fontSize='';let f=parseFloat(getComputedStyle(l).fontSize);while(l.scrollWidth>l.clientWidth&&f>15){f-=1;l.style.fontSize=f+'px'}}
-addEventListener('DOMContentLoaded',()=>{adSigdir();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(adSigdir)});addEventListener('resize',adSigdir);
+function hesapYol(){const e=document.getElementById('hesapYol');if(!e)return;let v=false;try{v=localStorage.getItem('hp-uye')==='1'}catch(_){}e.hidden=!v}
+addEventListener('hpuye',hesapYol);addEventListener('storage',e=>{if(e.key==='hp-uye')hesapYol()});
+addEventListener('DOMContentLoaded',()=>{hesapYol();adSigdir();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(adSigdir)});addEventListener('resize',adSigdir);
 const SATICILAR={halalar:{ad:'Halalar'}};
 const saticiOf=id=>EK[id]?EK[id].satici:'halalar';
 const saticiAd=id=>EK[id]?EK[id].sad:'Halalar';

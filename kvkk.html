@@ -36,7 +36,7 @@ p,li{color:#cfcac1}
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
 </head>
 <body><div class="hpi-sol" style="position:sticky;top:0;z-index:50;background:#0b0b0d;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;max-width:760px;margin:0 auto"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><a href="https://tolgaarpa.github.io/hitpazari/index.html?mod=pazar" style="border:1px solid #55555e;padding:10px 14px;color:#f2efe9;text-decoration:none;font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap">← Tünele dön</a></div><main>
-<a class="geri" href="./">← Uygulamaya dön</a>
+<span style="display:flex;gap:14px;align-items:center"><a class="geri" id="hesapYol" hidden href="https://tolgaarpa.github.io/hitpazari/hit.html#hesap">Hesabım</a><a class="geri" href="./">← Uygulamaya dön</a></span>
 <div class="ust">6698 sayılı Kişisel Verilerin Korunması Kanunu</div>
 <h1>Kişisel verilerin işlenmesine ilişkin aydınlatma metni</h1>
 <div class="taslak">TASLAK — yayından önce bir avukata kontrol ettirilmeli. Köşeli parantezli yerler dükkân bilgileriyle doldurulacak.</div>
@@ -74,4 +74,4 @@ p,li{color:#cfcac1}
 <p>Başvurularınızı [e-posta] adresine veya [açık adres] adresine yazılı olarak iletebilirsiniz. Başvurunuz en geç 30 gün içinde ücretsiz sonuçlandırılır.</p>
 
 <p style="color:var(--muted);font-size:13px;margin-top:28px">Son güncelleme: 30 Ekim 2026</p>
-</main></body></html>
+</main><script>try{document.getElementById('hesapYol').hidden=localStorage.getItem('hp-uye')!=='1'}catch(e){}</script></body></html>
