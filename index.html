@@ -615,14 +615,17 @@ const T=(()=>{
   function boyut(){DPR=Math.min(devicePixelRatio||1,2);const r=wrap.getBoundingClientRect();VW=r.width;VH=r.height;cv.width=Math.round(VW*DPR);cv.height=Math.round(VH*DPR);SC=Math.max(0.42,Math.min(1,VW/1440*1.5))}
   boyut(); addEventListener('resize',boyut);
   const IMG={},ALPHA={};
-  URUNLER.forEach(u=>{const im=new Image();im.src=img(u[0]);IMG[u[0]]=im;
+  URUNLER.forEach(u=>{const im=new Image();im.addEventListener('load',()=>uyan());im.src=img(u[0]);IMG[u[0]]=im;
     im.decode().then(()=>{const c=document.createElement('canvas');c.width=c.height=48;const x=c.getContext('2d');x.drawImage(im,0,0,48,48);ALPHA[u[0]]=x.getImageData(0,0,48,48).data}).catch(()=>{})});
   const L=[];for(let t=0;t<TEKRAR;t++)URUNLER.forEach(u=>L.push(u));
   const items=L.map((u,i)=>{const ar=ASPECT[u[0]]||1,X=1.4,Y=1.35,per=2*(2*X+2*Y),p=((i*0.6180339)%1)*per,inn=((i*0.4142)%1)*0.35;let xv,yv;
     if(p<2*X){xv=-X+p;yv=-Y+inn}else if(p<2*X+2*Y){xv=X-inn;yv=-Y+(p-2*X)}else if(p<4*X+2*Y){xv=X-(p-2*X-2*Y);yv=Y-inn}else{xv=-X+inn;yv=Y-(p-4*X-2*Y)}
     let rot=0;if(ar<0.75){const mag=9+((i*0.7548)%1)*11,side=Math.abs(xv)>Math.abs(yv)?Math.sign(xv):(((i*0.31)%1)<0.5?-1:1);rot=-side*mag}else rot=(((i*0.5698)%1)-0.5)*4;
     return {u,x:xv,y:yv,z:-(i*STEP)-250,w:(ar>1.25?460:ar<0.75?300:380)+((i*13)%6)*45,rot:rot*Math.PI/180,thin:i%3!==0,sx:0,sy:0,sw:0,sh:0,op:0,dz:0}});
-  const TOTAL=(L.length+1)*STEP; let camZ=0,target=0,acik=true,drawn=[];
+  const TOTAL=(L.length+1)*STEP; let camZ=0,target=0,acik=true,drawn=[],kirli=true,calisiyor=false;
+  // çizim yalnız bir şey değişince çalışır
+  function uyan(){kirli=true;if(acik&&!calisiyor){calisiyor=true;requestAnimationFrame(render)}}
+  ['wheel','pointerdown','pointermove'].forEach(t=>wrap.addEventListener(t,uyan,{passive:true}));addEventListener('resize',uyan);addEventListener('pageshow',uyan);document.addEventListener('visibilitychange',uyan);setInterval(()=>{if(acik&&camZ!==target&&!calisiyor)uyan()},250);
   const clamp=v=>Math.min(Math.max(v,0),TOTAL);
   // tekerlek (masaüstü) ve parmak sürükleme (telefon); dokunma = seçim
   wrap.addEventListener('wheel',e=>{e.preventDefault();if(Math.abs(e.deltaY)<2)return;if(target<=0&&e.deltaY<0){target=0;return}target=clamp(target+e.deltaY*1.4)},{passive:false});
@@ -637,9 +640,9 @@ const T=(()=>{
   const secim=document.getElementById('secim');
   function sec(it){secim.textContent=it.u[1];secim.classList.add('on');setTimeout(()=>{secim.classList.remove('on');oneAl(it.u[0]);kapat_();ciz()},420)}
   function kapat_(){acik=false;wrap.style.transition='opacity .35s';wrap.style.opacity=0;setTimeout(()=>{wrap.style.display='none'},360)}
-  function ac_(){wrap.style.display='';boyut();requestAnimationFrame(()=>{wrap.style.opacity=1});if(!acik){acik=true;requestAnimationFrame(render)}}
+  function ac_(){wrap.style.display='';boyut();requestAnimationFrame(()=>{wrap.style.opacity=1});acik=true;uyan()}
   function render(){
-    if(!acik)return;
+    if(!acik){calisiyor=false;return}kirli=false;
     camZ+=(target-camZ)*0.12;if(Math.abs(target-camZ)<0.05)camZ=target;
     document.getElementById('derin').textContent=Math.round(camZ/40)+' m';
     drawn=[];
@@ -652,8 +655,8 @@ const T=(()=>{
     drawn.sort((a,b)=>a.dz-b.dz);
     g.setTransform(DPR,0,0,DPR,0,0);g.globalAlpha=1;g.clearRect(0,0,VW,VH);g.fillStyle=document.documentElement.dataset.tema==='gunduz'?'rgba(255,255,255,.45)':'rgba(11,11,13,.45)';g.fillRect(0,0,VW,VH);
     for(const it of drawn){g.save();g.globalAlpha=it.op;g.translate(it.sx,it.sy);g.rotate(it.rot);g.drawImage(IMG[it.u[0]],-it.sw/2,-it.sh/2,it.sw,it.sh);g.restore()}
-    requestAnimationFrame(render)}
-  requestAnimationFrame(render);
+    if(camZ!==target||kirli)requestAnimationFrame(render);else calisiyor=false}
+  uyan();
   document.getElementById('direkBasla').onclick=()=>kapat_();
   // 'Tünel' düğmesi sitedeki tünele döner: Pazar destesinden Pazar tüneline, Halalar destesinden Halalar tüneline
   document.getElementById('tuneleDon').onclick=()=>{location.href=TUNEL.donus};
