@@ -320,6 +320,7 @@ nav button{font-size:14px!important;padding:16px 0!important}
 @media(max-width:360px){header>div:last-child{gap:6px!important}header .tunele{padding:7px 7px;letter-spacing:.08em}}
 .hesap-yol{display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap;background:#1b2fa0!important;border-color:#1b2fa0!important;color:#fff!important}.hesap-yol[hidden]{display:none}
 @media(max-width:600px){header>div:last-child{display:grid!important;grid-template-columns:auto auto;gap:5px 8px}header>div:last-child #araAc{grid-column:1;grid-row:1}header>div:last-child #tuneleDon{grid-column:2;grid-row:1}header>div:last-child .hesap-yol{grid-column:1;grid-row:2;padding:4px 7px;justify-content:center;font-size:11px}header>div:last-child .sayac{grid-column:2;grid-row:2;align-self:center}}
+#ara .hpf{--hpf-pad:16px}
 /* tema: Gündüz beyaz (Hit Pazarı tünel menüsünden seçilir, Gece varsayılan) */
 html[data-tema="gunduz"]{--bg:#fff;--ink:#111114;--muted:#77777f;--line:#e4e4e8;--card:#fff;--nope:#4a4a52;--offer:#1b2fa0;--buy:#d9a400}
 html[data-tema="gunduz"] .hp-logo{color:#111114}
@@ -362,7 +363,7 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
     <div class="e-satir iki"><button class="e-btn e-gec" data-yon="sol" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Geç</span></button><button class="e-btn e-begen" data-yon="sag" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Beğen</span></button></div>
   </aside>
   <div id="ara"><div class="ara-bas"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><b>Ara</b></div><div class="ust2"><input id="araKutu" type="search" placeholder="Ürün ara: plak, tablo, porselen…" autocomplete="off"><button class="tunele" id="araKapat">Kapat</button></div>
-    <div class="katlar" id="katlar"></div><div class="sonuc" id="sonuc"></div></div>
+    <div class="katlar" id="katlar"></div><div id="filtre"></div><div class="sonuc" id="sonuc"></div></div>
   <div class="ipucu">
     <button class="b-nope" data-yon="sol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Geç</button>
     <button class="b-offer" data-yon="yukari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Teklif ver</button>
@@ -398,6 +399,7 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
 <!-- Hit Pazarı'nın diğer dükkânları (DSG, Önsal): sitedeki canlı veriden -->
 <script src="https://tolgaarpa.github.io/hitpazari/veri/dukkan2.js"></script>
 <script src="https://tolgaarpa.github.io/hitpazari/veri/dukkan3.js"></script>
+<script>/* Ara filtreleri sitedeki veri/filtre.js ile aynı (yerel denemede yerel siteden) */document.write('<script src="'+(['8768','8769'].includes(location.port)?'http://localhost:8766/':'https://tolgaarpa.github.io/hitpazari/')+'veri/filtre.js"><\/script>')</script>
 <script>/* dekupe konturu: sitedeki veri/kontur.js ile aynı kural; kırmızı, yeşil şimdilik örnek */
 let knM=null;function knS(id){if(!knM)knM=new Map(typeof DUKKAN3!=='undefined'?DUKKAN3.urunler.map((u,i)=>['d3:'+u.id,{k:u.kategori,i}]):[]);const b=knM.get(id);if(!b)return '';return b.i%9===0?'kn-k':b.i%9===4?'kn-y':b.k==='Beyaz Eşya'?'kn-s':''}</script>
 <script>
@@ -592,6 +594,7 @@ let tt=null;function toast(m){const t=document.getElementById('toast');t.textCon
 ciz();
 // ---- arama ve kategori ----
 (()=>{const kutu=document.getElementById('araKutu'),kl=document.getElementById('katlar'),so=document.getElementById('sonuc'),pen=document.getElementById('ara');let kat='';
+  const fl=window.HPF?HPF.kur(document.getElementById('filtre'),()=>goster()):{suz:i=>new Set(i),durum:()=>null,yukle(){},temizle(){}};
   const norm=t=>(t||'').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i');
   // popülerlik (şimdilik kategorideki ürün sayısı): ilk 3 büyük, sonraki 4 orta, kalanı küçük
   const AL=TUNEL.liste;
@@ -601,6 +604,7 @@ ciz();
   function goster(){const q=norm(kutu.value).trim();
     kl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===kat));
     const L=AL.filter(u=>(!kat||KAT(u[0])===kat)&&(!q||q.split(/\s+/).every(w=>norm(u[1]+' '+u[2]+' '+u[3]+' '+KAT(u[0])).includes(w))));
+    {const izin=fl.suz(L.map(u=>u[0]));for(let i=L.length-1;i>=0;i--)if(!izin.has(L[i][0]))L.splice(i,1)}   // kategoriye özel filtreler (veri/filtre.js)
     // önem sırası: beğendiklerin önce, sonra popüler kategoriler; ilk satır 4, sonra 5, sonra 6'şar (kademeli küçülür)
     {let B=[];try{B=(JSON.parse(localStorage.getItem('halalar-app-v1'))||{}).begeni||[]}catch(e){}const puan=u=>(B.includes(u[0])?1000:0)+(SAY[KAT(u[0])]||0);L.sort((x,y)=>puan(y)-puan(x))}
     const kd=i=>i<4?'s4':i<9?'s5':'s6';
