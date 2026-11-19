@@ -631,15 +631,20 @@ const T=(()=>{
     let rot=0;if(ar<0.75){const mag=9+((i*0.7548)%1)*11,side=Math.abs(xv)>Math.abs(yv)?Math.sign(xv):(((i*0.31)%1)<0.5?-1:1);rot=-side*mag}else rot=(((i*0.5698)%1)-0.5)*4;
     return {u,x:xv,y:yv,z:-(i*STEP)-250,w:(ar>1.25?460:ar<0.75?300:380)+((i*13)%6)*45,rot:rot*Math.PI/180,thin:i%3!==0,sx:0,sy:0,sw:0,sh:0,op:0,dz:0}});
   const TOTAL=(L.length+1)*STEP; let camZ=0,target=0,acik=true,drawn=[],kirli=true,calisiyor=false;
+  // SERBEST BAKIŞ (sitedeki gibi): yana sürükleyince kamera sağa sola döner; yanlarda ikinci sıra ürün belirir, ürünlerin %30'u kaybolur (Tolga 19.11)
+  {const N=L.length;for(let i=0;i<N;i++){const u=L[(i+Math.floor(N/2))%N],ar=ASPECT[u[0]]||1;items.push({u,i:N+i,x:0,xa:(i%2?1:-1)*(1.15+((i*0.618)%1)*1.2),y:(((i*0.377)%1)-0.5)*2.4,z:-(i*STEP)-250+STEP/2,w:ar>1.25?460:ar<0.75?300:380,rot:(((i*0.5698)%1)-0.5)*4*Math.PI/180,thin:false,sx:0,sy:0,sw:0,sh:0,op:0,dz:0,yan:1})}items.forEach((it,i)=>{if(it.i===undefined)it.i=i})}
+  let bak=0,bakT=0;const BMAX=1.48,bakDegis=d=>{bakT=Math.max(-BMAX,Math.min(BMAX,bakT+d));uyan()};
+  const onune=document.createElement('button');onune.type='button';onune.textContent='↺ Önüne bak';onune.style.cssText="position:absolute;left:50%;bottom:96px;z-index:5;transform:translateX(-50%);padding:10px 18px;border:1.5px solid rgba(242,239,233,.55);border-radius:40px;background:rgba(11,11,13,.62);color:#f2efe9;font:700 15px/1 'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:0;pointer-events:none;transition:opacity .3s";
+  onune.onclick=e=>{e.stopPropagation();bakT=0;uyan()};wrap.appendChild(onune);
   // çizim yalnız bir şey değişince çalışır
   function uyan(){kirli=true;if(acik&&!calisiyor){calisiyor=true;requestAnimationFrame(render)}}
-  ['wheel','pointerdown','pointermove'].forEach(t=>wrap.addEventListener(t,uyan,{passive:true}));addEventListener('resize',uyan);addEventListener('pageshow',uyan);document.addEventListener('visibilitychange',uyan);setInterval(()=>{if(acik&&camZ!==target&&!calisiyor)uyan()},250);
+  ['wheel','pointerdown','pointermove'].forEach(t=>wrap.addEventListener(t,uyan,{passive:true}));addEventListener('resize',uyan);addEventListener('pageshow',uyan);document.addEventListener('visibilitychange',uyan);setInterval(()=>{if(acik&&(camZ!==target||bak!==bakT)&&!calisiyor)uyan()},250);
   const clamp=v=>Math.min(Math.max(v,0),TOTAL);
   // tekerlek (masaüstü) ve parmak sürükleme (telefon); dokunma = seçim
-  wrap.addEventListener('wheel',e=>{e.preventDefault();if(Math.abs(e.deltaY)<2)return;if(target<=0&&e.deltaY<0){target=0;return}target=clamp(target+e.deltaY*1.4)},{passive:false});
-  let py=null,px0=0,py0=0,hareket=0,t0=0;
-  wrap.addEventListener('pointerdown',e=>{if(e.target.closest('button,a'))return;py=e.clientY;px0=e.clientX;py0=e.clientY;hareket=0;t0=performance.now();wrap.setPointerCapture(e.pointerId)});
-  wrap.addEventListener('pointermove',e=>{if(py===null)return;const dy=py-e.clientY;py=e.clientY;hareket+=Math.abs(dy);target=clamp(target+dy*4)});
+  wrap.addEventListener('wheel',e=>{e.preventDefault();if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){bakDegis(e.deltaX*0.004);return}if(Math.abs(e.deltaY)<2)return;if(target<=0&&e.deltaY<0){target=0;return}target=clamp(target+e.deltaY*1.4)},{passive:false});
+  let py=null,px0=0,py0=0,hareket=0,t0=0,pxs=0,yon=null;
+  wrap.addEventListener('pointerdown',e=>{if(e.target.closest('button,a'))return;py=e.clientY;px0=pxs=e.clientX;py0=e.clientY;hareket=0;yon=null;t0=performance.now();wrap.setPointerCapture(e.pointerId)});
+  wrap.addEventListener('pointermove',e=>{if(py===null)return;if(yon===null&&Math.hypot(e.clientX-px0,e.clientY-py0)>10)yon=Math.abs(e.clientX-px0)>Math.abs(e.clientY-py0)?'yan':'dik';const dy=py-e.clientY,dx=pxs-e.clientX;py=e.clientY;pxs=e.clientX;hareket+=Math.abs(dy)+Math.abs(dx);if(yon==='yan')bakDegis(dx*0.0065);else target=clamp(target+dy*4)});
   wrap.addEventListener('pointerup',e=>{if(py===null)return;py=null;
     if(hareket<10&&Math.hypot(e.clientX-px0,e.clientY-py0)<10&&performance.now()-t0<500){const r=wrap.getBoundingClientRect();const it=pick(e.clientX-r.left,e.clientY-r.top);if(it)sec(it)}});
   function pickIs(it,x,y){const d=ALPHA[it.u[0]];if(!d||it.op<0.05)return false;const dx=x-it.sx,dy=y-it.sy,c=Math.cos(it.rot),s=Math.sin(it.rot);
@@ -654,16 +659,19 @@ const T=(()=>{
     camZ+=(target-camZ)*0.12;if(Math.abs(target-camZ)<0.05)camZ=target;
     document.getElementById('derin').textContent=Math.round(camZ/40)+' m';
     drawn=[];
-    for(const it of items){const dz=it.z+camZ;it.dz=dz;if(dz>250||dz<-7000)continue;
+    bak+=(bakT-bak)*0.14;if(Math.abs(bakT-bak)<0.002)bak=bakT;const bd=Math.min(1,Math.abs(bak)/0.45);onune.style.opacity=Math.abs(bakT)>0.35?1:0;onune.style.pointerEvents=Math.abs(bakT)>0.35?'auto':'none';
+    for(const it of items){const dz0=it.z+camZ;if(dz0>P+900||dz0<-7000)continue;
+      let X=it.yan?it.xa*Math.max(700,VW*0.7):it.x*VW*0.5,dz=dz0;if(bak){const c=Math.cos(bak),sn=Math.sin(bak),Zr=dz0-P;const X2=X*c+Zr*sn;dz=-X*sn+Zr*c+P;X=X2}
+      if(dz>250)continue;it.dz=dz;
       let vis=1;if(dz>0)vis*=Math.max(0,(250-dz)/250);if(dz<-5500)vis*=Math.max(0,(7000+dz)/1500);if(it.thin)vis*=Math.min(1,Math.max(0,(dz+THIN_Z+500)/500));if(vis<=0.01)continue;
       const im=IMG[it.u[0]];if(!im.complete||!im.naturalWidth)continue;
       const fog=Math.min(1,Math.max(0,(-dz-2000)/10000)),k=P/(P-dz);
-      it.op=(1-fog*0.6)*vis;it.sw=it.w*SC*k;it.sh=it.sw*im.naturalHeight/im.naturalWidth;it.sx=VW/2+(it.x*VW*0.5)*k;it.sy=VH/2+(it.y*VH*0.5)*k;
+      it.op=(1-fog*0.6)*vis*(it.yan?bd:1)*(((it.i*0.7071)%1)<0.3?1-bd:1);if(it.op<0.01)continue;it.sw=it.w*SC*k;it.sh=it.sw*im.naturalHeight/im.naturalWidth;it.sx=VW/2+X*k;it.sy=VH/2+(it.y*VH*0.5)*k;
       if(it.sx+it.sw<-50||it.sx-it.sw>VW+50||it.sy+it.sh<-50||it.sy-it.sh>VH+50)continue;drawn.push(it)}
     drawn.sort((a,b)=>a.dz-b.dz);
     g.setTransform(DPR,0,0,DPR,0,0);g.globalAlpha=1;g.clearRect(0,0,VW,VH);g.fillStyle=document.documentElement.dataset.tema==='gunduz'?'rgba(255,255,255,.45)':'rgba(11,11,13,.45)';g.fillRect(0,0,VW,VH);
     for(const it of drawn){g.save();g.globalAlpha=it.op;g.translate(it.sx,it.sy);g.rotate(it.rot);g.drawImage(IMG[it.u[0]],-it.sw/2,-it.sh/2,it.sw,it.sh);g.restore()}
-    if(camZ!==target||kirli)requestAnimationFrame(render);else calisiyor=false}
+    if(camZ!==target||bak!==bakT||kirli)requestAnimationFrame(render);else calisiyor=false}
   uyan();
   document.getElementById('direkBasla').onclick=()=>kapat_();
   // 'Tünel' düğmesi sitedeki tünele döner: Pazar destesinden Pazar tüneline, Halalar destesinden Halalar tüneline
