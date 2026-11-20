@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8"><script>/* Hit Pazarı tek proje: uygulama yalnız kart destesidir. Ürünle (#u=) gelinmediyse Hit Pazarı ana sayfasına gider; eski yalnız-Halalar tüneli açılmaz. */(()=>{if(/^#u=/.test(location.hash)||/[?&](pazar=1|t=)/.test(location.search))return;const y={'8769':'8766','8771':'8770'}[location.port];location.replace((y?location.protocol+'//'+location.hostname+':'+y+'/':'https://tolgaarpa.github.io/hitpazari/')+'hit.html')})();</script>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><!-- test dönemi: Google listelemesin (Tolga 21.11) --><script>/* Hit Pazarı tek proje: uygulama yalnız kart destesidir. Ürünle (#u=) gelinmediyse Hit Pazarı ana sayfasına gider; eski yalnız-Halalar tüneli açılmaz. */(()=>{if(/^#u=/.test(location.hash)||/[?&](pazar=1|t=)/.test(location.search))return;const y={'8769':'8766','8771':'8770'}[location.port];location.replace((y?location.protocol+'//'+location.hostname+':'+y+'/':'https://tolgaarpa.github.io/hitpazari/')+'hit.html')})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="theme-color" content="#0b0b0d">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -401,6 +401,7 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
 <script src="https://tolgaarpa.github.io/hitpazari/veri/dukkan2.js"></script>
 <script src="https://tolgaarpa.github.io/hitpazari/veri/dukkan3.js"></script>
 <script>/* Ara filtreleri sitedeki veri/filtre.js ile aynı (yerel denemede yerel siteden) */document.write('<script src="'+(['8768','8769'].includes(location.port)?'http://localhost:8766/':'https://tolgaarpa.github.io/hitpazari/')+'veri/filtre.js"><\/script>')</script>
+<script>/* Görüş bildir sekmesi (test dönemi, sitedeki veri/gorus.js) */document.write('<script defer src="'+(['8768','8769'].includes(location.port)?'http://localhost:8772/':'https://tolgaarpa.github.io/hitpazari/')+'veri/gorus.js"><\/script>')</script>
 <script>/* dekupe konturu: sitedeki veri/kontur.js ile aynı kural; kırmızı, yeşil şimdilik örnek */
 let knM=null;function knS(id){if(!knM)knM=new Map(typeof DUKKAN3!=='undefined'?DUKKAN3.urunler.map((u,i)=>['d3:'+u.id,{k:u.kategori,i}]):[]);const b=knM.get(id);if(!b)return '';return b.i%9===0?'kn-k':b.i%9===4?'kn-y':b.k==='Beyaz Eşya'?'kn-s':''}</script>
 <script>
@@ -410,7 +411,7 @@ let knM=null;function knS(id){if(!knM)knM=new Map(typeof DUKKAN3!=='undefined'?D
 const WEB='https://tolgaarpa.github.io/hitpazari/',EK={};
 [['d2:',typeof DUKKAN2!=='undefined'?DUKKAN2:null],['d3:',typeof DUKKAN3!=='undefined'?DUKKAN3:null]].forEach(([on,dk])=>{if(!dk)return;
   dk.urunler.filter(x=>x.stok!==0).forEach(x=>{const tam=p=>/^https?:/.test(p)?p:WEB+p;
-    EK[on+x.id]={u:[on+x.id,x.ad,x.aciklama||'','—'],g:(x.gorseller&&x.gorseller.length?x.gorseller:[x.gorsel]).map(tam),fiyat:x.fiyat||0,kat:x.kategori,satici:dk.id,sad:dk.ad,teslim:dk.teslim||'',tunel:!!x.tunel}})});
+    EK[on+x.id]={u:[on+x.id,x.ad,x.aciklama||'','—',x.tamAd||''],g:(x.gorseller&&x.gorseller.length?x.gorseller:[x.gorsel]).map(tam),fiyat:x.fiyat||0,kat:x.kategori,satici:dk.id,sad:dk.ad,teslim:dk.teslim||'',tunel:!!x.tunel}})});
 // ?pazar=1 (sitede Pazar tünelinden ya da başka dükkân ürününden gelindi): deste bütün dükkânların ürünleriyle
 // Deste, sitede girilen tünelin ürünleriyle açılır (?t=): pazar | dukkan:2 | dukkan:3 | sec:<seçim> | kat:<Halalar kategorisi> | boş = Halalar
 const QS=new URLSearchParams(location.search),TS=QS.get('t')||(QS.get('pazar')==='1'?'pazar':'');
@@ -606,7 +607,7 @@ ciz();
     kl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===kat));
     // arama: kelime başından eşleşir ("ram" seramik/program getirmez); önce ad ve kategoride arar, orada yoksa açıklamada (Tolga 21.11)
     const kc=t=>(t||'').toLocaleLowerCase('tr-TR'),parca=(t,f)=>f(t).split(/[^a-z0-9çğıöşü]+/).filter(Boolean),ham=kutu.value,ka=u=>!kat||KAT(u[0])===kat;
-    const esle=(m,f)=>{const T=parca(m,f),W=parca(ham,f);return W.every(w=>T.some(t=>t.startsWith(w)))},ad=u=>u[1]+' '+(u[3]==='—'?'':u[3])+' '+KAT(u[0]),hep=u=>u[1]+' '+u[2]+' '+u[3]+' '+KAT(u[0]);
+    const esle=(m,f)=>{const T=parca(m,f),W=parca(ham,f);return W.every(w=>T.some(t=>t.startsWith(w)))},ad=u=>u[1]+' '+(u[3]==='—'?'':u[3])+' '+KAT(u[0]),hep=u=>u[1]+' '+u[2]+' '+u[3]+' '+KAT(u[0])+' '+(u[4]||'');
     let L=AL.filter(ka);if(parca(ham,kc).length)for(const [m,f] of [[ad,kc],[hep,kc],[ad,norm],[hep,norm]]){L=AL.filter(u=>ka(u)&&esle(m(u),f));if(L.length)break}   // önce Türkçe harfle (masa≠maşa), yoksa harfsiz (camasir→çamaşır)
     {const izin=fl.suz(L.map(u=>u[0]));for(let i=L.length-1;i>=0;i--)if(!izin.has(L[i][0]))L.splice(i,1)}   // kategoriye özel filtreler (veri/filtre.js)
     // önem sırası: beğendiklerin önce, sonra popüler kategoriler; ilk satır 4, sonra 5, sonra 6'şar (kademeli küçülür)

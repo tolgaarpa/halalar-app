@@ -20,6 +20,17 @@ service cloud.firestore {
                     && request.resource.data.zaman == request.time;
       allow read, update, delete: if yonetici();
     }
+    // Görüş bildir (test dönemi): herkes yazar, yalnız yönetici okur/siler
+    match /gorusler/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['metin','iletisim','sayfa','ekran','zaman'])
+                    && request.resource.data.keys().hasAll(['metin','iletisim','sayfa','ekran','zaman'])
+                    && request.resource.data.metin is string && request.resource.data.metin.size() >= 2 && request.resource.data.metin.size() <= 1000
+                    && request.resource.data.iletisim is string && request.resource.data.iletisim.size() <= 80
+                    && request.resource.data.sayfa is string && request.resource.data.sayfa.size() <= 200
+                    && request.resource.data.ekran is string && request.resource.data.ekran.size() <= 20
+                    && request.resource.data.zaman == request.time;
+      allow read, delete: if yonetici();
+    }
     // Müşterinin gördüğü durum (kişisel bilgi yok): belge no ile okunur, yalnız yönetici yazar
     match /durumlar/{id} {
       allow get: if true;

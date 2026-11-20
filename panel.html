@@ -64,7 +64,7 @@ h1 small{font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.22em}
 <body>
 <header><div class="hpi-sol"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><h1>Halalar <small>Dükkân paneli</small></h1></div>
   <div class="filtre" id="filtre" hidden>
-    <button data-f="Beklemede" class="on">Bekleyen</button><button data-f="hepsi">Tümü</button><button id="cikis">Çıkış</button>
+    <button data-f="Beklemede" class="on">Bekleyen</button><button data-f="hepsi">Tümü</button><button data-f="gorus" id="gorusB">Görüşler</button><button id="cikis">Çıkış</button>
   </div></header>
 <main id="main"><div class="giris" id="giris">
   <h1>Hit Pazarı paneli</h1>
@@ -83,20 +83,25 @@ firebase.initializeApp(FIREBASE_AYAR);
 const auth=firebase.auth(), db=firebase.firestore();
 const TL=n=>(n||0).toLocaleString('tr-TR')+' ₺';
 const RENK={'Beklemede':'var(--bekle)','Kabul edildi':'var(--kabul)','Reddedildi':'var(--ret)','Karşı teklif':'var(--karsi)','Satıldı':'var(--satildi)'};
-let filtre='Beklemede', veri=[], dinle=null;
+let filtre='Beklemede', veri=[], dinle=null, gorus=[], dinleG=null;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('gir').onclick=()=>{if(/FBAN|FBAV|Instagram|WhatsApp|Line\/|; wv\)|GSA\//.test(navigator.userAgent)){document.getElementById('ghata').textContent='Uygulama içi tarayıcıda Google girişi çalışmaz; Safari/Chrome ile aç.';return}auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e=>{if(e.code!=='auth/popup-closed-by-user')document.getElementById('ghata').textContent='Giriş olmadı ('+(e.code||e.message)+')'})};
 document.getElementById('cikis').onclick=()=>auth.signOut();
 document.querySelectorAll('#filtre [data-f]').forEach(b=>b.onclick=()=>{filtre=b.dataset.f;document.querySelectorAll('#filtre [data-f]').forEach(x=>x.classList.toggle('on',x===b));ciz()});
 auth.onAuthStateChanged(u=>{
   document.getElementById('giris').hidden=!!u; document.getElementById('filtre').hidden=!u;
-  if(dinle){dinle();dinle=null} veri=[]; ciz();
+  if(dinle){dinle();dinle=null} if(dinleG){dinleG();dinleG=null} veri=[]; gorus=[]; ciz();
   if(!u)return;
   dinle=db.collection('talepler').orderBy('zaman','desc').onSnapshot(q=>{veri=q.docs.map(d=>({id:d.id,...d.data()}));ciz()},
     e=>{document.getElementById('liste').innerHTML=`<div class="bos">Bu hesabın yetkisi yok (${esc(u.email)}). Yetkili hesapla gir.</div>`});
+  // test dönemi görüşleri (sitedeki 'Görüş bildir' sekmesi)
+  dinleG=db.collection('gorusler').orderBy('zaman','desc').onSnapshot(q=>{gorus=q.docs.map(d=>({id:d.id,...d.data()}));document.getElementById('gorusB').textContent='Görüşler ('+gorus.length+')';if(filtre==='gorus')ciz()},e=>console.warn('görüşler okunamadı',e));
 });
 function ciz(){
   const el=document.getElementById('liste'); if(!auth.currentUser){el.innerHTML='';return}
+  if(filtre==='gorus'){el.innerHTML=gorus.length?gorus.map(g=>{const z=g.zaman&&g.zaman.toDate?g.zaman.toDate().toLocaleString('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'';
+      return `<div class="talep" style="--c:var(--muted);grid-template-columns:1fr"><div><div class="ust"><h3 style="white-space:pre-wrap;font-family:inherit;text-transform:none">${esc(g.metin)}</h3></div><div class="satir"><span>${esc(g.iletisim||'isimsiz')}</span><span>${esc(g.sayfa)}</span><span>${esc(g.ekran)}</span><span class="zaman">${z}</span></div><div class="aks"><button class="btn" data-gsil="${g.id}">Sil</button></div></div></div>`}).join(''):'<div class="bos">Henüz görüş yok.</div>';
+    el.querySelectorAll('[data-gsil]').forEach(b=>b.onclick=()=>{if(b.dataset.emin)db.collection('gorusler').doc(b.dataset.gsil).delete();else{b.dataset.emin=1;b.textContent='Emin misin? Tekrar bas'}});return}
   const l=veri.filter(t=>filtre==='hepsi'||t.durum===filtre);
   if(!l.length){el.innerHTML=`<div class="bos">${filtre==='Beklemede'?'Bekleyen talep yok.':'Henüz talep yok.'}</div>`;return}
   el.innerHTML=l.map(t=>{const liste=FIYAT[t.urun]; const z=t.zaman&&t.zaman.toDate?t.zaman.toDate().toLocaleString('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'';
