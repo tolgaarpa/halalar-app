@@ -633,7 +633,7 @@ const T=(()=>{
     return {u,x:xv,y:yv,z:-(i*STEP)-250,w:(ar>1.25?460:ar<0.75?300:380)+((i*13)%6)*45,rot:rot*Math.PI/180,thin:i%3!==0,sx:0,sy:0,sw:0,sh:0,op:0,dz:0}});
   const TOTAL=(L.length+1)*STEP; let camZ=0,target=0,acik=true,drawn=[],kirli=true,calisiyor=false;
   // SERBEST BAKIŞ (sitedeki gibi): yana sürükleyince kamera sağa sola döner; yanlarda ikinci sıra ürün belirir, ürünlerin %30'u kaybolur (Tolga 19.11)
-  {const N=L.length;for(let j=0;j<N*(innerWidth<768?2:1);j++){const i=j%N,kat=Math.floor(j/N),u=L[(i+Math.floor(N/2)+kat*Math.floor(N/3))%N],ar=ASPECT[u[0]]||1;items.push({u,i:N+j,x:0,xa:(j%2?1:-1)*(1.15+((j*0.618)%1)*1.2),y:(((j*0.377)%1)-0.5)*2.4,z:-(i*STEP)-250+STEP/2-kat*STEP/4,w:ar>1.25?460:ar<0.75?300:380,rot:(((i*0.5698)%1)-0.5)*4*Math.PI/180,thin:false,sx:0,sy:0,sw:0,sh:0,op:0,dz:0,yan:1})}items.forEach((it,i)=>{if(it.i===undefined)it.i=i})}
+  {const N=L.length;{const SK=URUNLER.length,PERM=[...Array(SK).keys()];for(let a=SK-1;a>0;a--){const b=Math.floor(((a*0.6180339+0.31)%1)*(a+1));[PERM[a],PERM[b]]=[PERM[b],PERM[a]]}const KATS=innerWidth<768?Math.max(1,Math.min(3,Math.round(SK/45))):1;for(let j=0;j<N*KATS;j++){const i=Math.floor(j/KATS),kat=j%KATS,u=URUNLER[PERM[(j+Math.floor(SK/2))%SK]],ar=ASPECT[u[0]]||1,sag=(i+kat)%2?1:-1;items.push({i:N+j,u,x:0,xa:sag*(1.15+((j*0.618)%1)*1.2),y:(((j*0.377)%1)-0.5)*2.4,z:-(i*STEP)-250+STEP/2-kat*STEP/KATS,w:ar>1.25?460:ar<0.75?300:380,ar,rot:(((j*0.5698)%1)-0.5)*4*Math.PI/180,thin:false,sx:0,sy:0,sw:0,sh:0,op:0,dz:0,yan:1})}}items.forEach((it,i)=>{if(it.i===undefined)it.i=i})}
   let bak=0,bakT=0;const BMAX=1.48,bakDegis=d=>{bakT=Math.max(-BMAX,Math.min(BMAX,bakT+d));uyan()};
   const onune=document.createElement('button');onune.type='button';onune.textContent='↺ Önüne bak';onune.style.cssText="position:absolute;left:50%;bottom:96px;z-index:5;transform:translateX(-50%);padding:10px 18px;border:1.5px solid rgba(242,239,233,.55);border-radius:40px;background:rgba(11,11,13,.62);color:#f2efe9;font:700 15px/1 'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:0;pointer-events:none;transition:opacity .3s";
   onune.onclick=e=>{e.stopPropagation();bakT=0;uyan()};wrap.appendChild(onune);
@@ -662,7 +662,7 @@ const T=(()=>{
     drawn=[];
     bak+=(bakT-bak)*0.14;if(Math.abs(bakT-bak)<0.002)bak=bakT;const bd=Math.min(1,Math.abs(bak)/0.45);onune.style.opacity=Math.abs(bakT)>0.35?1:0;onune.style.pointerEvents=Math.abs(bakT)>0.35?'auto':'none';
     for(const it of items){const dz0=it.z+camZ;if(dz0>P+900||dz0<-7000)continue;
-      let X=it.yan?it.xa*Math.max(700,VW*0.7):it.x*VW*0.5,dz=dz0;if(bak){const c=Math.cos(bak),sn=Math.sin(bak),Zr=dz0-P;const X2=X*c+Zr*sn;dz=-X*sn+Zr*c+P;X=X2}
+      let X=it.yan?it.xa*(VW<768?450:Math.max(700,VW*0.7)):it.x*VW*0.5,dz=dz0;if(bak){const c=Math.cos(bak),sn=Math.sin(bak),Zr=dz0-P;const X2=X*c+Zr*sn;dz=-X*sn+Zr*c+P;X=X2}
       if(dz>250)continue;it.dz=dz;
       let vis=1;if(dz>0)vis*=Math.max(0,(250-dz)/250);if(dz<-5500)vis*=Math.max(0,(7000+dz)/1500);if(it.thin)vis*=Math.min(1,Math.max(0,(dz+THIN_Z+500)/500));if(vis<=0.01)continue;
       const im=IMG[it.u[0]];if(!im.complete||!im.naturalWidth)continue;
