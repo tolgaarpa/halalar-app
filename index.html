@@ -604,7 +604,10 @@ ciz();
   kl.innerHTML=katlar.map((k,i)=>`<button data-k="${k==='Tümü'?'':k}" class="${i===0?'b3':i<=3?'b1':i<=7?'b2':'b3'}">${k}</button>`).join('');
   function goster(){const q=norm(kutu.value).trim();
     kl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===kat));
-    const L=AL.filter(u=>(!kat||KAT(u[0])===kat)&&(!q||q.split(/\s+/).every(w=>norm(u[1]+' '+u[2]+' '+u[3]+' '+KAT(u[0])).includes(w))));
+    // arama: kelime başından eşleşir ("ram" seramik/program getirmez); önce ad ve kategoride arar, orada yoksa açıklamada (Tolga 21.11)
+    const kc=t=>(t||'').toLocaleLowerCase('tr-TR'),parca=(t,f)=>f(t).split(/[^a-z0-9çğıöşü]+/).filter(Boolean),ham=kutu.value,ka=u=>!kat||KAT(u[0])===kat;
+    const esle=(m,f)=>{const T=parca(m,f),W=parca(ham,f);return W.every(w=>T.some(t=>t.startsWith(w)))},ad=u=>u[1]+' '+(u[3]==='—'?'':u[3])+' '+KAT(u[0]),hep=u=>u[1]+' '+u[2]+' '+u[3]+' '+KAT(u[0]);
+    let L=AL.filter(ka);if(parca(ham,kc).length)for(const [m,f] of [[ad,kc],[hep,kc],[ad,norm],[hep,norm]]){L=AL.filter(u=>ka(u)&&esle(m(u),f));if(L.length)break}   // önce Türkçe harfle (masa≠maşa), yoksa harfsiz (camasir→çamaşır)
     {const izin=fl.suz(L.map(u=>u[0]));for(let i=L.length-1;i>=0;i--)if(!izin.has(L[i][0]))L.splice(i,1)}   // kategoriye özel filtreler (veri/filtre.js)
     // önem sırası: beğendiklerin önce, sonra popüler kategoriler; ilk satır 4, sonra 5, sonra 6'şar (kademeli küçülür)
     {let B=[];try{B=(JSON.parse(localStorage.getItem('halalar-app-v1'))||{}).begeni||[]}catch(e){}const puan=u=>(B.includes(u[0])?1000:0)+(SAY[KAT(u[0])]||0);L.sort((x,y)=>puan(y)-puan(x))}
