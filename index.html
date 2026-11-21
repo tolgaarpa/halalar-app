@@ -355,6 +355,8 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
 <style>/* beden seçimi (deste) */.bdn{margin:12px 0 4px}.bdn b{display:block;font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:8px}
 .bdn div{display:flex;flex-wrap:wrap;gap:8px}.bdn button{min-width:46px;height:42px;padding:0 10px;border:1px solid rgba(128,128,136,.5);background:none;color:inherit;font:600 15px/1 Barlow,sans-serif;border-radius:3px}
 .bdn button.on{background:#e8201c;border-color:#e8201c;color:#fff}.btab{margin-top:8px;font:500 13px/1.3 Barlow,sans-serif}.btab summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.btab table{border-collapse:collapse;margin-top:6px;width:100%}.btab th,.btab td{border:1px solid rgba(128,128,136,.4);padding:5px 7px;text-align:left}.btab small{display:block;opacity:.6;margin-top:4px}</style>
+<style>/* sıralama (3. müşteri turu) */.sirala{display:flex;align-items:center;justify-content:flex-end;gap:8px;max-width:1200px;width:100%;margin:0 auto;padding:0 16px 10px;font:700 13px/1 "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8d887f}.sirala select{background:#17171b;color:#f2efe9;border:1px solid #2a2a30;padding:8px 10px;font:500 15px Barlow,sans-serif;border-radius:3px}html[data-tema="gunduz"] .sirala select{background:#fff;color:#111114;border-color:#d4d4da}#ara .oge i{display:block;font:400 17px/1.2 Anton,Impact,sans-serif;font-style:normal;color:#e8201c;margin-top:4px}#ara .oge i em{font:700 10px/1 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8d887f;font-style:normal;margin-left:4px}</style>
+<style>/* telefonda kategoriler tek satır, yana kayar (3. müşteri turu) */@media(max-width:760px){#ara .katlar{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;padding-bottom:10px!important;-webkit-overflow-scrolling:touch}#ara .katlar::-webkit-scrollbar{display:none}#ara .katlar button{flex:none;font-size:14px!important;padding:9px 12px!important;white-space:nowrap}}</style>
 </head>
 <body>
 <div id="app">
@@ -367,7 +369,7 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
     <div class="e-satir iki"><button class="e-btn e-gec" data-yon="sol" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Geç</span></button><button class="e-btn e-begen" data-yon="sag" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Beğen</span></button></div>
   </aside>
   <div id="ara"><div class="ara-bas"><a class="hp-logo" href="https://tolgaarpa.github.io/hitpazari/hit.html" aria-label="Hit Pazarı"><span class="hp-c" aria-hidden="true">//</span><span class="hp-a">HİT PAZARI</span></a><b>Ara</b></div><div class="ust2"><input id="araKutu" type="search" placeholder="Ürün ara: plak, tablo, porselen…" autocomplete="off"><button class="tunele" id="araKapat">Kapat</button></div>
-    <div class="katlar" id="katlar"></div><div id="filtre"></div><div class="sonuc" id="sonuc"></div></div>
+    <div class="katlar" id="katlar"></div><div id="filtre"></div><div class="sirala"><label for="sirala">Sırala</label><select id="sirala"><option value="">Önerilen</option><option value="ucuz">En düşük fiyat</option><option value="pahali">En yüksek fiyat</option></select></div><div class="sonuc" id="sonuc"></div></div>
   <div class="ipucu">
     <button class="b-nope" data-yon="sol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Geç</button>
     <button class="b-offer" data-yon="yukari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Teklif ver</button>
@@ -622,11 +624,12 @@ ciz();
     {const izin=fl.suz(L.map(u=>u[0]));for(let i=L.length-1;i>=0;i--)if(!izin.has(L[i][0]))L.splice(i,1)}   // kategoriye özel filtreler (veri/filtre.js)
     // önem sırası: beğendiklerin önce, sonra popüler kategoriler; ilk satır 4, sonra 5, sonra 6'şar (kademeli küçülür)
     {let B=[];try{B=(JSON.parse(localStorage.getItem('halalar-app-v1'))||{}).begeni||[]}catch(e){}const puan=u=>(B.includes(u[0])?1000:0)+(SAY[KAT(u[0])]||0);L.sort((x,y)=>puan(y)-puan(x))}
+    {const sr=document.getElementById('sirala').value;if(sr){const F=u=>(fiyat(u[0])||0);L.sort((a,b)=>{const fa=F(a),fb=F(b);if(!fa&&!fb)return 0;if(!fa)return 1;if(!fb)return -1;return sr==='ucuz'?fa-fb:fb-fa})}}   // sıralama: en ucuz / en pahalı (fiyatsızlar sonda)
     const kd=i=>i<4?'s4':i<9?'s5':'s6';
     so.innerHTML=L.length?L.map((u,i)=>`<button class="oge ${kd(i)}" data-id="${u[0]}"><img class="${knS(u[0])}" loading="lazy" src="${img(u[0])}" alt=""><b>${u[1]}</b><small>${KAT(u[0])} · ${fiyatYaz(u[0])}</small></button>`).join(''):`<div class="yok"><b>“${esc(kutu.value.trim())}” için sonuç yok.</b><br>Aradığını dükkânlara soralım: <a href="https://wa.me/905326337206?text=${encodeURIComponent('Merhaba, Hit Pazarı\'nda şunu arıyorum: '+kutu.value.trim())}" target="_blank" rel="noopener">WhatsApp'tan sor</a></div>`;
     so.querySelectorAll('.oge').forEach(b=>b.onclick=()=>{if(!SIRA.includes(b.dataset.id)){SIRA.push(b.dataset.id)}oneAl(b.dataset.id);pen.classList.remove('on');ciz()})}
   kl.onclick=e=>{const b=e.target.closest('button');if(!b)return;kat=b.dataset.k;goster()};
-  kutu.oninput=goster;
+  kutu.oninput=goster;document.getElementById('sirala').onchange=goster;
   document.getElementById('araAc').onclick=()=>{pen.classList.add('on');goster();setTimeout(()=>kutu.focus(),50)};
   document.getElementById('araKapat').onclick=()=>pen.classList.remove('on');
 })();
