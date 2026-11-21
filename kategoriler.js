@@ -1,5 +1,5 @@
 // ürün kategorileri (arama ve filtre için)
-const KATEGORILER=["Tablo & Afiş", "Müzik", "Mutfak & Sofra", "Oyuncak & Figür", "Heykel & Dekor", "Elektronik & Kamera", "Sandık & Çanta", "Nostalji Eşya", "Spor & Koleksiyon", "Kitap & Kâğıt"];
+const KATEGORILER=["Tablo & Afiş", "Müzik", "Mutfak & Sofra", "Oyuncak & Figür", "Heykel & Dekor", "Elektronik & Kamera", "Sandık & Çanta", "Nostalji Eşya", "Takı", "Spor & Koleksiyon", "Kitap & Kâğıt"];
 const KATEGORI={
 "ig/ig_heykelmasa": "Heykel & Dekor",
 "ig/ig_kurt": "Heykel & Dekor",
@@ -26,8 +26,8 @@ const KATEGORI={
 "3491": "Nostalji Eşya",
 "3468": "Nostalji Eşya",
 "3476": "Nostalji Eşya",
-"3494": "Nostalji Eşya",
-"3492": "Nostalji Eşya",
+"3494": "Takı",
+"3492": "Takı",
 "ek/3481_tarti": "Nostalji Eşya",
 "ig/ig_kayak": "Spor & Koleksiyon",
 "3479": "Spor & Koleksiyon",
@@ -96,3 +96,4 @@ const KATEGORI={
 "h/fincantakim2": "Mutfak & Sofra",
 "h/tef": "Müzik"
 };
+// Takı kategorisi (sahip 21.11): küpe ve yüzük Nostalji Eşya'dan ayrıldı

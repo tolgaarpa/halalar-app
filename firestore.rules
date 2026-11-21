@@ -7,7 +7,8 @@ service cloud.firestore {
     }
     // Teklif ve satın alma talepleri (ad + telefon içerir): okuma yalnız yönetici
     match /talepler/{id} {
-      allow create: if request.resource.data.keys().hasOnly(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici'])
+      allow create: if request.resource.data.keys().hasOnly(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici','liste'])
+                    && (!('liste' in request.resource.data) || (request.resource.data.liste is string && request.resource.data.liste.size() <= 1500))
                     && request.resource.data.keys().hasAll(['urun','urunAd','tur','tutar','ad','tel','durum','zaman','satici'])
                     && request.resource.data.urun is string && request.resource.data.urun.size() > 0 && request.resource.data.urun.size() <= 120
                     && request.resource.data.urunAd is string && request.resource.data.urunAd.size() > 0 && request.resource.data.urunAd.size() <= 120

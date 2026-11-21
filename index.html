@@ -354,7 +354,7 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
 <style>/* Ara: bütün pencere kayar, fare nerede olursa olsun (Tolga 21.11) */#ara{overflow-y:auto;overscroll-behavior:contain}#ara>*{flex-shrink:0}#ara .sonuc{flex:none;overflow:visible}.sayfa{overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y}.sayfa>*{flex-shrink:0}.sayfa .liste{flex:none;overflow:visible}#toast{pointer-events:none}</style>
 <style>/* beden seçimi (deste) */.bdn{margin:12px 0 4px}.bdn b{display:block;font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:8px}
 .bdn div{display:flex;flex-wrap:wrap;gap:8px}.bdn button{min-width:46px;height:42px;padding:0 10px;border:1px solid rgba(128,128,136,.5);background:none;color:inherit;font:600 15px/1 Barlow,sans-serif;border-radius:3px}
-.bdn button.on{background:#e8201c;border-color:#e8201c;color:#fff}</style>
+.bdn button.on{background:#e8201c;border-color:#e8201c;color:#fff}.btab{margin-top:8px;font:500 13px/1.3 Barlow,sans-serif}.btab summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.btab table{border-collapse:collapse;margin-top:6px;width:100%}.btab th,.btab td{border:1px solid rgba(128,128,136,.4);padding:5px 7px;text-align:left}.btab small{display:block;opacity:.6;margin-top:4px}</style>
 </head>
 <body>
 <div id="app">
@@ -454,7 +454,8 @@ function kisiOku(){const ad=document.getElementById('kad').value.trim(),tel=docu
 // DSG kıyafetlerinde beden seçimi (sahip 21.11): her ürün her bedende var sayılır; seçilen beden talebe yazılır
 let SBEDEN='';
 function bedenHTML(id){SBEDEN='';const x=EK[id];if(!x||!/^d2:/.test(id))return '';const L=x.kat==='Alt giyim'?['28','30','32','34','36','38']:['S','M','L','XL','XXL'];
-  return `<div class="bdn"><b>Beden</b><div>${L.map(b=>`<button type="button" data-bd="${b}">${b}</button>`).join('')}</div></div>`}
+  const alt=x.kat==='Alt giyim',TB=alt?[['28','72','81'],['30','76','81'],['32','81','82'],['34','86','82'],['36','91','83'],['38','96','83']]:[['S','96–100','70'],['M','100–104','72'],['L','104–110','74'],['XL','110–116','76'],['XXL','116–122','78']];
+  return `<div class="bdn"><b>Beden</b><div>${L.map(b=>`<button type="button" data-bd="${b}">${b}</button>`).join('')}</div><details class="btab"><summary>Beden tablosu</summary><table><tr><th>Beden</th><th>${alt?'Bel':'Göğüs'} (cm)</th><th>${alt?'İç boy':'Boy'} (cm)</th></tr>${TB.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</table><small>Örnek ölçüler; ürüne göre biraz değişebilir.</small></details></div>`}
 function bedenBagla(){sheet.querySelectorAll('[data-bd]').forEach(b=>b.onclick=()=>{SBEDEN=b.dataset.bd;sheet.querySelectorAll('[data-bd]').forEach(y=>y.classList.toggle('on',y===b));const h=document.getElementById('khata');if(h)h.textContent=''})}
 function bedenTamam(id){if(/^d2:/.test(id)&&EK[id]&&!SBEDEN){document.getElementById('khata').textContent='Bedenini seç.';return false}return true}
 async function gonder(id,tur,tutar,kisi,btn){
@@ -580,7 +581,7 @@ function satinAlAc(id){
   ac(ust(id,'Satın alma talebi','var(--buy)')+`
     <div class="ozet"><div><span>Satıcı</span><span>${saticiAd(id)}</span></div><div><span>Ürün</span><span>${TL(f)}</span></div><div><span>Teslimat</span><span>${EK[id]&&EK[id].teslim?EK[id].teslim:'Kargo ile 1-3 iş günü · ya da dükkândan teslim'}</span></div><div><b>Toplam</b><b>${TL(f)}</b></div></div>
     ${bedenHTML(id)}${kisiAlanlari()}
-    <div class="not">Bu ilk sürümde ödeme alınmıyor; talebin dükkâna düşer, dükkân seni arayıp ürünü ayırır.</div>
+    <div class="not">Bu ilk sürümde ödeme alınmıyor; talebin dükkâna düşer, dükkân seni arayıp ürünü ayırır.</div><div class="not"><b>İade ve cayma hakkı:</b> Ürünü teslim aldıktan sonra 14 gün içinde gerekçe göstermeden iade edebilirsin. Ayrıntılar <a href="https://tolgaarpa.github.io/hitpazari/satis-kosullari.html" target="_blank" rel="noopener">satış koşullarında</a>.</div>
     <div class="btns"><button id="vz">Vazgeç</button><button class="ana" id="gn" style="background:var(--buy)">Onayla</button></div>`);
   document.getElementById('vz').onclick=()=>kapat(true);bedenBagla();
   document.getElementById('gn').onclick=async e=>{if(!bedenTamam(id))return;const k=kisiOku();if(!k)return;const ref=await gonder(id,'alim',f,k,e.currentTarget);if(!ref)return;
@@ -622,7 +623,7 @@ ciz();
     // önem sırası: beğendiklerin önce, sonra popüler kategoriler; ilk satır 4, sonra 5, sonra 6'şar (kademeli küçülür)
     {let B=[];try{B=(JSON.parse(localStorage.getItem('halalar-app-v1'))||{}).begeni||[]}catch(e){}const puan=u=>(B.includes(u[0])?1000:0)+(SAY[KAT(u[0])]||0);L.sort((x,y)=>puan(y)-puan(x))}
     const kd=i=>i<4?'s4':i<9?'s5':'s6';
-    so.innerHTML=L.length?L.map((u,i)=>`<button class="oge ${kd(i)}" data-id="${u[0]}"><img class="${knS(u[0])}" loading="lazy" src="${img(u[0])}" alt=""><b>${u[1]}</b><small>${KAT(u[0])} · ${fiyatYaz(u[0])}</small></button>`).join(''):'<div class="yok">Bu aramada ürün yok.</div>';
+    so.innerHTML=L.length?L.map((u,i)=>`<button class="oge ${kd(i)}" data-id="${u[0]}"><img class="${knS(u[0])}" loading="lazy" src="${img(u[0])}" alt=""><b>${u[1]}</b><small>${KAT(u[0])} · ${fiyatYaz(u[0])}</small></button>`).join(''):`<div class="yok"><b>“${esc(kutu.value.trim())}” için sonuç yok.</b><br>Aradığını dükkânlara soralım: <a href="https://wa.me/905326337206?text=${encodeURIComponent('Merhaba, Hit Pazarı\'nda şunu arıyorum: '+kutu.value.trim())}" target="_blank" rel="noopener">WhatsApp'tan sor</a></div>`;
     so.querySelectorAll('.oge').forEach(b=>b.onclick=()=>{if(!SIRA.includes(b.dataset.id)){SIRA.push(b.dataset.id)}oneAl(b.dataset.id);pen.classList.remove('on');ciz()})}
   kl.onclick=e=>{const b=e.target.closest('button');if(!b)return;kat=b.dataset.k;goster()};
   kutu.oninput=goster;
