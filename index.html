@@ -352,6 +352,9 @@ html[data-tema="gunduz"] #tunel .tust .logo,html[data-tema="gunduz"] #tunel .tus
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%278%27 fill=%27%230b0b0d%27/%3E%3Cpath d=%27M12 50 22 14h9L21 50zM30 50 40 14h9L39 50z%27 fill=%27%23e8201c%27/%3E%3C/svg%3E">
 <script>/* yerel deneme (bilgisayar/ev ağı): canlı site adreslerini yerel kopyaya çevir; canlıda hiçbir şey yapmaz */(()=>{const y={'8766':['8766','8769'],'8769':['8766','8769'],'8770':['8770','8771'],'8771':['8770','8771']}[location.port];if(!y)return;const o=location.protocol+'//'+location.hostname+':';const f=h=>String(h).replace('https://tolgaarpa.github.io/hitpazari/',o+y[0]+'/').replace('https://tolgaarpa.github.io/halalar-app/',o+y[1]+'/');window.yerelCevir=f;const d=()=>document.querySelectorAll('a[href^="https://tolgaarpa.github.io/"]').forEach(a=>a.setAttribute('href',f(a.getAttribute('href'))));new MutationObserver(d).observe(document.documentElement,{subtree:true,childList:true});addEventListener('DOMContentLoaded',d)})()</script>
 <style>/* Ara: bütün pencere kayar, fare nerede olursa olsun (Tolga 21.11) */#ara{overflow-y:auto;overscroll-behavior:contain}#ara>*{flex-shrink:0}#ara .sonuc{flex:none;overflow:visible}.sayfa{overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y}.sayfa>*{flex-shrink:0}.sayfa .liste{flex:none;overflow:visible}#toast{pointer-events:none}</style>
+<style>/* beden seçimi (deste) */.bdn{margin:12px 0 4px}.bdn b{display:block;font:700 12px/1 "Barlow Condensed",sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:8px}
+.bdn div{display:flex;flex-wrap:wrap;gap:8px}.bdn button{min-width:46px;height:42px;padding:0 10px;border:1px solid rgba(128,128,136,.5);background:none;color:inherit;font:600 15px/1 Barlow,sans-serif;border-radius:3px}
+.bdn button.on{background:#e8201c;border-color:#e8201c;color:#fff}</style>
 </head>
 <body>
 <div id="app">
@@ -411,7 +414,7 @@ let knM=null;function knS(id){if(!knM)knM=new Map(typeof DUKKAN3!=='undefined'?D
 const WEB='https://tolgaarpa.github.io/hitpazari/',EK={};
 [['d2:',typeof DUKKAN2!=='undefined'?DUKKAN2:null],['d3:',typeof DUKKAN3!=='undefined'?DUKKAN3:null]].forEach(([on,dk])=>{if(!dk)return;
   dk.urunler.filter(x=>x.stok!==0).forEach(x=>{const tam=p=>/^https?:/.test(p)?p:WEB+p;
-    EK[on+x.id]={u:[on+x.id,x.ad,x.aciklama||'','—',x.tamAd||''],g:(x.gorseller&&x.gorseller.length?x.gorseller:[x.gorsel]).map(tam),fiyat:x.fiyat||0,kat:x.kategori,satici:dk.id,sad:dk.ad,teslim:dk.teslim||'',tunel:!!x.tunel}})});
+    EK[on+x.id]={u:[on+x.id,x.ad,x.aciklama||'','—',x.tamAd||''],g:(x.gorseller&&x.gorseller.length?x.gorseller:[x.gorsel]).map(tam),fiyat:x.fiyat||0,ornek:!!x.ornek,kat:x.kategori,satici:dk.id,sad:dk.ad,teslim:dk.teslim||'',tunel:!!x.tunel}})});
 // ?pazar=1 (sitede Pazar tünelinden ya da başka dükkân ürününden gelindi): deste bütün dükkânların ürünleriyle
 // Deste, sitede girilen tünelin ürünleriyle açılır (?t=): pazar | dukkan:2 | dukkan:3 | sec:<seçim> | kat:<Halalar kategorisi> | boş = Halalar
 const QS=new URLSearchParams(location.search),TS=QS.get('t')||(QS.get('pazar')==='1'?'pazar':'');
@@ -448,10 +451,16 @@ function kisiOku(){const ad=document.getElementById('kad').value.trim(),tel=docu
   if(tel.replace(/\D/g,'').length<10){document.getElementById('khata').textContent='Telefon numaranı 10-11 hane olarak yaz.';return null}
   if(!document.getElementById('krz').checked){document.getElementById('khata').textContent='Göndermek için aydınlatma metnini onaylaman gerekiyor.';return null}
   D.kisi={ad,tel,rza:true};kaydet();return {ad,tel}}
+// DSG kıyafetlerinde beden seçimi (sahip 21.11): her ürün her bedende var sayılır; seçilen beden talebe yazılır
+let SBEDEN='';
+function bedenHTML(id){SBEDEN='';const x=EK[id];if(!x||!/^d2:/.test(id))return '';const L=x.kat==='Alt giyim'?['28','30','32','34','36','38']:['S','M','L','XL','XXL'];
+  return `<div class="bdn"><b>Beden</b><div>${L.map(b=>`<button type="button" data-bd="${b}">${b}</button>`).join('')}</div></div>`}
+function bedenBagla(){sheet.querySelectorAll('[data-bd]').forEach(b=>b.onclick=()=>{SBEDEN=b.dataset.bd;sheet.querySelectorAll('[data-bd]').forEach(y=>y.classList.toggle('on',y===b));const h=document.getElementById('khata');if(h)h.textContent=''})}
+function bedenTamam(id){if(/^d2:/.test(id)&&EK[id]&&!SBEDEN){document.getElementById('khata').textContent='Bedenini seç.';return false}return true}
 async function gonder(id,tur,tutar,kisi,btn){
   if(!VT){toast('Bağlantı kurulamadı, internetini kontrol et');return null}
   btn.disabled=true;btn.textContent='Gönderiliyor…';
-  try{const r=await VT.collection('talepler').add({urun:id,urunAd:U(id)[1],tur,tutar,ad:kisi.ad,tel:kisi.tel,durum:'Beklemede',zaman:firebase.firestore.FieldValue.serverTimestamp(),satici:saticiOf(id)});return r.id}
+  try{const r=await VT.collection('talepler').add({urun:id,urunAd:((U(id)[4]||U(id)[1])+(SBEDEN&&/^d2:/.test(id)?' · Beden '+SBEDEN:'')).slice(0,120),tur,tutar,ad:kisi.ad,tel:kisi.tel,durum:'Beklemede',zaman:firebase.firestore.FieldValue.serverTimestamp(),satici:saticiOf(id)});return r.id}
   catch(e){console.warn(e);document.getElementById('khata').textContent='Gönderilemedi. İnternetini kontrol edip tekrar dene.';btn.disabled=false;btn.textContent=tur==='teklif'?'Teklifi gönder':'Onayla';return null}}
 let D={sira:0,begeni:[],gec:[],islem:[]};
 try{const x=JSON.parse(localStorage.getItem(KEY));if(x)D=Object.assign(D,x)}catch(e){}
@@ -494,7 +503,7 @@ function yanGuncelle(){const sol=document.getElementById('solBilgi');if(!sol)ret
   document.getElementById('sDonem').textContent=EK[id]?[EK[id].sad,KAT(id)].join(' · '):[KAT(id),u[3]==='—'?'':u[3]].filter(Boolean).join(' · ')||'Halalar koleksiyonu';
   document.getElementById('sAd').textContent=u[1];document.getElementById('sAcik').textContent=u[2];
   const n=FOTOLAR(id).length;document.getElementById('sAci').textContent=n>1?n+' açı · fotoğrafa dokun':'';
-  const f=fiyat(id)||0;document.getElementById('eFy').innerHTML=f?`<b>${TL(f)}</b>${EK[id]?'':'<small>örnek fiyat</small>'}`:'<b>Teklif ile</b><small>fiyatı teklifle belirlenir</small>';
+  const f=fiyat(id)||0;document.getElementById('eFy').innerHTML=f?`<b>${TL(f)}</b>${EK[id]&&!EK[id].ornek?'':'<small>örnek fiyat</small>'}`:'<b>Teklif ile</b><small>fiyatı teklifle belirlenir</small>';
   const t=document.getElementById('eTk');t.value='';t.placeholder=f?String(Math.round(f*.8/50)*50):'Tutar';
   document.querySelector('#sagEylem .e-al').classList.toggle('pasif',!f)}
 function sayac(){document.getElementById('sayac').textContent=Math.min(D.sira+1,SIRA.length)+' / '+SIRA.length;
@@ -557,24 +566,24 @@ function teklifAc(id){
   ac(ust(id,'Teklif ver','var(--offer)')+`
     <div class="teklif-kutu"><input id="tk" inputmode="numeric" value="${o[1]||''}" placeholder="Tutar"><span>₺</span></div>
     <div class="hizli">${o.map(v=>`<button data-v="${v}">${TL(v)}</button>`).join('')}</div>
-    ${kisiAlanlari()}
+    ${bedenHTML(id)}${kisiAlanlari()}
     <div class="not">Teklifin dükkâna iletilir. Cevap "Teklif ve taleplerim" sekmesinde görünür, gerekirse dükkân seni arar.</div>
     <div class="btns"><button id="vz">Vazgeç</button><button class="ana" id="gn" style="background:var(--offer)">Teklifi gönder</button></div>`);
-  sheet.querySelectorAll('.hizli button').forEach(b=>b.onclick=()=>document.getElementById('tk').value=b.dataset.v);
+  sheet.querySelectorAll('.hizli button').forEach(b=>b.onclick=()=>document.getElementById('tk').value=b.dataset.v);bedenBagla();
   document.getElementById('vz').onclick=()=>kapat(true);
   document.getElementById('gn').onclick=async e=>{const v=parseInt(document.getElementById('tk').value.replace(/\D/g,''))||0;if(v<=0){document.getElementById('khata').textContent='Teklif tutarını yaz.';return}
-    const k=kisiOku();if(!k)return;const ref=await gonder(id,'teklif',v,k,e.currentTarget);if(!ref)return;
+    if(!bedenTamam(id))return;const k=kisiOku();if(!k)return;const ref=await gonder(id,'teklif',v,k,e.currentTarget);if(!ref)return;
     D.islem.unshift({id,ref,satici:saticiOf(id),tur:'teklif',tutar:v,zaman:Date.now(),durum:'Beklemede'});kaydet();kapat(false);toast('Teklif gönderildi: '+TL(v));ucur(aktif.el,'yukari',ilerle)}}
 function satinAlAc(id){
   const f=fiyat(id);
   if(!f){toast('Bu ürünün fiyatı teklifle belirlenir: yukarı kaydırıp teklif ver');if(aktif)aktif.geriAl();return}
   ac(ust(id,'Satın alma talebi','var(--buy)')+`
-    <div class="ozet"><div><span>Satıcı</span><span>${saticiAd(id)}</span></div><div><span>Ürün</span><span>${TL(f)}</span></div><div><span>Teslimat</span><span>${EK[id]&&EK[id].teslim?EK[id].teslim:'Dükkândan teslim'}</span></div><div><b>Toplam</b><b>${TL(f)}</b></div></div>
-    ${kisiAlanlari()}
+    <div class="ozet"><div><span>Satıcı</span><span>${saticiAd(id)}</span></div><div><span>Ürün</span><span>${TL(f)}</span></div><div><span>Teslimat</span><span>${EK[id]&&EK[id].teslim?EK[id].teslim:'Kargo ile 1-3 iş günü · ya da dükkândan teslim'}</span></div><div><b>Toplam</b><b>${TL(f)}</b></div></div>
+    ${bedenHTML(id)}${kisiAlanlari()}
     <div class="not">Bu ilk sürümde ödeme alınmıyor; talebin dükkâna düşer, dükkân seni arayıp ürünü ayırır.</div>
     <div class="btns"><button id="vz">Vazgeç</button><button class="ana" id="gn" style="background:var(--buy)">Onayla</button></div>`);
-  document.getElementById('vz').onclick=()=>kapat(true);
-  document.getElementById('gn').onclick=async e=>{const k=kisiOku();if(!k)return;const ref=await gonder(id,'alim',f,k,e.currentTarget);if(!ref)return;
+  document.getElementById('vz').onclick=()=>kapat(true);bedenBagla();
+  document.getElementById('gn').onclick=async e=>{if(!bedenTamam(id))return;const k=kisiOku();if(!k)return;const ref=await gonder(id,'alim',f,k,e.currentTarget);if(!ref)return;
     D.islem.unshift({id,ref,satici:saticiOf(id),tur:'alim',tutar:f,zaman:Date.now(),durum:'Beklemede'});kaydet();kapat(false);toast('Talebin dükkâna iletildi');ucur(aktif.el,'asagi',ilerle)}}
 
 // ---- listeler ----
